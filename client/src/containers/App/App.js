@@ -3,6 +3,7 @@ import { Switch, Route, Link } from 'react-router-dom';
 
 import './App.css';
 const Home = React.lazy(() => import('../Home/Home'));
+const Common = React.lazy(() => import('../Common/Common'));
 const History = React.lazy(() => import('../History/History'));
 const General = React.lazy(() => import('../General/General'));
 const Multimedia = React.lazy(() => import('../Multimedia/Multimedia'));
@@ -20,11 +21,13 @@ function App() {
         <Link to="/multimedia">Multimedia</Link>
         <Link to="/donations">Donations</Link>
         <Link to="/contact">Contact</Link>
+        <Link to="/common">Common</Link>
       </div>
 
       <React.Suspense fallback={<div>Loading...</div>}>
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/common" component={Common} />
           <Route path="/history" component={History} />
           <Route path="/general" component={General} />
           <Route path="/multimedia" component={Multimedia} />
