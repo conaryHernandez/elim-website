@@ -4,6 +4,7 @@ import Slider from '../../components/Slider/Slider';
 
 import { photos } from './photos';
 import Spinner from '../../components/UI/Spinner/Spinner';
+import Button from '../../components/UI/Button/Button';
 
 const Common = () => {
   return (
@@ -14,6 +15,7 @@ const Common = () => {
       <Slider photos={photos.filter(el => el.height === 3)} />
       <h1>UI Elements</h1>
       <Spinner />
+      <Button size="small">Add</Button>
     </div>
   );
 };

@@ -1,14 +1,8 @@
 import React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import AppNavigator from './AppRoutes';
 
 import './App.css';
-const Home = React.lazy(() => import('../Home/Home'));
-const Common = React.lazy(() => import('../Common/Common'));
-const History = React.lazy(() => import('../History/History'));
-const General = React.lazy(() => import('../General/General'));
-const Multimedia = React.lazy(() => import('../Multimedia/Multimedia'));
-const Donations = React.lazy(() => import('../Donations/Donations'));
-const Contact = React.lazy(() => import('../Contact/Contact'));
 
 function App() {
   return (
@@ -25,15 +19,7 @@ function App() {
       </div>
 
       <React.Suspense fallback={<div>Loading...</div>}>
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/common" component={Common} />
-          <Route path="/history" component={History} />
-          <Route path="/general" component={General} />
-          <Route path="/multimedia" component={Multimedia} />
-          <Route path="/donations" component={Donations} />
-          <Route path="/contact" component={Contact} />
-        </Switch>
+        <AppNavigator />
       </React.Suspense>
     </div>
   );
