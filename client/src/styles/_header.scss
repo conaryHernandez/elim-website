@@ -1,0 +1,22 @@
+#header {
+  .header-logo {
+    width: 30rem;
+  }
+  .ant-menu-horizontal {
+    background: #1a1423;
+    a {
+      color: #fff;
+    }
+    .ant-menu-item,
+    .ant-menu-submenu {
+      &:hover {
+        color: #9d085f;
+        border-bottom: 2px solid #9d085f;
+      }
+    }
+    .ant-menu-item-selected,
+    .ant-menu-submenu-active {
+      border-bottom: 2px solid #9d085f;
+    }
+  }
+}
