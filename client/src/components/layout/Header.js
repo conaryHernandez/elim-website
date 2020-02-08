@@ -23,9 +23,9 @@ export default function Header() {
   };
   return (
     <div id="header">
-      <Icon type="menu" className={`hidden-large-up`} onClick={showDrawer} />
+      <Icon type="menu" className={`hidden-large-up ib`} onClick={showDrawer} />
       <Drawer isDrawerVisible={isDrawerVisible} onClose={onClose} />
-      <img src={logo} className="header-logo" alt="Elim Logo" />
+      <img src={logo} className="header-logo ib" alt="Elim Logo" />
       <Menu
         onClick={handleClick}
         selectedKeys={[currentOption]}
@@ -42,14 +42,9 @@ export default function Header() {
             </span>
           }
         >
-          <Menu.ItemGroup title="Item 1">
-            <Menu.Item key="setting:1">Option 1</Menu.Item>
-            <Menu.Item key="setting:2">Option 2</Menu.Item>
-          </Menu.ItemGroup>
-          <Menu.ItemGroup title="Item 2">
-            <Menu.Item key="setting:3">Option 3</Menu.Item>
-            <Menu.Item key="setting:4">Option 4</Menu.Item>
-          </Menu.ItemGroup>
+          <Menu.Item key="huellas">Huellas del pasado</Menu.Item>
+          <Menu.Item key="beliefs">En que creemos</Menu.Item>
+          <Menu.Item key="calendar">Calendario</Menu.Item>
         </SubMenu>
 
         <SubMenu
@@ -59,14 +54,12 @@ export default function Header() {
             </span>
           }
         >
-          <Menu.ItemGroup title="Item 1">
-            <Menu.Item key="setting:1">Option 1</Menu.Item>
-            <Menu.Item key="setting:2">Option 2</Menu.Item>
-          </Menu.ItemGroup>
-          <Menu.ItemGroup title="Item 2">
-            <Menu.Item key="setting:3">Option 3</Menu.Item>
-            <Menu.Item key="setting:4">Option 4</Menu.Item>
-          </Menu.ItemGroup>
+          <Menu.Item key="alabanza">Alabanza</Menu.Item>
+          <Menu.Item key="escuela">Escuela Bíblica</Menu.Item>
+          <Menu.Item key="damas">Damas</Menu.Item>
+          <Menu.Item key="youth">Jóvenes</Menu.Item>
+          <Menu.Item key="servidores">Ujieres</Menu.Item>
+          <Menu.Item key="educacion">Educación Básica Ministerio</Menu.Item>
         </SubMenu>
 
         <SubMenu
@@ -76,14 +69,8 @@ export default function Header() {
             </span>
           }
         >
-          <Menu.ItemGroup title="Item 1">
-            <Menu.Item key="setting:1">Option 1</Menu.Item>
-            <Menu.Item key="setting:2">Option 2</Menu.Item>
-          </Menu.ItemGroup>
-          <Menu.ItemGroup title="Item 2">
-            <Menu.Item key="setting:3">Option 3</Menu.Item>
-            <Menu.Item key="setting:4">Option 4</Menu.Item>
-          </Menu.ItemGroup>
+          <Menu.Item key="donacion-mce">Donación Misión Elim</Menu.Item>
+          <Menu.Item key="donacion-central">Donación Elim Central</Menu.Item>
         </SubMenu>
 
         <Menu.Item key="contact">
