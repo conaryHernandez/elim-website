@@ -1,15 +1,23 @@
+@import '../../../../styles/variables';
+
 .Footer {
-}
+  background-color: $component-bg;
+  color: #fff;
 
-.FooterList {
-  text-align: center;
-}
+  .FooterTitle {
+    color: #fff;
+  }
 
-.FooterSpecialList {
-  text-align: center;
+  .FooterList {
+    text-align: center;
+  }
 
-  a {
-    display: inline-block;
-    padding: 10px;
+  .FooterSpecialList {
+    text-align: center;
+
+    a {
+      display: inline-block;
+      padding: 10px;
+    }
   }
 }

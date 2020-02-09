@@ -9,8 +9,10 @@ console.log('footerData', footerData);
 
 const Footer = () => {
   return (
-    <div>
-      <h2 className="txt-center">Mision Cristiana Elim</h2>
+    <div className={classes.Footer}>
+      <h2 className={`${classes.FooterTitle} txt-center`}>
+        Mision Cristiana Elim
+      </h2>
 
       <ListItems
         className={classes.FooterSpecialList}
