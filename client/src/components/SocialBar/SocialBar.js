@@ -1,13 +1,10 @@
 import React from 'react';
 import classes from './SocialBar.module.scss';
 
-// in the future data can be passed as props;
-import socialData from './socialData';
-
 const SocialBar = props => {
   return (
-    <div className={classes.SocialBar}>
-      {socialData.map(social => (
+    <div className={`${classes.SocialBar} ${props.className}`}>
+      {props.networks?.map(social => (
         <a key={social.id} href={social.link} className={classes.Item}>
           <i className={`icon-${social.name}`} />
           <i className="icon-radio-unchecked" />
@@ -18,7 +15,8 @@ const SocialBar = props => {
 };
 
 SocialBar.defaultProps = {
-  socialData: []
+  socialData: [],
+  className: 'default'
 };
 
 export default SocialBar;
