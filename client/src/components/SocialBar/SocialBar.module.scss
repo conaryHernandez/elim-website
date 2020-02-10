@@ -16,8 +16,10 @@
 
     &:hover {
       i {
+        transition: color 0.3s ease;
+
         cursor: pointer;
-        color: $primary-color;
+        color: $status-color;
       }
     }
 
