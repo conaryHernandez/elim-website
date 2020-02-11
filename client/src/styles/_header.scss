@@ -10,9 +10,13 @@
     font-size: 1.8rem;
   }
   .ant-menu-horizontal {
-    background: #1a1423;
+    background: $secondary-color;
+    opacity: 0.97;
     a {
       color: #fff;
+      &:hover {
+        color: $status-color;
+      }
     }
     .ant-menu-item,
     .ant-menu-submenu {

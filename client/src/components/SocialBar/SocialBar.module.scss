@@ -1,8 +1,8 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
 .SocialBar {
   padding: 10px;
-  background-color: $component-color;
+  background-color: $secondary-color;
 
   i {
     display: inline-block;
@@ -12,7 +12,8 @@
 
   .Item {
     position: relative;
-    margin: 10px;
+    margin-right: 2.5rem;
+    margin-left: 2.5rem;
 
     &:hover {
       i {
@@ -25,7 +26,7 @@
 
     i {
       &:first-child {
-        font-size: 12.5px;
+        font-size: 2.5rem;
         position: absolute;
         padding-top: 9px;
         left: 50%;

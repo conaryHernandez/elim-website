@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, Icon } from "antd";
-import Drawer from "./DrawerWrapper";
-import logo from "../../assets/img/home/elim-logo.png";
+import Drawer from "../Drawer/DrawerWrapper";
+import logo from "../../../../assets/img/home/elim-logo.png";
 
 const { SubMenu } = Menu;
 
