@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { Menu, Icon } from "antd";
-import Drawer from "../Drawer/DrawerWrapper";
-import logo from "../../../../assets/img/home/elim-logo.png";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Menu, Icon } from 'antd';
+import Drawer from '../Drawer/DrawerWrapper';
+import logo from '../../../../assets/img/home/elim-logo.png';
 
 const { SubMenu } = Menu;
 
@@ -38,7 +38,7 @@ export default function Header() {
         <SubMenu
           title={
             <span className="submenu-title-wrapper">
-              <Link to="/mision-elim">Misión Cristiana Elim</Link>
+              <Link to="/history">Misión Cristiana Elim</Link>
             </span>
           }
         >
