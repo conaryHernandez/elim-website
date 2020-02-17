@@ -1,4 +1,5 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .Home {
   .homeLegend {
@@ -11,5 +12,41 @@
     opacity: 1;
     bottom: 1rem;
     cursor: pointer;
+  }
+  .pastorMessage {
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+  }
+
+  .pastorAvatar {
+    width: 27rem;
+    height: 27rem;
+  }
+  .introText {
+    font: 400 1.2rem/2rem $font-roboto;
+    text-align: justify;
+
+    @include respond-to(large) {
+      max-width: 90%;
+    }
+  }
+  .readMore {
+    font: 700 1.2rem/2rem $font-roboto;
+    color: #000;
+    border: 1px solid $secondary-color;
+    border-radius: 5rem;
+    padding: 1rem;
+    width: 100%;
+    display: block;
+    margin-top: 4rem;
+    @include respond-to(large) {
+      padding: 0.4rem;
+      width: 15rem;
+    }
+
+    &:hover {
+      background-color: $secondary-color;
+      color: #fff;
+    }
   }
 }
