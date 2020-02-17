@@ -14,6 +14,14 @@ const History = () => {
         <div className="container">
           <Row>
             <div className={classes.Section}>
+              <Col xs={24} md={10} className="hidden-sm-min-up">
+                <img
+                  className={`${classes.Pastor} img-responsive ${classes.MobileImg}`}
+                  src={Pastor}
+                  alt="Nuestro Pastor"
+                />
+              </Col>
+
               <Col xs={24} md={14}>
                 <h3 className={classes.Title}>Nuestro Pastor</h3>
                 <span className={classes.SubTitle}>
@@ -44,7 +52,7 @@ const History = () => {
                   Evangélica y José Trinidad Reyes de San Pedro Sula.
                 </p>
               </Col>
-              <Col xs={24} md={10} className="first-xs last-lg">
+              <Col xs={24} md={10} className="hidden-sm-min-down">
                 <img
                   className={`${classes.Pastor} img-responsive`}
                   src={Pastor}
@@ -59,8 +67,9 @@ const History = () => {
                 <img
                   className={`${classes.Pastores} img-responsive`}
                   src={Pastores}
-                  alt="Nuestro Pastor"
+                  alt="Nuestro Pastores"
                 />
+                <figcaption>Ismael Paz y Marina de Paz</figcaption>
               </Col>
               <Col xs={24} md={14}>
                 <p>
@@ -90,6 +99,97 @@ const History = () => {
                 </p>
               </Col>
             </div>
+          </Row>
+        </div>
+      </div>
+      <div className={classes.ContentBanner}>
+        <div className={classes.BannerImg} />
+        <h3 className={classes.ContentBannerTitle}>
+          Una Misión exclusivamente{' '}
+          <span className="display-block">al servicio de Dios.</span>
+        </h3>
+      </div>
+      <div className={classes.PastElim}>
+        <div className="container">
+          <Row>
+            <Col xs={24} md={14}>
+              <h3 className={classes.Title}>Huellas del Pasado</h3>
+              <p>
+                Misión Cristiana Elim Honduras, surge básicamente de la
+                necesidad de buscar a Dios en oración en el año 1974. Un grupo
+                de hermanos se reunía a buscar de Dios y como consecuencia de
+                esa búsqueda el grupo creció. Se comenzó a predicar y el Señor
+                continuó añadiendo de él y visitando con su presencia en cada
+                reunión. Debido al crecimiento se vio la necesidad de buscar a
+                alguien que se hiciera cargo del grupo, que ya eran
+                aproximadamente unos treinta hermanos; desde ese momento fue
+                reconocido por este grupo como su Pastor y consejero espiritual
+                el hermano Rafael Ismael Paz.
+              </p>
+
+              <p>
+                Para el año 1978 el hermano Ismael Paz recibe una confirmación
+                sobrenatural acerca de su llamado a servir a tiempo completo al
+                salir de su trabajo secular para dedicarse al servicio de la
+                obra.
+              </p>
+
+              <p>
+                En 1980 se establece una relación muy especial con el Dr.
+                Otoniel Ríos Paredes quien llega a Honduras y Dios afirma una
+                vez más a través de una profecía el llamamiento del hermano
+                Ismael Paz y lo unge como Pastor General de Misión Cristiana
+                Elim en Honduras.
+              </p>
+
+              <p>
+                La Iglesia era visitada por personas que buscaban sanidad,
+                liberación, ser rescatados de sus vicios, así como una respuesta
+                para los problemas que abatían sus almas, a quienes les fue
+                presentado el Evangelio de Cristo; sin imaginarse que algunos de
+                ellos llegarían a ser Pastores fundadores de otras iglesias de
+                Misión Cristiana Elim. Tan impactante era lo que sucedía que
+                otros líderes evangélicos también visitaban, inquietos por ser
+                parte de este avivamiento.
+              </p>
+
+              <p>
+                A partir de ese momento empezaron a surgir congregaciones en
+                todo el territorio nacional con el surgimiento de otros Pastores
+                que han mostrado un llamado evidente de Dios.
+              </p>
+
+              <p>
+                El crecimiento lo ha dado Dios, no ha sido un logro individual,
+                es el resultado de la armoniosa interrelación de siervos
+                escogidos por Dios, uniendo así fortalezas, talentos y virtudes
+                que conforman; más que un equipo un cuerpo ministerial que
+                comparte la misma visión, persigue la misma meta y se apoya
+                entre sí para llegar a tocar las vidas y corazones que tanto
+                necesitan de Dios.
+              </p>
+              <p>
+                Así como el Apóstol Pablo recomendaba a los Filipenses hemos
+                procurado a través de los tiempos “estar firmes y muy unidos,
+                luchando todos juntos por la fe del evangelio.” Compartir esa
+                maravillosa visión y ser fructíferos, nos llena, porque hacemos
+                las cosas para El.
+              </p>
+
+              <p>
+                Misión Cristiana Elim Honduras
+                <span className="display-block">
+                  Una Misión exclusivamente al servicio de Dios.
+                </span>
+              </p>
+            </Col>
+            <Col xs={24} md={10}>
+              <img
+                className={`${classes.Pastores} img-responsive`}
+                src={Pastores}
+                alt="Nuestro Pastores"
+              />{' '}
+            </Col>
           </Row>
         </div>
       </div>

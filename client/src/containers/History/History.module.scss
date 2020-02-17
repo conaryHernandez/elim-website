@@ -1,4 +1,17 @@
 .History {
+  p {
+    font-size: 1.6rem;
+    text-align: justify;
+  }
+
+  figcaption {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 1rem;
+    margin-bottom: 2rem;
+  }
+
   .Banner {
     display: block;
     margin: auto;
@@ -12,13 +25,15 @@
   }
 
   .SubTitle {
+    display: block;
+    margin-bottom: 2rem;
     font-size: 1.6rem;
     font-weight: 500;
     color: rgba(0, 0, 0, 0.85);
   }
 
   .Section {
-    margin-top: 10rem;
+    margin-top: 6rem;
   }
 
   .Pastor {
@@ -26,8 +41,38 @@
     max-width: 41.8rem;
   }
 
+  .MobileImg {
+    margin-bottom: 3rem;
+  }
+
   .Pastores {
     margin: auto;
     max-width: 37rem;
+  }
+
+  .ContentBanner {
+    position: relative;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+
+    .BannerImg {
+      margin: auto;
+      width: 100%;
+      height: 24rem;
+      max-width: 1440px;
+      background-image: url(../../assets/img/history/mision-elim-bg.jpg);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .ContentBannerTitle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      color: white;
+      font-size: 3.6rem;
+      text-align: center;
+      transform: translate(-50%, -50%);
+    }
   }
 }
