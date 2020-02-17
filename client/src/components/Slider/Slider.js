@@ -8,11 +8,19 @@ const Slider = props => {
       {props.photos.map(photo => (
         <div>
           <img alt={photo.src} src={photo.src} />
-          {photo.legend && <p className="legend">{photo.legend || ""}</p>}
+          {photo.legend && (
+            <p className={props.settings.legendClassName}>
+              {photo.legend || ""}
+            </p>
+          )}
         </div>
       ))}
     </Carousel>
   );
 };
 
+Slider.defaultProps = {
+  settings: {},
+  photos: {}
+};
 export default Slider;

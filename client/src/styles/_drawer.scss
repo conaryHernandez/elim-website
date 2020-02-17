@@ -1,13 +1,31 @@
 .ant-drawer-body {
-  padding: 1.5rem;
+  padding: 3rem 1.5rem;
+}
+
+.ant-drawer-content-wrapper {
+  background: none;
+}
+.ant-drawer-header {
+  background: none;
+  .ant-drawer-title {
+    color: #fff;
+  }
+}
+.ant-drawer-content {
+  background-color: $secondary-color;
+  color: #fff;
+  opacity: 0.9;
 }
 .drawer-item {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   a {
     font-size: 1.6rem;
+    &:hover {
+      color: $status-color;
+    }
   }
   i {
-    margin-right: 0.5rem;
-    font-size: 1.7rem;
+    margin-right: 2rem;
+    font-size: 2rem;
   }
 }

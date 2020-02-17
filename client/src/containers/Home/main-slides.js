@@ -27,7 +27,7 @@ export const photos = [
     src: predicas,
     width: 3,
     height: 4,
-    legend: ""
+    legend: "Ver enseñanzas"
   },
   {
     src: transmission,

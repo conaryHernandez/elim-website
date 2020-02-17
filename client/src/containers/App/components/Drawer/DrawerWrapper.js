@@ -7,7 +7,7 @@ export default function DrawerWrapper(props) {
   return (
     <div id="drawer" className="ib">
       <Drawer
-        title="Basic Drawer"
+        title="Misión Cristiana Elim"
         placement="left"
         closable={false}
         onClose={props.onClose}

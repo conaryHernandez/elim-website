@@ -1,0 +1,15 @@
+@import "../../styles/variables";
+
+.Home {
+  .homeLegend {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: none;
+    font-size: 1.5rem;
+    color: #fff;
+    opacity: 1;
+    bottom: 1rem;
+    cursor: pointer;
+  }
+}
