@@ -5,6 +5,7 @@ import classes from './History.module.scss';
 import ElimBanner from '../../assets/img/history/banner-mision-elim.jpg';
 import Pastor from '../../assets/img/history/nuestro-pastor.png';
 import Pastores from '../../assets/img/history/pastores.png';
+import CoPastores from '../../assets/img/history/mision-copastores.png';
 
 const History = () => {
   return (
@@ -192,6 +193,36 @@ const History = () => {
             </Col>
           </Row>
         </div>
+      </div>
+      <div className={classes.MemberBanner}>
+        <div className="container">
+          <Row>
+            <Col xs={24} md={10} lg={7}>
+              <img
+                className={`${classes.MemberBannerImg} img-responsive`}
+                src={CoPastores}
+                alt="Pastor Ismael Paz"
+              />
+            </Col>
+            <Col xs={24} md={14} lg={17}>
+              <h3 className={classes.MemberBannerTitle}>Junta Directiva</h3>
+              <p className={classes.MemberBannerContent}>
+                La Junta Directiva de Misión Cristiana Elim esta conformada en
+                su mayoría por pastores y presbíteros de la Misión, trabaja en
+                varias líneas principales como ser el seguimiento al
+                cumplimiento de las normas tanto de la Misión como de los Entes
+                Gubernamentales, a fin de que la Misión se mantenga ordenada,
+                organizada y estable, también se trabaja en la asistencia
+                administrativa a las iglesias, consolidación contable, contando
+                además con la asesoría legal del abogado Carlos Ortega.
+              </p>
+            </Col>
+          </Row>
+        </div>
+      </div>
+      <div className={classes.Believe}>
+        <div className={classes.BelieveBanner} />
+        <div className="container"></div>
       </div>
     </div>
   );
