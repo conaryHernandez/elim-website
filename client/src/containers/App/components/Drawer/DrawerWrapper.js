@@ -25,6 +25,17 @@ export default function DrawerWrapper(props) {
           <Icon type="team" />
           <Link to="/elim-central">Elim Central</Link>
         </div>
+
+        <div className="drawer-item">
+          <Icon type="calendar" />
+          <Link to="/calendario">Calendario</Link>
+        </div>
+
+        <div className="drawer-item">
+          <Icon type="book" />
+          <Link to="/calendario">Prédicas</Link>
+        </div>
+
         <div className="drawer-item">
           <Icon type="heart" />
           <Link to="/corazones-generosos">Corazones Generosos</Link>
@@ -32,10 +43,6 @@ export default function DrawerWrapper(props) {
         <div className="drawer-item">
           <Icon type="contacts" />
           <Link to="/contact">Contacto</Link>
-        </div>
-        <div className="drawer-item">
-          <Icon type="user" />
-          <Link to="/users">Usuarios</Link>
         </div>
       </Drawer>
     </div>

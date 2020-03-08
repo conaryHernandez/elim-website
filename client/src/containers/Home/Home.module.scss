@@ -23,7 +23,7 @@
     height: 27rem;
   }
   .introText {
-    font: 400 1.2rem/2rem $font-roboto;
+    font: 400 1.4rem/2.2rem $font-openSans;
     text-align: justify;
 
     @include respond-to(large) {
@@ -31,7 +31,7 @@
     }
   }
   .readMore {
-    font: 700 1.2rem/2rem $font-roboto;
+    font: 600 1.2rem/2rem $font-openSans;
     color: #000;
     border: 1px solid $secondary-color;
     border-radius: 5rem;
@@ -48,5 +48,41 @@
       background-color: $secondary-color;
       color: #fff;
     }
+  }
+  .servicesSchedule {
+    background-image: url("../../assets/img/home/horarios-bg.jpg");
+    min-height: 50rem;
+    padding: 2rem 0;
+    @include respond-to(large) {
+      padding-top: 5rem;
+    }
+  }
+  .scheduleItem {
+    color: #fff;
+    max-width: 32rem;
+    margin-top: 2rem;
+    border: 2px solid #fff;
+    border-radius: 2rem;
+    padding: 2rem;
+    text-align: center;
+
+    &:hover {
+      background-color: #fff;
+      color: #000;
+    }
+
+    @include respond-to(xlarge) {
+      max-width: 40rem;
+    }
+    @include respond-to(xxl) {
+      max-width: 50rem;
+    }
+  }
+  .scheduleTime {
+    font: 600 1.4rem/2rem $font-openSans;
+    display: block;
+  }
+  .serviceName {
+    font: 400 1.3rem/2rem $font-openSans;
   }
 }

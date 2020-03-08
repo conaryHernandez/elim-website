@@ -1,9 +1,12 @@
 import React from "react";
 import { photos } from "./main-slides";
+import { schedules } from "./schedules";
 import Slider from "../../components/Slider/Slider";
 import { Row, Col } from "antd";
 import classes from "./Home.module.scss";
 import pastor from "../../assets/img/home/dr-rafael-ismael.png";
+import ScheduleItem from "./ScheduleItem";
+import { Link } from "react-router-dom";
 
 const settings = {
   showThumbs: false,
@@ -14,20 +17,26 @@ const settings = {
 };
 
 const Home = () => {
+  const generateSchedulesItemList = schedulesList => {
+    return schedulesList.map(schedule => (
+      <ScheduleItem scheduleData={schedule} />
+    ));
+  };
+
   return (
     <div className={classes.Home}>
       <Slider photos={photos.map(el => el)} settings={settings} />
       <div className="container">
         <div className={classes.pastorMessage}>
           <Row type="flex" justify="space-around" align="middle">
-            <Col xs={24} md={10} lg={8} xl={10} className="txt-center">
+            <Col xs={24} md={10} lg={8} className="txt-center">
               <img
                 className={classes.pastorAvatar}
                 src={pastor}
                 alt="Pastor Ismael Paz"
               />
             </Col>
-            <Col xs={24} md={14} lg={8} xl={10}>
+            <Col xs={24} md={14} lg={16}>
               <h1>Palabras de Vida</h1>
               <p className={classes.introText}>
                 El enfoque que cada quien tenga de la vida, puede depender de la
@@ -40,12 +49,22 @@ const Home = () => {
                 graves problemas de la vida; o si la hay, ¡yo no lo he
                 descubierto todavía! la vida no es fácil y nunca lo ha sido.
               </p>
-              <a className={`${classes.readMore} uppercase txt-center`} href="">
+              <Link className={`${classes.readMore} uppercase txt-center`}>
                 Leer más
-              </a>
+              </Link>
             </Col>
           </Row>
         </div>
+      </div>
+      <div className={classes.servicesSchedule}>
+        <Row
+          type="flex"
+          justify="space-around"
+          align="middle"
+          className="container"
+        >
+          {generateSchedulesItemList(schedules)}
+        </Row>
       </div>
     </div>
   );
