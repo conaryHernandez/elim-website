@@ -1,7 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import { Drawer, Icon } from "antd";
+import { Drawer } from "antd";
+import {
+  HomeOutlined,
+  UsergroupAddOutlined,
+  TeamOutlined,
+  CalendarOutlined,
+  BookOutlined,
+  HeartOutlined,
+  ContactsOutlined
+} from "@ant-design/icons";
 
 export default function DrawerWrapper(props) {
   return (
@@ -14,34 +23,34 @@ export default function DrawerWrapper(props) {
         visible={props.isDrawerVisible}
       >
         <div className="drawer-item">
-          <Icon type="home" />
+          <HomeOutlined />
           <Link to="/">Home</Link>
         </div>
         <div className="drawer-item">
-          <Icon type="usergroup-add" />
+          <UsergroupAddOutlined />
           <Link to="/mision-elim">Misión Cristiana Elim</Link>
         </div>
         <div className="drawer-item">
-          <Icon type="team" />
+          <TeamOutlined />
           <Link to="/elim-central">Elim Central</Link>
         </div>
 
         <div className="drawer-item">
-          <Icon type="calendar" />
+          <CalendarOutlined />
           <Link to="/calendario">Calendario</Link>
         </div>
 
         <div className="drawer-item">
-          <Icon type="book" />
+          <BookOutlined />
           <Link to="/calendario">Prédicas</Link>
         </div>
 
         <div className="drawer-item">
-          <Icon type="heart" />
+          <HeartOutlined />
           <Link to="/corazones-generosos">Corazones Generosos</Link>
         </div>
         <div className="drawer-item">
-          <Icon type="contacts" />
+          <ContactsOutlined />
           <Link to="/contact">Contacto</Link>
         </div>
       </Drawer>

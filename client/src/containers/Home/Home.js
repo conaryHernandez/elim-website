@@ -7,6 +7,7 @@ import classes from "./Home.module.scss";
 import pastor from "../../assets/img/home/dr-rafael-ismael.png";
 import ScheduleItem from "./ScheduleItem";
 import { Link } from "react-router-dom";
+import { Form, Input, Button } from "antd";
 
 const settings = {
   showThumbs: false,
@@ -17,9 +18,18 @@ const settings = {
 };
 
 const Home = () => {
+  const [form] = Form.useForm();
+  const onSubmitPrayer = values => {
+    console.log("Success:", values);
+  };
+
+  const onSubmitPrayerFailed = errorInfo => {
+    console.log("Failed:", errorInfo);
+  };
+
   const generateSchedulesItemList = schedulesList => {
-    return schedulesList.map(schedule => (
-      <ScheduleItem scheduleData={schedule} />
+    return schedulesList.map((schedule, index) => (
+      <ScheduleItem key={index} scheduleData={schedule} />
     ));
   };
 
@@ -49,7 +59,10 @@ const Home = () => {
                 graves problemas de la vida; o si la hay, ¡yo no lo he
                 descubierto todavía! la vida no es fácil y nunca lo ha sido.
               </p>
-              <Link className={`${classes.readMore} uppercase txt-center`}>
+              <Link
+                to="/"
+                className={`${classes.readMore} uppercase txt-center`}
+              >
                 Leer más
               </Link>
             </Col>
@@ -65,6 +78,50 @@ const Home = () => {
         >
           {generateSchedulesItemList(schedules)}
         </Row>
+      </div>
+      <div className={`${classes.oracionWrapper} container`}>
+        <div className={classes.titleWrapper}>
+          <h2>Queremos orar por ti!</h2>
+          <strong>La oración eficaz del justo puede mucho</strong>
+        </div>
+
+        <Form name="basic" form={form} onSubmit={onSubmitPrayer}>
+          <Form.Item
+            label="Nombre"
+            name="name"
+            rules={[
+              {
+                required: true,
+                message: "Por favor ingresa tu nombre!"
+              }
+            ]}
+          >
+            <Input />
+          </Form.Item>
+
+          <Form.Item
+            label="País"
+            name="country"
+            rules={[
+              {
+                required: true,
+                message: "Por favor ingresa tu país!"
+              }
+            ]}
+          >
+            <Input.Password />
+          </Form.Item>
+
+          <Form.Item name={["petición", "peticion"]} label="Petición">
+            <Input.TextArea />
+          </Form.Item>
+
+          <Form.Item className="txt-center">
+            <Button type="primary" htmlType="submit">
+              Submit
+            </Button>
+          </Form.Item>
+        </Form>
       </div>
     </div>
   );

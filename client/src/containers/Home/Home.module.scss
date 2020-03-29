@@ -85,4 +85,14 @@
   .serviceName {
     font: 400 1.3rem/2rem $font-openSans;
   }
+  .oracionWrapper {
+    padding: 3rem 2rem 5rem;
+  }
+  .titleWrapper {
+    margin-bottom: 3rem;
+    text-align: center;
+    h2 {
+      margin-bottom: 0;
+    }
+  }
 }

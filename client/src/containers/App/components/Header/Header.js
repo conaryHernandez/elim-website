@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, Icon, Affix } from "antd";
+import { Menu, Affix } from "antd";
+import { MenuOutlined } from "@ant-design/icons";
 import Drawer from "../Drawer/DrawerWrapper";
 import logo from "../../../../assets/img/home/elim-logo.png";
 
@@ -23,11 +24,7 @@ export default function Header() {
   };
   return (
     <div id="header">
-      <Icon
-        type="menu"
-        className={`hidden-xlarge-up ib`}
-        onClick={showDrawer}
-      />
+      <MenuOutlined className={`hidden-xlarge-up ib`} onClick={showDrawer} />
       <Drawer isDrawerVisible={isDrawerVisible} onClose={onClose} />
       <img src={logo} className="header-logo ib" alt="Elim Logo" />
       <Affix offsetTop={0}>

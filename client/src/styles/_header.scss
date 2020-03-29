@@ -1,5 +1,6 @@
 #header {
   padding-top: 1rem;
+
   .header-logo {
     width: 30rem;
     margin-bottom: 1rem;
@@ -9,6 +10,7 @@
     margin-left: 1.5rem;
     font-size: 1.8rem;
   }
+
   .ant-menu-horizontal {
     border: none;
     background: $secondary-color;
@@ -29,6 +31,27 @@
     .ant-menu-item-selected,
     .ant-menu-submenu-active {
       border-bottom: 2px solid $primary-color;
+    }
+  }
+}
+
+.ant-menu-submenu-popup {
+  background: #1a1423;
+  opacity: 0.8;
+
+  a {
+    color: #fff;
+  }
+}
+.ant-menu-submenu > .ant-menu {
+  background: #1a1423;
+  color: #fff;
+}
+
+.ant-menu-submenu {
+  li {
+    &:hover {
+      color: $status-color;
     }
   }
 }
