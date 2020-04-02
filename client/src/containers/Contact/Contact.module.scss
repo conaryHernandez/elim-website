@@ -1,0 +1,33 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+#Contact {
+  background-color: unset;
+
+  .mainBanner {
+    height: 20rem;
+    @include respond-to(xlarge) {
+      height: 30rem;
+    }
+    img {
+      width: 100%;
+      height: inherit;
+      object-fit: cover;
+    }
+  }
+  .mainBannerOverlay {
+    width: 100%;
+    height: inherit;
+    position: absolute;
+    opacity: 0.6;
+    background-image: linear-gradient(45deg, #1a1423, #42002a);
+  }
+  .infoCardsWrapper {
+    padding-bottom: 5rem;
+    margin-top: -4rem;
+    .infoCard {
+      margin-bottom: 2rem;
+      box-shadow: 5px 9px 16px 4px rgba(0, 0, 0, 0.1);
+    }
+  }
+}

@@ -1,30 +1,41 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { photos } from "./main-slides";
 import { schedules } from "./schedules";
 import Slider from "../../components/Slider/Slider";
-import { Row, Col } from "antd";
 import classes from "./Home.module.scss";
 import pastor from "../../assets/img/home/dr-rafael-ismael.png";
 import ScheduleItem from "./ScheduleItem";
-import { Link } from "react-router-dom";
-import { Form, Input, Button } from "antd";
+import { Row, Col, Form, Input, Button, notification } from "antd";
+import { CheckCircleTwoTone } from "@ant-design/icons";
 
 const settings = {
   showThumbs: false,
   infiniteLoop: true,
-  autoPlay: true,
+  autoPlay: false,
   showIndicators: false,
-  legendClassName: classes.homeLegend
+  legendClassName: classes.homeLegend,
+  className: classes.mainSlider
 };
 
 const Home = () => {
   const [form] = Form.useForm();
   const onSubmitPrayer = values => {
     console.log("Success:", values);
+    openNotification("bottomRight");
   };
 
   const onSubmitPrayerFailed = errorInfo => {
     console.log("Failed:", errorInfo);
+  };
+
+  const openNotification = placement => {
+    notification.info({
+      message: "Tu petición fue enviada!",
+      description: "Estaremos orando por tu necesidad.",
+      icon: <CheckCircleTwoTone />,
+      placement
+    });
   };
 
   const generateSchedulesItemList = schedulesList => {
@@ -70,6 +81,7 @@ const Home = () => {
         </div>
       </div>
       <div className={classes.servicesSchedule}>
+        <h2>Horarios de culto</h2>
         <Row
           type="flex"
           justify="space-around"
@@ -81,13 +93,18 @@ const Home = () => {
       </div>
       <div className={`${classes.oracionWrapper} container`}>
         <div className={classes.titleWrapper}>
-          <h2>Queremos orar por ti!</h2>
+          <h3>Queremos orar por ti!</h3>
           <strong>La oración eficaz del justo puede mucho</strong>
         </div>
 
-        <Form name="basic" form={form} onSubmit={onSubmitPrayer}>
+        <Form
+          name="basic"
+          form={form}
+          onFinish={onSubmitPrayer}
+          onFinishFailed={onSubmitPrayerFailed}
+          className={classes.oracionForm}
+        >
           <Form.Item
-            label="Nombre"
             name="name"
             rules={[
               {
@@ -96,11 +113,10 @@ const Home = () => {
               }
             ]}
           >
-            <Input />
+            <Input placeholder="Nombre" />
           </Form.Item>
 
           <Form.Item
-            label="País"
             name="country"
             rules={[
               {
@@ -109,11 +125,19 @@ const Home = () => {
               }
             ]}
           >
-            <Input.Password />
+            <Input placeholder="País" />
           </Form.Item>
 
-          <Form.Item name={["petición", "peticion"]} label="Petición">
-            <Input.TextArea />
+          <Form.Item
+            name={["petición", "peticion"]}
+            rules={[
+              {
+                required: true,
+                message: "Por favor ingresa tu petición!"
+              }
+            ]}
+          >
+            <Input.TextArea placeholder="petición" />
           </Form.Item>
 
           <Form.Item className="txt-center">
