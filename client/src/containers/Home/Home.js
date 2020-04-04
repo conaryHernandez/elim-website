@@ -141,8 +141,12 @@ const Home = () => {
           </Form.Item>
 
           <Form.Item className="txt-center">
-            <Button type="primary" htmlType="submit">
-              Submit
+            <Button
+              type="primary"
+              htmlType="submit"
+              className={classes.submitPrayerBtn}
+            >
+              Enviar
             </Button>
           </Form.Item>
         </Form>

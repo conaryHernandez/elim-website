@@ -123,5 +123,81 @@ export const churches = [
         link: "https://www.facebook.com/IglesiaElimCholoma?fref=ts"
       }
     ]
+  },
+  {
+    name: "Iglesia De Cristo Misión Cristiana Elim Barrio Alvarado La Ceiba",
+    shortName: "Elim Barrio Alvarado La Ceiba",
+    address: {
+      location: "Barrio Alvarado Una Cuadra Al Este De Instituto Pico Bonito",
+      departamento: "Atlántida",
+      ciudad: "La Ceiba",
+      deptoCode: "ATL"
+    },
+    phone: "+504 2443-0743 / +504 9983-1371",
+    pastor: "Carlos Eduardo Rodríguez Cuadra",
+    foundationDate: "17 De Julio 1993",
+    email: "iglesiaasaf@yahoo.com",
+    website: "",
+    services: [
+      {
+        name: "Martes",
+        day: "6:15 pm",
+        time: "Culto General"
+      },
+      {
+        name: "Viernes",
+        day: "6:15 pm",
+        time: "Culto General"
+      },
+      {
+        name: "Domingo",
+        day: "3:00 pm",
+        time: "Culto General"
+      }
+    ],
+    socialNetworks: [
+      {
+        name: "facebook",
+        link: "https://www.facebook.com/elimpotrerillos?fref=ts"
+      }
+    ]
+  },
+  {
+    name: "Iglesia de Cristo Misión Cristiana Elim Tegucigalpa",
+    shortName: "Elim Tegucigalpa",
+    address: {
+      location: "Centro comercial Mayangle, Colonia Mayangle",
+      departamento: "Francisco Morazán",
+      ciudad: "Tegucigalpa",
+      deptoCode: "FCO"
+    },
+    phone: "+504 9815-5830",
+    pastor: "Meliton Rodriguez Rodriguez",
+    foundationDate: "9 de Noviembre de 1994",
+    email: "melitonrodriguez58@hotmail.com",
+    website: "",
+    services: [
+      {
+        name: "Martes",
+        day: "6:30 pm",
+        time: "Culto General"
+      },
+      {
+        name: "Sábado",
+        day: "2:00 pm",
+        time: "Culto Jóvenes"
+      },
+      {
+        name: "Domingo",
+        day: "10:00 am",
+        time: "Culto General"
+      }
+    ],
+    socialNetworks: [
+      {
+        name: "facebook",
+        link: "https://www.facebook.com/elimpotrerillos?fref=ts"
+      }
+    ]
   }
 ];

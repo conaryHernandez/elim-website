@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card, Col, Row, Select } from "antd";
+import { Card, Col, Row, Select, Tooltip } from "antd";
 import { PhoneOutlined, MailFilled, HomeFilled } from "@ant-design/icons";
 import ChurchCard from "./components/ChurchCard";
 import mainBanner from "../../assets/img/contact/banner-contacto.jpg";
@@ -14,10 +14,14 @@ const Contact = () => {
   const [filteredChurches, setFilteredChurches] = useState(churchesData);
 
   const onDepartamentChange = value => {
-    const filtered = churchesData.filter(church => {
-      return church.address.deptoCode === value;
-    });
-    setFilteredChurches(filtered);
+    if (value === "all") {
+      setFilteredChurches(churchesData);
+    } else {
+      const filtered = churchesData.filter(church => {
+        return church.address.deptoCode === value;
+      });
+      setFilteredChurches(filtered);
+    }
   };
 
   const onBlur = () => {
@@ -104,21 +108,27 @@ const Contact = () => {
         <div className={styles.locationsWrapper}>
           <img src={logo} className={styles.logo} alt="Logo" />
           <h2>Iglesias en el país</h2>
-          <Select
-            showSearch
-            style={{ width: 320, marginBottom: "2rem", color: "#000" }}
-            placeholder="Buscar por departamento"
-            optionFilterProp="children"
-            onChange={onDepartamentChange}
-            onFocus={onFocus}
-            onBlur={onBlur}
-            onSearch={onSearch}
-            filterOption={(input, option) =>
-              option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-            }
+          <Tooltip
+            placement="rightBottom"
+            title={"Consulta iglesias por departamento"}
           >
-            {generateDepartmentsList(departaments)}
-          </Select>
+            <Select
+              showSearch
+              style={{ width: 320, marginBottom: "2rem", color: "#000" }}
+              placeholder="Elige un departamento"
+              optionFilterProp="children"
+              onChange={onDepartamentChange}
+              onFocus={onFocus}
+              onBlur={onBlur}
+              onSearch={onSearch}
+              filterOption={(input, option) =>
+                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              }
+            >
+              <Option value="all">Todas</Option>
+              {generateDepartmentsList(departaments)}
+            </Select>
+          </Tooltip>
         </div>
         <div className={styles.churchesWrapper}>
           <Row gutter={18} justify="center">
