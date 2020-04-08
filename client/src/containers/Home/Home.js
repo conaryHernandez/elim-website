@@ -1,13 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { photos } from "./main-slides";
-import { schedules } from "./schedules";
-import Slider from "../../components/Slider/Slider";
-import classes from "./Home.module.scss";
-import pastor from "../../assets/img/home/dr-rafael-ismael.png";
-import ScheduleItem from "./ScheduleItem";
-import { Row, Col, Form, Input, Button, notification } from "antd";
-import { CheckCircleTwoTone } from "@ant-design/icons";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { photos } from './main-slides';
+import { schedules } from './schedules';
+import Slider from '../../components/Slider/Slider';
+import classes from './Home.module.scss';
+import ScheduleItem from './ScheduleItem';
+import { Row, Col, Form, Input, Button, notification } from 'antd';
+import { CheckCircleTwoTone } from '@ant-design/icons';
 
 const settings = {
   showThumbs: false,
@@ -15,30 +14,30 @@ const settings = {
   autoPlay: false,
   showIndicators: false,
   legendClassName: classes.homeLegend,
-  className: classes.mainSlider
+  className: classes.mainSlider,
 };
 
 const Home = () => {
   const [form] = Form.useForm();
-  const onSubmitPrayer = values => {
-    console.log("Success:", values);
-    openNotification("bottomRight");
+  const onSubmitPrayer = (values) => {
+    console.log('Success:', values);
+    openNotification('bottomRight');
   };
 
-  const onSubmitPrayerFailed = errorInfo => {
-    console.log("Failed:", errorInfo);
+  const onSubmitPrayerFailed = (errorInfo) => {
+    console.log('Failed:', errorInfo);
   };
 
-  const openNotification = placement => {
+  const openNotification = (placement) => {
     notification.info({
-      message: "Tu petición fue enviada!",
-      description: "Estaremos orando por tu necesidad.",
+      message: 'Tu petición fue enviada!',
+      description: 'Estaremos orando por tu necesidad.',
       icon: <CheckCircleTwoTone />,
-      placement
+      placement,
     });
   };
 
-  const generateSchedulesItemList = schedulesList => {
+  const generateSchedulesItemList = (schedulesList) => {
     return schedulesList.map((schedule, index) => (
       <ScheduleItem key={index} scheduleData={schedule} />
     ));
@@ -46,14 +45,14 @@ const Home = () => {
 
   return (
     <div className={classes.Home}>
-      <Slider photos={photos.map(el => el)} settings={settings} />
+      <Slider photos={photos.map((el) => el)} settings={settings} />
       <div className="container">
         <div className={classes.pastorMessage}>
           <Row type="flex" justify="space-around" align="middle">
             <Col xs={24} md={10} lg={8} className="txt-center">
               <img
                 className={classes.pastorAvatar}
-                src={pastor}
+                src="https://elim.nyc3.digitaloceanspaces.com/v2/images/home/dr-rafael-ismael.png"
                 alt="Pastor Ismael Paz"
               />
             </Col>
@@ -109,8 +108,8 @@ const Home = () => {
             rules={[
               {
                 required: true,
-                message: "Por favor ingresa tu nombre!"
-              }
+                message: 'Por favor ingresa tu nombre!',
+              },
             ]}
           >
             <Input placeholder="Nombre" />
@@ -121,20 +120,20 @@ const Home = () => {
             rules={[
               {
                 required: true,
-                message: "Por favor ingresa tu país!"
-              }
+                message: 'Por favor ingresa tu país!',
+              },
             ]}
           >
             <Input placeholder="País" />
           </Form.Item>
 
           <Form.Item
-            name={["petición", "peticion"]}
+            name={['petición', 'peticion']}
             rules={[
               {
                 required: true,
-                message: "Por favor ingresa tu petición!"
-              }
+                message: 'Por favor ingresa tu petición!',
+              },
             ]}
           >
             <Input.TextArea placeholder="petición" />

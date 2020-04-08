@@ -1,5 +1,5 @@
-@import "../../styles/variables";
-@import "../../styles/mixins";
+@import '../../styles/variables';
+@import '../../styles/mixins';
 
 .Home {
   .homeLegend {
@@ -50,7 +50,7 @@
     }
   }
   .servicesSchedule {
-    background-image: url("../../assets/img/home/horarios-bg.jpg");
+    background-image: url('https://elim.nyc3.digitaloceanspaces.com/v2/images/home/horarios-bg.jpg');
     min-height: 50rem;
     padding: 2rem 0;
     @include respond-to(large) {
