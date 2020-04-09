@@ -48,25 +48,6 @@ const Home = () => {
     <div className={classes.Home}>
       <Slider photos={photos.map((el) => el)} settings={settings} />
       <div className="container">
-        <div className="transmission">
-          <iframe
-            width="100%"
-            height="560"
-            src="https://www.youtube.com/embed/live_stream?channel=UCLabTb6ZU_MtZf1KG8chE2A"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-          <iframe
-            title="CHURCH @ HOME"
-            width="100%"
-            height="560"
-            src="https://www.youtube.com/embed/live_stream?channel=UCOAjX8pc2fY1S5AqsXvZywg&autoplay=1"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </div>
         <div className={classes.pastorMessage}>
           <Row type="flex" justify="space-around" align="middle">
             <Col xs={24} md={10} lg={8} className="txt-center">

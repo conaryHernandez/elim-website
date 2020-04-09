@@ -7,6 +7,7 @@ const History = lazy(() => import('../History/History'));
 const General = lazy(() => import('../General/General'));
 const Multimedia = lazy(() => import('../Multimedia/Multimedia'));
 const Donations = lazy(() => import('../Donations/Donations'));
+const Live = lazy(() => import('../Live/Live'));
 
 const routes = [
   {
@@ -43,6 +44,11 @@ const routes = [
     exact: false,
     path: '/contact',
     component: Contact,
+  },
+  {
+    exact: false,
+    path: '/elim-live',
+    component: Live,
   },
 ];
 
