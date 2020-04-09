@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
-import { Drawer } from "antd";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { Drawer } from 'antd';
 import {
   HomeOutlined,
   UsergroupAddOutlined,
@@ -9,8 +9,9 @@ import {
   CalendarOutlined,
   BookOutlined,
   HeartOutlined,
-  ContactsOutlined
-} from "@ant-design/icons";
+  ContactsOutlined,
+  VideoCameraOutlined,
+} from '@ant-design/icons';
 
 export default function DrawerWrapper(props) {
   return (
@@ -18,13 +19,17 @@ export default function DrawerWrapper(props) {
       <Drawer
         title="Misión Cristiana Elim"
         placement="left"
-        closable={false}
+        closable={true}
         onClose={props.onClose}
         visible={props.isDrawerVisible}
       >
         <div className="drawer-item">
           <HomeOutlined />
           <Link to="/">Home</Link>
+        </div>
+        <div className="drawer-item">
+          <VideoCameraOutlined />
+          <Link to="/elim-live">En vivo</Link>
         </div>
         <div className="drawer-item">
           <UsergroupAddOutlined />
@@ -60,5 +65,5 @@ export default function DrawerWrapper(props) {
 
 DrawerWrapper.propTypes = {
   onClose: PropTypes.func,
-  isDrawerVisible: PropTypes.bool
+  isDrawerVisible: PropTypes.bool,
 };

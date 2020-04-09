@@ -6,6 +6,7 @@ import logo from '../../assets/img/home/elim-logo-2.png';
 import styles from './Contact.module.scss';
 import { churches } from './churchesData';
 import { departaments } from './departamentsData';
+import { cdnPath } from '../../constants';
 
 const Contact = () => {
   const { Option } = Select;
@@ -49,7 +50,7 @@ const Contact = () => {
       <div className={styles.mainBanner}>
         <div className={styles.mainBannerOverlay} />
         <img
-          src="https://elim.nyc3.digitaloceanspaces.com/v2/images/contact/banner-contacto.jpg"
+          src={`${cdnPath}/v2/images/contact/banner-contacto.jpg`}
           alt="Contacto Banner"
         />
       </div>

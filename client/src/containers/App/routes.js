@@ -1,47 +1,49 @@
+import { lazy } from 'react';
 import Home from '../Home/Home';
 import Common from '../Common/Common';
-import History from '../History/History';
-import General from '../General/General';
-import Multimedia from '../Multimedia/Multimedia';
-import Donations from '../Donations/Donations';
-import Contact from '../Contact/Contact';
+
+const Contact = lazy(() => import('../Contact/Contact'));
+const History = lazy(() => import('../History/History'));
+const General = lazy(() => import('../General/General'));
+const Multimedia = lazy(() => import('../Multimedia/Multimedia'));
+const Donations = lazy(() => import('../Donations/Donations'));
 
 const routes = [
   {
     exact: true,
     path: '/',
-    component: Home
+    component: Home,
   },
   {
     exact: false,
     path: '/common',
-    component: Common
+    component: Common,
   },
   {
     exact: false,
     path: '/history',
-    component: History
+    component: History,
   },
   {
     exact: false,
     path: '/general',
-    component: General
+    component: General,
   },
   {
     exact: false,
     path: '/multimedia',
-    component: Multimedia
+    component: Multimedia,
   },
   {
     exact: false,
     path: '/donations',
-    component: Donations
+    component: Donations,
   },
   {
     exact: false,
     path: '/contact',
-    component: Contact
-  }
+    component: Contact,
+  },
 ];
 
 export default routes;

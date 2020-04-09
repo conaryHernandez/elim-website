@@ -1,9 +1,11 @@
-import React from "react";
-import AppNavigator from "./AppRoutes";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
+import React, { useEffect } from 'react';
+import AppNavigator from './AppRoutes';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
-function App() {
+function App(props) {
+  const { hideLoader } = props;
+  useEffect(() => hideLoader(), [hideLoader]);
   return (
     <div className="App">
       <Header />

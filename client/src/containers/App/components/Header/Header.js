@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { Menu, Affix } from "antd";
-import { MenuOutlined } from "@ant-design/icons";
-import Drawer from "../Drawer/DrawerWrapper";
-import logo from "../../../../assets/img/home/elim-logo.png";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Menu, Affix } from 'antd';
+import { MenuOutlined } from '@ant-design/icons';
+import Drawer from '../Drawer/DrawerWrapper';
+import logo from '../../../../assets/img/home/elim-logo.png';
 
 const { SubMenu } = Menu;
 
@@ -19,7 +19,7 @@ export default function Header() {
     setIsDrawerVisible(false);
   };
 
-  const handleClick = e => {
+  const handleClick = (e) => {
     setCurrentOption(e.key);
   };
   return (
@@ -36,6 +36,10 @@ export default function Header() {
         >
           <Menu.Item key="alipay">
             <Link to="/">Home</Link>
+          </Menu.Item>
+
+          <Menu.Item key="live">
+            <Link to="/elim-live">En vivo</Link>
           </Menu.Item>
 
           <SubMenu
