@@ -128,6 +128,14 @@
         min-height: 50rem;
         object-position: 50% 25%;
       }
+      @include respond-to(xxl) {
+        max-height: 60rem;
+        min-height: 60rem;
+      }
+      @include respond-to(image-max) {
+        max-height: 80rem;
+        min-height: 80rem;
+      }
     }
   }
 }

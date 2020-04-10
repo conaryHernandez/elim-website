@@ -1,0 +1,41 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+#liveVw {
+  .mainBanner {
+    height: 30rem;
+    @include respond-to(xlarge) {
+      height: 40rem;
+    }
+    @include respond-to(xxl) {
+      height: 50rem;
+    }
+    img {
+      width: 100%;
+      height: inherit;
+      object-fit: cover;
+    }
+  }
+  .mainBannerOverlay {
+    width: 100%;
+    height: inherit;
+    position: absolute;
+    opacity: 0.6;
+    background-image: linear-gradient(180deg, #1a1423, #000);
+  }
+  .iframeWrapper {
+    margin-top: -3rem;
+    margin-bottom: 50px;
+    z-index: 10;
+    position: relative;
+    width: 100%;
+    height: 30rem;
+
+    @include respond-to(large) {
+      height: 40rem;
+    }
+    @include respond-to(xxl) {
+      height: 56rem;
+    }
+  }
+}
