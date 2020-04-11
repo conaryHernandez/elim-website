@@ -111,27 +111,23 @@ const Contact = () => {
         <div className={styles.locationsWrapper}>
           <img src={logo} className={styles.logo} alt="Logo" />
           <h2>Iglesias en el país</h2>
-          <Tooltip
-            placement="rightBottom"
-            title={'Consulta iglesias por departamento'}
+
+          <Select
+            showSearch
+            style={{ width: 320, marginBottom: '2rem', color: '#000' }}
+            placeholder="Elige un departamento"
+            optionFilterProp="children"
+            onChange={onDepartamentChange}
+            onFocus={onFocus}
+            onBlur={onBlur}
+            onSearch={onSearch}
+            filterOption={(input, option) =>
+              option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+            }
           >
-            <Select
-              showSearch
-              style={{ width: 320, marginBottom: '2rem', color: '#000' }}
-              placeholder="Elige un departamento"
-              optionFilterProp="children"
-              onChange={onDepartamentChange}
-              onFocus={onFocus}
-              onBlur={onBlur}
-              onSearch={onSearch}
-              filterOption={(input, option) =>
-                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-              }
-            >
-              <Option value="all">Todas</Option>
-              {generateDepartmentsList(departaments)}
-            </Select>
-          </Tooltip>
+            <Option value="all">Todas</Option>
+            {generateDepartmentsList(departaments)}
+          </Select>
         </div>
         <div className={styles.churchesWrapper}>
           <Row gutter={18} justify="center">

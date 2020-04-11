@@ -24,18 +24,40 @@
     background-image: linear-gradient(180deg, #1a1423, #000);
   }
   .iframeWrapper {
-    margin-top: -3rem;
+    width: 100%;
+    height: 25rem;
+    margin-top: -13rem;
     margin-bottom: 50px;
     z-index: 10;
     position: relative;
-    width: 100%;
-    height: 30rem;
+    border: 0.7rem solid #fff;
+    box-shadow: 0px 8px 15px 3px rgba(0, 0, 0, 0.1);
 
     @include respond-to(large) {
       height: 40rem;
+      margin-top: -14rem;
+    }
+    @include respond-to(xlarge) {
+      margin-top: -18rem;
     }
     @include respond-to(xxl) {
       height: 56rem;
+    }
+  }
+  .recentMessages {
+    margin-top: 8rem;
+    padding-bottom: 10rem;
+    h1 {
+      font: 500 3rem $font-openSans;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+  }
+  .messageCard {
+    margin-bottom: 2rem;
+    img {
+      width: 60%;
+      margin: 0 auto;
     }
   }
 }
