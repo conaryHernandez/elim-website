@@ -58,3 +58,7 @@
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
   background-color: unset;
 }
+
+.ant-menu-item > a:hover {
+  color: $status-color;
+}

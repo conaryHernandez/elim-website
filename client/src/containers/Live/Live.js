@@ -79,16 +79,6 @@ export default function Live() {
             </Col>
           </Row>
         </div>
-
-        {/* <iframe
-            title="CHURCH @ HOME"
-            width="100%"
-            height="560"
-            src="https://www.youtube.com/embed/live_stream?channel=UCOAjX8pc2fY1S5AqsXvZywg&autoplay=1"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe> */}
       </div>
     </div>
   );

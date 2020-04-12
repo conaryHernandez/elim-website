@@ -33,7 +33,7 @@ export default function DrawerWrapper(props) {
         </div>
         <div className="drawer-item">
           <UsergroupAddOutlined />
-          <Link to="/mision-elim">Misión Cristiana Elim</Link>
+          <Link to="/mision-elim-honduras">Misión Cristiana Elim</Link>
         </div>
         <div className="drawer-item">
           <TeamOutlined />

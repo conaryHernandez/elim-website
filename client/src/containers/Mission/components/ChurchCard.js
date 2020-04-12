@@ -1,11 +1,11 @@
-import React from "react";
-import styles from "../Contact.module.scss";
-import { Card, Col, Button } from "antd";
+import React from 'react';
+import styles from '../Churches.module.scss';
+import { Card, Col, Button } from 'antd';
 
 const headStyles = {
-  backgroundImage: "linear-gradient(45deg, #42002a, #941834)",
-  color: "#fff",
-  borderRadius: "1rem"
+  backgroundImage: 'linear-gradient(45deg, #42002a, #941834)',
+  color: '#fff',
+  borderRadius: '1rem',
 };
 
 export default function ChurchCard(props) {
@@ -25,7 +25,7 @@ export default function ChurchCard(props) {
           <p>{pastor}</p>
         </div>
 
-        <Button className={styles.seeMore} type="primary" size={"default"}>
+        <Button className={styles.seeMore} type="primary" size={'default'}>
           Detalles
         </Button>
       </Card>

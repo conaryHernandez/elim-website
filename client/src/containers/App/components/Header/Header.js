@@ -45,12 +45,14 @@ export default function Header() {
           <SubMenu
             title={
               <span className="submenu-title-wrapper">
-                <Link to="/mision-elim">Misión Cristiana Elim</Link>
+                <Link to="/mision-elim-honduras">Misión Cristiana Elim</Link>
               </span>
             }
           >
             <Menu.Item key="huellas">Huellas del pasado</Menu.Item>
-            <Menu.Item key="beliefs">En que creemos</Menu.Item>
+            <Menu.Item key="churches">
+              <Link to="/iglesias">Iglesias</Link>
+            </Menu.Item>
           </SubMenu>
 
           <SubMenu

@@ -8,6 +8,8 @@ const General = lazy(() => import('../General/General'));
 const Multimedia = lazy(() => import('../Multimedia/Multimedia'));
 const Donations = lazy(() => import('../Donations/Donations'));
 const Live = lazy(() => import('../Live/Live'));
+const Mission = lazy(() => import('../Mission/Mission'));
+const Churches = lazy(() => import('../Mission/Churches'));
 
 const routes = [
   {
@@ -49,6 +51,16 @@ const routes = [
     exact: false,
     path: '/elim-live',
     component: Live,
+  },
+  {
+    exact: false,
+    path: '/mision-elim-honduras',
+    component: Mission,
+  },
+  {
+    exact: false,
+    path: '/iglesias',
+    component: Churches,
   },
 ];
 

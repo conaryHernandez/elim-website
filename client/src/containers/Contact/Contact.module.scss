@@ -1,5 +1,5 @@
-@import "../../styles/variables";
-@import "../../styles/mixins";
+@import '../../styles/variables';
+@import '../../styles/mixins';
 
 #Contact {
   background-color: unset;
@@ -32,43 +32,6 @@
       svg {
         margin-right: 0.5rem;
       }
-    }
-  }
-  .locationsWrapper {
-    text-align: center;
-    .logo {
-      width: 11rem;
-      height: 11rem;
-      margin: 0 auto;
-      display: block;
-    }
-    h2 {
-      text-align: center;
-    }
-    .filterLabel {
-      display: inline-block;
-    }
-  }
-  .ChurchCard {
-    margin-bottom: 2rem;
-    box-shadow: 0 5px 16px 0 rgba(0, 0, 0, 0.1);
-  }
-  .churchesWrapper {
-    margin-top: 2rem;
-  }
-  .ChurchCardContent {
-    min-height: 15rem;
-  }
-  .seeMore {
-    margin: 0 auto;
-    background: none;
-    color: #000;
-    border: 1px solid #000;
-    width: 100%;
-    text-align: center;
-    &:hover {
-      border: 1px solid #941834;
-      color: #941834;
     }
   }
 }

@@ -1,50 +1,10 @@
-import React, { useState } from 'react';
-import { Card, Col, Row, Select, Tooltip } from 'antd';
+import React from 'react';
+import { Card, Col, Row } from 'antd';
 import { PhoneOutlined, MailFilled, HomeFilled } from '@ant-design/icons';
-import ChurchCard from './components/ChurchCard';
-import logo from '../../assets/img/home/elim-logo-2.png';
 import styles from './Contact.module.scss';
-import { churches } from './churchesData';
-import { departaments } from './departamentsData';
 import { cdnPath } from '../../constants';
 
 const Contact = () => {
-  const { Option } = Select;
-  const [churchesData, setChurches] = useState(churches);
-  const [filteredChurches, setFilteredChurches] = useState(churchesData);
-
-  const onDepartamentChange = (value) => {
-    if (value === 'all') {
-      setFilteredChurches(churchesData);
-    } else {
-      const filtered = churchesData.filter((church) => {
-        return church.address.deptoCode === value;
-      });
-      setFilteredChurches(filtered);
-    }
-  };
-
-  const onBlur = () => {
-    console.log('blur');
-  };
-
-  const onFocus = () => {
-    console.log('focus');
-  };
-
-  const onSearch = (val) => {
-    console.log('search:', val);
-  };
-
-  const generateChurchesCardList = (data) => {
-    return data.map((church, index) => (
-      <ChurchCard key={index} churchData={church} />
-    ));
-  };
-  const generateDepartmentsList = (data) => {
-    return data.map((depto) => <Option key={depto.code}>{depto.name}</Option>);
-  };
-
   return (
     <div id={styles.Contact}>
       <div className={styles.mainBanner}>
@@ -108,32 +68,14 @@ const Contact = () => {
             </Col>
           </Row>
         </div>
-        <div className={styles.locationsWrapper}>
-          <img src={logo} className={styles.logo} alt="Logo" />
-          <h2>Iglesias en el país</h2>
 
-          <Select
-            showSearch
-            style={{ width: 320, marginBottom: '2rem', color: '#000' }}
-            placeholder="Elige un departamento"
-            optionFilterProp="children"
-            onChange={onDepartamentChange}
-            onFocus={onFocus}
-            onBlur={onBlur}
-            onSearch={onSearch}
-            filterOption={(input, option) =>
-              option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-            }
-          >
-            <Option value="all">Todas</Option>
-            {generateDepartmentsList(departaments)}
-          </Select>
-        </div>
-        <div className={styles.churchesWrapper}>
-          <Row gutter={18} justify="center">
-            {generateChurchesCardList(filteredChurches)}
-          </Row>
-        </div>
+        <iframe
+          src="https://www.google.com/maps/d/u/0/embed?mid=14YYIILQwqJI5CaqkZTmxWNKB6NaG6sRN"
+          width="100%"
+          height="480"
+          frameBorder="0"
+          allowFullScreen
+        ></iframe>
       </div>
     </div>
   );
