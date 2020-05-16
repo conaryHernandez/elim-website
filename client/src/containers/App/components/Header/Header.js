@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Menu, Affix } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
 import Drawer from '../Drawer/DrawerWrapper';
-import logo from '../../../../assets/img/home/elim-logo.png';
+import logo from '../../../../assets/img/home/elim-logo-blue.png';
 
 const { SubMenu } = Menu;
 

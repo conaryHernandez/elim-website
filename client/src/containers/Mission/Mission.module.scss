@@ -1,0 +1,16 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.Mission {
+  .mainBanner {
+    height: 35rem;
+    @include respond-to(xlarge) {
+      height: 50rem;
+    }
+    img {
+      width: 100%;
+      height: inherit;
+      object-fit: cover;
+    }
+  }
+}

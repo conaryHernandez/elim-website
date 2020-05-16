@@ -46,7 +46,6 @@ export default function Churches() {
   return (
     <div id={styles.Churches} className="container">
       <div className={styles.locationsWrapper}>
-        <img src={logo} className={styles.logo} alt="Logo" />
         <h2>Iglesias en el país</h2>
 
         <Select

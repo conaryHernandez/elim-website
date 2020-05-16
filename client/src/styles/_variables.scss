@@ -2,16 +2,18 @@
 // Variables
 // ------------------------------------------------ */
 
-$primary-color: #941834;
-$secondary-color: #1a1423;
+$primary-color: #2c307a;
+$secondary-color: #040926;
 $third-color: #3d314a;
-$fourth-color: #c5d1eb;
+$fourth-color: #07a0c3;
 $fifth-color: #42002a;
 /* $component-bg: #560037;
 $component-color: #560037; */
-$status-color: #aacc03;
+$status-color: #d3d4d9;
+$status-color2: #f0c808;
 
-$font-openSans: "Open Sans", sans-serif;
+$font-openSans: 'Open Sans', sans-serif;
+$font-lobster: 'Lobster Two', cursive;
 
 $z-layers: (
   bottomless-pit: -9999,
@@ -22,7 +24,7 @@ $z-layers: (
   dropdown: 3000,
   overlay: 4000,
   modal: 4001,
-  drama: 9999
+  drama: 9999,
 );
 
 /*==== Breakpoints ====*/
@@ -48,5 +50,5 @@ $breakpoints: (
     md-max: 1199px,
   lg-min: 1200px,
   mobile-map-max: 730px,
-  image-max: 1920px
+  image-max: 1920px,
 );

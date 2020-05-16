@@ -1,11 +1,12 @@
 import React from 'react';
+import './ChurchCard.scss';
 import styles from '../Churches.module.scss';
 import { Card, Col, Button } from 'antd';
 
 const headStyles = {
-  backgroundImage: 'linear-gradient(45deg, #42002a, #941834)',
-  color: '#fff',
-  borderRadius: '1rem',
+  color: '#040926',
+  borderRadius: '.5rem',
+  lineHeight: '4rem',
 };
 
 export default function ChurchCard(props) {
@@ -15,8 +16,8 @@ export default function ChurchCard(props) {
       <Card
         title={shortName}
         headStyle={headStyles}
-        bordered={false}
-        className={styles.ChurchCard}
+        bordered
+        className={`${styles.ChurchCard} church-card`}
       >
         <div className={styles.ChurchCardContent}>
           <strong>Dirección</strong>
