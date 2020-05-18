@@ -26,7 +26,9 @@ export default function Header() {
     <div id="header">
       <MenuOutlined className={`hidden-xlarge-up ib`} onClick={showDrawer} />
       <Drawer isDrawerVisible={isDrawerVisible} onClose={onClose} />
-      <img src={logo} className="header-logo ib" alt="Elim Logo" />
+      <Link to="/">
+        <img src={logo} className="header-logo ib" alt="Elim Logo" />
+      </Link>
       <Affix offsetTop={0}>
         <Menu
           onClick={handleClick}
