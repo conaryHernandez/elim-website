@@ -50,14 +50,14 @@ const Home = () => {
       <div className="container">
         <div className={classes.pastorMessage}>
           <Row type="flex" justify="space-around" align="middle">
-            <Col xs={24} md={10} lg={8} className="txt-center">
+            {/* <Col xs={24} md={10} lg={8} className="txt-center">
               <img
                 className={classes.pastorAvatar}
                 src={`${cdnPath}/v2/images/home/dr-rafael-ismael.png`}
                 alt="Pastor Ismael Paz"
               />
-            </Col>
-            <Col xs={24} md={14} lg={16}>
+            </Col> */}
+            <Col xs={24} md={16}>
               <h1>Palabras de Vida</h1>
               <p className={classes.introText}>
                 El enfoque que cada quien tenga de la vida, puede depender de la
@@ -70,6 +70,8 @@ const Home = () => {
                 graves problemas de la vida; o si la hay, ¡yo no lo he
                 descubierto todavía! la vida no es fácil y nunca lo ha sido.
               </p>
+              <span className={classes.quoteBy}>-Pastor Ismael Paz</span>
+
               <Link
                 to="/"
                 className={`${classes.readMore} uppercase txt-center`}

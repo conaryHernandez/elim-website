@@ -2,6 +2,16 @@
 @import '../../styles/mixins';
 
 .Mission {
+  p {
+    text-align: justify;
+  }
+  .beliefs {
+    padding-top: 1rem;
+    h1 {
+      font: 600 3rem $font-openSans;
+    }
+  }
+
   .mainBanner {
     height: 35rem;
     @include respond-to(xlarge) {
@@ -11,6 +21,65 @@
       width: 100%;
       height: inherit;
       object-fit: cover;
+    }
+  }
+  .sloganWrapper {
+    position: relative;
+
+    h2 {
+      position: absolute;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+      font-size: 2.8rem;
+      color: #fff;
+
+      @include respond-to(xlarge) {
+        font-size: 3rem;
+      }
+      @include respond-to(image-max) {
+        font-size: 5rem;
+      }
+    }
+    img {
+      object-fit: cover;
+      width: 100%;
+
+      @include respond-to-max(large) {
+        height: 20rem;
+      }
+
+      @include respond-to(large) {
+        height: 25rem;
+      }
+
+      @include respond-to(xxl) {
+        height: 30rem;
+      }
+    }
+  }
+  .ourPastor {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    h3 {
+      font: 3.5rem $font-lobster;
+      text-align: center;
+    }
+    p {
+      font: 400 1.5rem/3rem $font-openSans;
+    }
+    .pastoresCouple {
+      margin-bottom: 2rem;
+      max-width: 50rem;
+      max-height: 34rem;
+    }
+    .preaching {
+      max-width: 30rem;
+      max-height: 30rem;
+      border-radius: 100%;
     }
   }
 }

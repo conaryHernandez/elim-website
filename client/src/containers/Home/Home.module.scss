@@ -18,12 +18,14 @@
     padding-bottom: 5rem;
 
     h1 {
-      font: 700 2.7rem $font-lobster;
-
-      @include respond-to-max(large) {
-        text-align: center;
-      }
+      font: 700 2.7rem/2.8rem $font-lobster;
+      text-align: center;
     }
+  }
+  .quoteBy {
+    font: 700 1.3rem $font-openSans;
+    font-style: italic;
+    display: inline-block;
   }
 
   .pastorAvatar {
