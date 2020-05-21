@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { Row, Col } from "antd";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Row, Col } from 'antd';
 
-import ListItems from "../../../../components/UI/ListItems/ListItems";
-import SocialBar from "../../../../components/SocialBar/SocialBar";
-import classes from "./Footer.module.scss";
+import ListItems from '../../../../components/UI/ListItems/ListItems';
+import SocialBar from '../../../../components/SocialBar/SocialBar';
+import classes from './Footer.module.scss';
 
 const Footer = () => {
   const [footerData, setFooterData] = useState({});
@@ -12,7 +12,7 @@ const Footer = () => {
   useEffect(() => {
     async function getFooterData() {
       try {
-        const response = await axios.get("data/footerData.json");
+        const response = await axios.get('data/footerData.json');
 
         setFooterData(response.data);
       } catch (err) {
@@ -55,7 +55,7 @@ const Footer = () => {
           />
 
           <Row>
-            {footerData?.sections?.map(item => (
+            {footerData?.sections?.map((item) => (
               <Col key={`list-${item.title}`} xs={24} md={12} lg={6}>
                 <ListItems
                   className={classes.FooterList}
@@ -68,7 +68,7 @@ const Footer = () => {
         </div>
       </div>
       <div className={classes.FooterLegend}>
-        <p>
+        <p className="txt-center">
           © Copyright 2017 — {new Date().getFullYear()} Misión Cristiana Elim.
           Todos los derechos reservados.
         </p>
