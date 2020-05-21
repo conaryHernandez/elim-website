@@ -21,7 +21,7 @@ export default function ChurchCard(props) {
       >
         <div className={styles.ChurchCardContent}>
           <strong>Dirección</strong>
-          <p>{address?.location}</p>
+          <span>{address?.location}</span>
           <strong>Pastor:</strong>
           <p>{pastor}</p>
         </div>

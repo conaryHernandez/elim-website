@@ -69,8 +69,8 @@ const Footer = () => {
       </div>
       <div className={classes.FooterLegend}>
         <p className="txt-center">
-          © Copyright 2017 — {new Date().getFullYear()} Misión Cristiana Elim.
-          Todos los derechos reservados.
+          © Copyright {new Date().getFullYear()} Misión Cristiana Elim. Todos
+          los derechos reservados.
         </p>
       </div>
     </>
