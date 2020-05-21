@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Row, Col } from 'antd';
 import { Link } from 'react-router-dom';
 import styles from './Mission.module.scss';
 import { cdnPath } from '../../constants';
 
 export default function Mission() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className={styles.Mission}>
       <div className={styles.mainBanner}>
@@ -15,15 +18,13 @@ export default function Mission() {
       </div>
       <div className="container">
         <div className={styles.beliefs}>
-          <h1 className="txt-center">Misión Cristiana Elim</h1>
+          <h1 className="txt-center">¿Quiénes somos?</h1>
           <Row justify="center">
             <Col xs={24} md={16}>
               <p>
-                Somos una Misión exclusivamente al servicio de Dios, teniendo
-                conciencia de ello, nosotros como Misión creemos firmemente en
-                lo que la Biblia afirma y enseña como la revelación más segura.
-                Reconociendo la labor de un Dios tri-uno en todas las eras de la
-                historia humana.
+                Como Misión creemos firmemente en lo que la Biblia afirma y
+                enseña como la revelación más segura. Reconociendo la labor de
+                un Dios tri-uno en todas las eras de la historia humana.
               </p>
               <p>
                 Confesamos que hay un solo Dios verdadero y viviente, el

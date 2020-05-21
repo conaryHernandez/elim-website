@@ -33,9 +33,6 @@
     height: 27rem;
   }
   .introText {
-    font: 500 1.4rem/2.2rem $font-openSans;
-    text-align: justify;
-
     @include respond-to(large) {
       max-width: 90%;
     }

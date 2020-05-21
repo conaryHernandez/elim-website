@@ -2,11 +2,8 @@
 @import '../../styles/mixins';
 
 .Mission {
-  p {
-    text-align: justify;
-  }
   .beliefs {
-    padding-top: 1rem;
+    padding-top: 2rem;
     h1 {
       font: 600 3rem $font-openSans;
     }
@@ -68,9 +65,7 @@
       font: 3.5rem $font-lobster;
       text-align: center;
     }
-    p {
-      font: 400 1.5rem/3rem $font-openSans;
-    }
+
     .pastoresCouple {
       margin-bottom: 2rem;
       max-width: 50rem;

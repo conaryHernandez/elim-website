@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { photos } from './main-slides';
 import { schedules } from './schedules';
@@ -19,6 +19,9 @@ const settings = {
 };
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [form] = Form.useForm();
   const onSubmitPrayer = (values) => {
     console.log('Success:', values);
