@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Drawer } from 'antd';
@@ -13,48 +13,55 @@ import {
   VideoCameraOutlined,
 } from '@ant-design/icons';
 
+import elimWhiteLogo from '../../../../assets/img/home/logo-elim-white.png';
+
 export default function DrawerWrapper(props) {
+  const closeDrawer = () => {
+    props.setIsDrawerVisible(false);
+  };
+
   return (
     <div id="drawer" className="ib">
       <Drawer
-        title="Misión Cristiana Elim"
+        title={<img src={elimWhiteLogo} />}
         placement="left"
         closable={true}
+        keyboard
         onClose={props.onClose}
         visible={props.isDrawerVisible}
       >
-        <div className="drawer-item">
+        <div className="drawer-item" onClick={closeDrawer}>
           <HomeOutlined />
-          <Link to="/">Home</Link>
+          <Link to="/">Inicio</Link>
         </div>
-        <div className="drawer-item">
+        <div className="drawer-item" onClick={closeDrawer}>
           <VideoCameraOutlined />
           <Link to="/elim-live">En vivo</Link>
         </div>
-        <div className="drawer-item">
+        <div className="drawer-item" onClick={closeDrawer}>
           <UsergroupAddOutlined />
           <Link to="/mision-elim-honduras">Misión Cristiana Elim</Link>
         </div>
-        <div className="drawer-item">
+        <div className="drawer-item" onClick={closeDrawer}>
           <TeamOutlined />
           <Link to="/elim-central">Elim Central</Link>
         </div>
 
-        <div className="drawer-item">
+        <div className="drawer-item" onClick={closeDrawer}>
           <CalendarOutlined />
           <Link to="/calendario">Calendario</Link>
         </div>
 
-        <div className="drawer-item">
+        <div className="drawer-item" onClick={closeDrawer}>
           <BookOutlined />
           <Link to="/calendario">Prédicas</Link>
         </div>
 
-        <div className="drawer-item">
+        <div className="drawer-item" onClick={closeDrawer}>
           <HeartOutlined />
           <Link to="/corazones-generosos">Corazones Generosos</Link>
         </div>
-        <div className="drawer-item">
+        <div className="drawer-item" onClick={closeDrawer}>
           <ContactsOutlined />
           <Link to="/contact">Contacto</Link>
         </div>

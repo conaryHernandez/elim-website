@@ -40,3 +40,17 @@
 .txt-center {
   text-align: center;
 }
+
+.regular-btn {
+  height: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 2.5rem;
+  background: none;
+  border: 2px solid;
+  font-weight: bold;
+  width: 15rem;
+  &:hover {
+    color: lighten($secondary-color, 10%);
+  }
+}

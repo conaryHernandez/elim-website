@@ -9,6 +9,11 @@
   background: none;
   .ant-drawer-title {
     color: #fff;
+    text-align: center;
+    img {
+      width: 6rem;
+      height: 6rem;
+    }
   }
 }
 .ant-drawer-content {

@@ -25,7 +25,11 @@ export default function Header() {
   return (
     <div id="header">
       <MenuOutlined className={`hidden-xlarge-up ib`} onClick={showDrawer} />
-      <Drawer isDrawerVisible={isDrawerVisible} onClose={onClose} />
+      <Drawer
+        isDrawerVisible={isDrawerVisible}
+        onClose={onClose}
+        setIsDrawerVisible={setIsDrawerVisible}
+      />
       <Link to="/">
         <img src={logo} className="header-logo ib" alt="Elim Logo" />
       </Link>
@@ -37,7 +41,7 @@ export default function Header() {
           className="hidden-xlarge-down"
         >
           <Menu.Item key="alipay">
-            <Link to="/">Home</Link>
+            <Link to="/">Inicio</Link>
           </Menu.Item>
 
           <Menu.Item key="live">

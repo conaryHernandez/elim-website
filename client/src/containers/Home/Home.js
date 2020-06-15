@@ -12,7 +12,7 @@ import { cdnPath } from '../../constants';
 const settings = {
   showThumbs: false,
   infiniteLoop: true,
-  autoPlay: false,
+  autoPlay: true,
   showIndicators: false,
   legendClassName: classes.homeLegend,
   className: classes.mainSlider,
@@ -77,7 +77,7 @@ const Home = () => {
 
               <Link
                 to="/"
-                className={`${classes.readMore} uppercase txt-center`}
+                className={`${classes.readMore} regular-btn uppercase txt-center`}
               >
                 Leer más
               </Link>
@@ -149,7 +149,7 @@ const Home = () => {
             <Button
               type="primary"
               htmlType="submit"
-              className={classes.submitPrayerBtn}
+              className={`${classes.submitPrayerBtn} regular-btn`}
             >
               Enviar
             </Button>

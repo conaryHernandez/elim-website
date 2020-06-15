@@ -24,7 +24,6 @@
   }
   .quoteBy {
     font: 700 1.3rem $font-openSans;
-    font-style: italic;
     display: inline-block;
   }
 
@@ -38,23 +37,11 @@
     }
   }
   .readMore {
-    font: 600 1.2rem/2rem $font-openSans;
-    color: #000;
-    border: 1px solid $secondary-color;
-    border-radius: 5rem;
-    padding: 1rem;
-    width: 100%;
+    color: $secondary-color;
     display: block;
-    margin-top: 4rem;
-    @include respond-to(large) {
-      padding: 0.4rem;
-      width: 15rem;
-    }
-
-    &:hover {
-      background-color: $secondary-color;
-      color: #fff;
-    }
+    line-height: 3.5rem;
+    margin: 3rem auto 0;
+    width: 20rem;
   }
   .servicesSchedule {
     background-image: url('https://elim.nyc3.digitaloceanspaces.com/v2/images/home/horarios-bg.jpg');
@@ -106,14 +93,13 @@
     margin: 0 auto;
   }
   .submitPrayerBtn {
-    background-color: #1a1423;
-    border: none;
+    color: $secondary-color;
   }
   .titleWrapper {
     margin-bottom: 3rem;
     text-align: center;
     h3 {
-      font: 3rem $font-lobster;
+      font: 700 3rem $font-lobster;
       margin-bottom: 0;
     }
   }

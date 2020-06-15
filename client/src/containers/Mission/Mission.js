@@ -8,6 +8,7 @@ export default function Mission() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <div className={styles.Mission}>
       <div className={styles.mainBanner}>
