@@ -13,6 +13,7 @@ const settings = {
   showThumbs: false,
   infiniteLoop: true,
   autoPlay: true,
+  showStatus: false,
   showIndicators: false,
   legendClassName: classes.homeLegend,
   className: classes.mainSlider,
@@ -85,7 +86,21 @@ const Home = () => {
           </Row>
         </div>
       </div>
-      <div className={classes.servicesSchedule}>
+      <div className={`${classes.channels} ${classes.sectionPaddings}`}>
+        <div className="container">
+          <span className={classes.title}>Sigue nuestras transmisiones</span>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Reiciendis, omnis non. Ipsa tempora libero, iusto quia quis
+            perspiciatis unde voluptatem voluptates distinctio repellendus
+            eligendi sapiente, sequi animi? Praesentium eveniet ipsam atque
+            repellendus nobis rerum unde voluptate, at perspiciatis! Tempora
+            perferendis quae eos natus voluptatem similique eligendi sequi autem
+            omnis laudantium.
+          </p>
+        </div>
+      </div>
+      <div className={`${classes.servicesSchedule} ${classes.sectionPaddings}`}>
         <h2>Horarios de culto</h2>
         <Row
           type="flex"

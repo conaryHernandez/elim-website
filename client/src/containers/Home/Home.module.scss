@@ -2,6 +2,10 @@
 @import '../../styles/mixins';
 
 .Home {
+  .sectionPaddings {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
   .homeLegend {
     position: absolute;
     left: 50%;
@@ -18,8 +22,11 @@
     padding-bottom: 5rem;
 
     h1 {
-      font: 700 2.7rem/2.8rem $font-lobster;
+      font: 700 2.7rem/2.8rem $font-raleway;
       text-align: center;
+      @include respond-to(large) {
+        font: 700 3.5rem/2.8rem $font-raleway;
+      }
     }
   }
   .quoteBy {
@@ -43,27 +50,43 @@
     margin: 3rem auto 0;
     width: 20rem;
   }
-  .servicesSchedule {
-    background-image: url('https://elim.nyc3.digitaloceanspaces.com/v2/images/home/horarios-bg.jpg');
-    min-height: 50rem;
-    padding: 2rem 0;
-    @include respond-to(large) {
-      padding-top: 4rem;
-    }
-    h2 {
-      font: 600 2.5rem $font-openSans;
+  .channels {
+    background: url('../../assets/img/home/blue-gradient-bg.jpg');
+
+    .title {
+      font: 800 3.5rem $font-raleway;
+      display: block;
+      margin-bottom: 3rem;
       text-align: center;
       color: #fff;
-      margin-bottom: 2rem;
+    }
+    p {
+      margin: 0;
+      color: #fff;
+      text-align: center;
+    }
+  }
+  .servicesSchedule {
+    background-color: $hillBlue;
+    min-height: 50rem;
+
+    h2 {
+      font: 800 2.5rem $font-raleway;
+      text-align: center;
+      color: #fff;
+      margin-bottom: 6rem;
+      @include respond-to(large) {
+        font: 800 3.5rem $font-raleway;
+      }
     }
   }
   .scheduleItem {
     color: #fff;
     max-width: 32rem;
-    margin-top: 2rem;
+    margin-bottom: 3rem;
     border: 2px solid #fff;
     border-radius: 2rem;
-    padding: 2rem;
+    padding: 2.5rem 2rem;
     text-align: center;
 
     &:hover {
@@ -73,17 +96,25 @@
 
     @include respond-to(xlarge) {
       max-width: 40rem;
+      padding: 3rem 2rem;
     }
     @include respond-to(xxl) {
       max-width: 50rem;
+      padding: 3.5rem 2rem;
     }
   }
   .scheduleTime {
     font: 600 1.4rem/2rem $font-openSans;
     display: block;
+    @include respond-to(xxl) {
+      font-size: 1.6rem;
+    }
   }
   .serviceName {
     font: 400 1.3rem/2rem $font-openSans;
+    @include respond-to(xxl) {
+      font-size: 1.5rem;
+    }
   }
   .oracionWrapper {
     padding: 3rem 2rem 5rem;
@@ -94,12 +125,19 @@
   }
   .submitPrayerBtn {
     color: $secondary-color;
+
+    &:hover {
+      background: #040926;
+      color: #fff;
+      border-color: #000;
+      opacity: 0.9;
+    }
   }
   .titleWrapper {
     margin-bottom: 3rem;
     text-align: center;
     h3 {
-      font: 700 3rem $font-lobster;
+      font: 700 3rem $font-raleway;
       margin-bottom: 0;
     }
   }
