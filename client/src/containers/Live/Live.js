@@ -20,7 +20,7 @@ export default function Live() {
           <iframe
             width="100%"
             height="100%"
-            src="https://www.youtube.com/embed/live_stream?channel=UCLabTb6ZU_MtZf1KG8chE2A"
+            src="https://www.youtube.com/embed/GkEZd5OP6O8"
             frameBorder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
