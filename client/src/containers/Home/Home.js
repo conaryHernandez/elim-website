@@ -86,6 +86,80 @@ const Home = () => {
           </Row>
         </div>
       </div>
+      <div
+        className={`${classes.exploreWrapper} ${classes.sectionPaddings} section-gray`}
+      >
+        <div className="container">
+          <span className={classes.title}>Elim Honduras</span>
+          <Row justify={'center'} align={'middle'} gutter={24}>
+            <Col xs={24} sm={8} xl={7}>
+              <div className={classes.exploreCard}>
+                <img
+                  className="img-responsive"
+                  src={`${cdnPath}/v2/images/home/alabanza.jpeg`}
+                  alt="Alabanza"
+                />
+                <div className={classes.content}>
+                  <h3>Alabanza</h3>
+                  <p>
+                    Resourcing the body of Christ with fresh songs of worship.
+                  </p>
+                  <Link
+                    to="/"
+                    className={`${classes.exploreLink} uppercase txt-center`}
+                  >
+                    Elim Central
+                  </Link>
+                </div>
+              </div>
+            </Col>
+
+            <Col xs={24} sm={8} xl={7}>
+              <div className={classes.exploreCard}>
+                <img
+                  className="img-responsive"
+                  src={`${cdnPath}/v2/images/home/predicas.jpg`}
+                  alt="Prédicas"
+                />
+                <div className={classes.content}>
+                  <h3>Prédicas</h3>
+                  <p>
+                    Resourcing the body of Christ with fresh songs of worship.
+                  </p>
+                  <Link
+                    to="/"
+                    className={`${classes.exploreLink} uppercase txt-center`}
+                  >
+                    Ver libreria
+                  </Link>
+                </div>
+              </div>
+            </Col>
+
+            <Col xs={24} sm={8} xl={7}>
+              <div className={classes.exploreCard}>
+                <img
+                  className="img-responsive"
+                  src={`${cdnPath}/v2/images/home/generosidad.jpg`}
+                  alt="generosidad"
+                />
+                <div className={classes.content}>
+                  <h3>Generosidad</h3>
+                  <p>
+                    Resourcing the body of Christ with fresh songs of worship.
+                  </p>
+                  <Link
+                    to="/"
+                    className={`${classes.exploreLink} uppercase txt-center`}
+                  >
+                    Más Información
+                  </Link>
+                </div>
+              </div>
+            </Col>
+          </Row>
+        </div>
+      </div>
       <div className={`${classes.channels} ${classes.sectionPaddings}`}>
         <div className="container">
           <span className={classes.title}>Sigue nuestras transmisiones</span>
@@ -98,6 +172,12 @@ const Home = () => {
             perferendis quae eos natus voluptatem similique eligendi sequi autem
             omnis laudantium.
           </p>
+          <Link
+            to="/"
+            className={`${classes.goLiveBtn} regular-btn uppercase txt-center`}
+          >
+            Elim Live
+          </Link>
         </div>
       </div>
       <div className={`${classes.servicesSchedule} ${classes.sectionPaddings}`}>
