@@ -3,7 +3,7 @@
     {
       "id": "special-1",
       "label": "Contacto",
-      "link": "#"
+      "link": "/contact"
     },
     {
       "id": "special-2",
@@ -43,7 +43,8 @@
       "items": [
         {
           "id": "inicio-1",
-          "label": "Misión Cristiana Elim"
+          "label": "Misión Cristiana Elim",
+          "link": "/mision-elim-honduras"
         },
         {
           "id": "inicio-2",

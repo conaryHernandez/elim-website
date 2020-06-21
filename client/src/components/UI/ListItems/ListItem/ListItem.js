@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 
 import classes from './ListItem.module.scss';
 
-const ListItem = props => {
+const ListItem = (props) => {
+  console.log(props);
+
   return (
     <Link to={props.link} className={classes.ListItem}>
       {props.label}
@@ -14,7 +16,7 @@ const ListItem = props => {
 ListItem.defaultProps = {
   link: '#',
   label: 'Item',
-  className: 'default'
+  className: 'default',
 };
 
 export default ListItem;

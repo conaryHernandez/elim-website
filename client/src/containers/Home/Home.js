@@ -1,13 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { photos } from './main-slides';
 import { schedules } from './schedules';
 import Slider from '../../components/Slider/Slider';
 import classes from './Home.module.scss';
 import ScheduleItem from './ScheduleItem';
-import { Row, Col, Form, Input, Button, notification } from 'antd';
+import { Row, Col, Form, Input, Button, notification, Modal } from 'antd';
 import { CheckCircleTwoTone } from '@ant-design/icons';
 import { cdnPath } from '../../constants';
+import { pastorMessageOne, pastorMessageTwo } from './data';
+import parse from 'html-react-parser';
 
 const settings = {
   showThumbs: false,
@@ -19,7 +21,12 @@ const settings = {
   className: classes.mainSlider,
 };
 
+const messageOne = parse(pastorMessageOne);
+const messageTwo = parse(pastorMessageTwo);
+
 const Home = () => {
+  const [isMessageModalVisible, setIsMessageModalVisible] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -77,12 +84,28 @@ const Home = () => {
               <span className={classes.quoteBy}>-Pastor Ismael Paz</span>
 
               <button
+                onClick={() => setIsMessageModalVisible(true)}
                 className={`${classes.readMore} regular-btn uppercase txt-center`}
               >
                 Leer más
               </button>
             </Col>
           </Row>
+          <Modal
+            title="Palabras de Vida"
+            visible={isMessageModalVisible}
+            footer={null}
+            onCancel={() => setIsMessageModalVisible(false)}
+          >
+            <Row justify={'center'} align={'top'} gutter={24}>
+              <Col xs={24} sm={12}>
+                {messageOne}
+              </Col>
+              <Col xs={24} sm={12}>
+                {messageTwo}
+              </Col>
+            </Row>
+          </Modal>
         </div>
       </div>
       <div
