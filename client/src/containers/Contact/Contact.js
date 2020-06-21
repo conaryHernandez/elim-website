@@ -71,14 +71,15 @@ const Contact = () => {
             </Col>
           </Row>
         </div>
-
-        <iframe
-          src="https://www.google.com/maps/d/u/0/embed?mid=14YYIILQwqJI5CaqkZTmxWNKB6NaG6sRN"
-          width="100%"
-          height="480"
-          frameBorder="0"
-          allowFullScreen
-        ></iframe>
+        <div className={styles.mapWrapper}>
+          <iframe
+            src="https://www.google.com/maps/d/u/0/embed?mid=14YYIILQwqJI5CaqkZTmxWNKB6NaG6sRN"
+            width="100%"
+            height="480"
+            frameBorder="0"
+            allowFullScreen
+          ></iframe>
+        </div>
       </div>
     </div>
   );
