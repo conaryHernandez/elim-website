@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './Live.module.scss';
 import { cdnPath } from '../../constants';
 import { Card, Row, Col } from 'antd';
@@ -6,6 +6,9 @@ import { Card, Row, Col } from 'antd';
 const { Meta } = Card;
 
 export default function Live() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div id={styles.liveVw}>
       <div className={styles.mainBanner}>

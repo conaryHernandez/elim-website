@@ -76,12 +76,11 @@ const Home = () => {
               </p>
               <span className={classes.quoteBy}>-Pastor Ismael Paz</span>
 
-              <Link
-                to="/"
+              <button
                 className={`${classes.readMore} regular-btn uppercase txt-center`}
               >
                 Leer más
-              </Link>
+              </button>
             </Col>
           </Row>
         </div>
@@ -152,7 +151,7 @@ const Home = () => {
                     to="/"
                     className={`${classes.exploreLink} uppercase txt-center`}
                   >
-                    Más Información
+                    Información
                   </Link>
                 </div>
               </div>
@@ -173,7 +172,7 @@ const Home = () => {
             omnis laudantium.
           </p>
           <Link
-            to="/"
+            to="/elim-live"
             className={`${classes.goLiveBtn} regular-btn uppercase txt-center`}
           >
             Elim Live

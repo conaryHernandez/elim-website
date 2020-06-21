@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Card, Col, Row } from 'antd';
 import { PhoneOutlined, MailFilled, HomeFilled } from '@ant-design/icons';
 import styles from './Contact.module.scss';
 import { cdnPath } from '../../constants';
 
 const Contact = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div id={styles.Contact}>
       <div className={styles.mainBanner}>

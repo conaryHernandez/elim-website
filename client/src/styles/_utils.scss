@@ -53,6 +53,9 @@
   &:hover {
     color: lighten($secondary-color, 10%);
   }
+  &:focus {
+    outline: 0;
+  }
 }
 
 .section-gray {

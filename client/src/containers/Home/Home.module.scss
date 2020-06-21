@@ -58,7 +58,8 @@
     }
   }
   .channels {
-    background: url('../../assets/img/home/blue-gradient-bg.jpg');
+    background: url('../../assets/img/home/blue-gradient-bg.jpg') no-repeat;
+    padding-bottom: 4rem;
 
     p {
       margin: 0;
