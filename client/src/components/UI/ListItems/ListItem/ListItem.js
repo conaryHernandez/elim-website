@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import classes from './ListItem.module.scss';
 
 const ListItem = (props) => {
-  console.log(props);
+  // console.log(props);
 
   return (
     <Link to={props.link} className={classes.ListItem}>

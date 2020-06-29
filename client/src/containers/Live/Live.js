@@ -1,29 +1,42 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Live.module.scss';
-import { cdnPath } from '../../constants';
+import { cdnPath, strapiURL } from '../../constants';
 import { Card, Row, Col } from 'antd';
+import axios from 'axios';
 
 const { Meta } = Card;
 
 export default function Live() {
+  const [pageData, setPageData] = useState({});
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    axios
+      .get(`${strapiURL}/elim-live`)
+      .then((response) => {
+        setPageData(response.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   }, []);
   return (
     <div id={styles.liveVw}>
       <div className={styles.mainBanner}>
         <div className={styles.mainBannerOverlay} />
-        <img
-          src={`${cdnPath}/v2/images/home/main-slider/alabanza-2020.jpg`}
-          alt="Live Banner"
-        />
+        {pageData.mainBannerPath && (
+          <img
+            src={`${cdnPath}${pageData.mainBannerPath}`}
+            alt={pageData.MainBannerAltText}
+          />
+        )}
       </div>
       <div className="container">
         <div className={styles.iframeWrapper}>
           <iframe
             width="100%"
             height="100%"
-            src="https://www.youtube.com/embed/GkEZd5OP6O8"
+            src={`https://www.youtube.com/embed/${pageData.videoId}`}
             frameBorder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
