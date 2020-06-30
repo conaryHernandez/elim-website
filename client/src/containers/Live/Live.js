@@ -1,16 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Live.module.scss';
-import { cdnPath, strapiURL } from '../../constants';
-import { Card, Row, Col } from 'antd';
+import { cdnPath, strapiURL, elimAPI } from '../../constants';
+import { Card, Row, Col, Modal } from 'antd';
 import axios from 'axios';
 
 const { Meta } = Card;
 
 export default function Live() {
   const [pageData, setPageData] = useState({});
+  const [videoList, setVideoList] = useState([]);
+  const [onPromiseError, setOnPromiseError] = useState('');
+  const [isModalVideoVisible, setIsModalVideoVisible] = useState(false);
+  const [currentVideo, setCurrentVideo] = useState('');
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    getPageData(strapiURL);
+    getLatestVideos(elimAPI, 6);
+  }, []);
+
+  const getPageData = (strapiURL) => {
     axios
       .get(`${strapiURL}/elim-live`)
       .then((response) => {
@@ -19,10 +28,49 @@ export default function Live() {
       .catch((err) => {
         console.error(err);
       });
-  }, []);
+  };
+  const getLatestVideos = async (elimAPI, maxResults = 6) => {
+    const response = await axios.get(`${elimAPI}/videos?latest=${maxResults}`);
+
+    response.status === 200
+      ? setVideoList(response.data.videos)
+      : setOnPromiseError(response.data.message);
+  };
+  const handleVideoModal = (isShowing = false, videoId = '') => {
+    setIsModalVideoVisible(isShowing);
+    setCurrentVideo(videoId);
+  };
+
+  const generateVideoItemList = (videoList) => {
+    return videoList.map((video, index) => {
+      const desc = video.snippet.description.split('\n');
+      return (
+        <Col key={index} xs={24} sm={12} lg={8}>
+          <div
+            className={styles.videoItem}
+            onClick={() =>
+              handleVideoModal(true, video.snippet.resourceId.videoId)
+            }
+          >
+            <img
+              className="img-responsive"
+              src={video.snippet.thumbnails.medium.url}
+              alt={video.snippet.title}
+            />
+            <strong className={styles.videoTitle}>{video.snippet.title}</strong>
+            <strong className={styles.videoDesc}>
+              {desc[0].includes('Pagina') ? '' : desc[0]}
+            </strong>
+          </div>
+        </Col>
+      );
+    });
+  };
+
   return (
     <div id={styles.liveVw}>
       <div className={styles.mainBanner}>
+        <h1>Transmisiones</h1>
         <div className={styles.mainBannerOverlay} />
         {pageData.mainBannerPath && (
           <img
@@ -43,58 +91,31 @@ export default function Live() {
           ></iframe>
         </div>
         <div className={styles.recentMessages}>
-          <h1>Mensajes recientes</h1>
-          <Row gutter={18} justify="center">
-            <Col xs={24} sm={12} lg={8}>
-              <Card
-                className={styles.messageCard}
-                cover={
-                  <img
-                    alt="example"
-                    src="https://elimhn.org/images/recursos/ensenanzas_predicas/Giovanny-Gambarelly.png"
-                  />
-                }
-              >
-                <Meta
-                  title="Libres de las ataduras"
-                  description="Hay situaciones en la vida que esclavizan, el problema que enfrentamos tiene que ver con ignorar sus raíces o acostumbrarnos a vivir con ellas. "
-                />
-              </Card>
-            </Col>
-            <Col xs={24} sm={12} lg={8}>
-              <Card
-                className={styles.messageCard}
-                cover={
-                  <img
-                    alt="example"
-                    src="https://elimhn.org/images/recursos/ensenanzas_predicas/Josue-Barrientos.png"
-                  />
-                }
-              >
-                <Meta
-                  title="Las cosas que debe procurar el creyente"
-                  description="La vida del creyente no es ajena a las realidades terrenales, muchas de las cosas con las que a diario nos relacionamos se vuelven ataduras o tropiezos en nuestras vidas."
-                />
-              </Card>
-            </Col>
-            <Col xs={24} sm={12} lg={8}>
-              <Card
-                className={styles.messageCard}
-                cover={
-                  <img
-                    alt="example"
-                    src="https://elimhn.org/images/recursos/ensenanzas_predicas/roger-diaz.png"
-                  />
-                }
-              >
-                <Meta
-                  title="No menosprecies tu conciencia"
-                  description="El objetivo de la sangre de Cristo es llegar hasta la conciencia y limpiarla hasta que pueda sentir que toda mancha es removida. «…purificados los corazones de mala conciencia» (Heb.10:22)"
-                />
-              </Card>
-            </Col>
+          <h2>Mensajes recientes</h2>
+          <Row gutter={16} justify="center" align={'middle'}>
+            {videoList.length > 0 && generateVideoItemList(videoList)}
           </Row>
         </div>
+        <Modal
+          wrapClassName={styles.VideoModal}
+          bodyStyle={{ background: '#000', padding: '0' }}
+          visible={isModalVideoVisible}
+          footer={false}
+          onOk={() => handleVideoModal(false)}
+          onCancel={() => handleVideoModal(false)}
+        >
+          <div className={styles.youtubeWrapper}>
+            <iframe
+              title=""
+              width="100%"
+              height="380"
+              src={`https://www.youtube.com/embed/${currentVideo}`}
+              frameBorder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </Modal>
       </div>
     </div>
   );
