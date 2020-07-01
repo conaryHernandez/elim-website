@@ -41,7 +41,7 @@ export default function Worship() {
         <div className="container">
           <Row align="middle" justify="center">
             <Col xs={24}>
-              <strong className={styles.availableCD}>Ya diponibles!</strong>
+              <strong className={styles.availableCD}>Ya disponibles!</strong>
             </Col>
 
             <Col xs={24} sm={6} lg={{ span: 6, offset: 6 }}>
@@ -63,21 +63,40 @@ export default function Worship() {
             </Col>
 
             <div className={styles.platformsWrapper}>
-              <img
-                className={styles.platformLogo}
-                src={`${cdnPath}/v2/images/central/worship/youtube-white.png`}
-                alt="Youtube Logo"
-              />
-              <img
-                className={styles.platformLogo}
-                src={`${cdnPath}/v2/images/central/worship/spotify-white.png`}
-                alt="Spotify"
-              />
-              <img
-                className={styles.platformLogo}
-                src={`${cdnPath}/v2/images/central/worship/amazon.png`}
-                alt="Amazon"
-              />
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://www.youtube.com/channel/UC7Ukk_VOwRJEvyNzlu4ckCQ"
+              >
+                <img
+                  className={styles.platformLogo}
+                  src={`${cdnPath}/v2/images/central/worship/youtube-white.png`}
+                  alt="Youtube Logo"
+                />
+              </a>
+
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://open.spotify.com/artist/52eZu145B7h27z3jFHifgk?si=aW6n0AiNT-ugQmn7ExCzxg"
+              >
+                <img
+                  className={styles.platformLogo}
+                  src={`${cdnPath}/v2/images/central/worship/spotify-white.png`}
+                  alt="Spotify"
+                />
+              </a>
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://music.amazon.com/artists/B087V87KVM?tab=CATALOG"
+              >
+                <img
+                  className={styles.platformLogo}
+                  src={`${cdnPath}/v2/images/central/worship/amazon.png`}
+                  alt="Amazon"
+                />
+              </a>
             </div>
           </Row>
         </div>
@@ -97,6 +116,60 @@ export default function Worship() {
             honra y toda Gloria, el Rey de reyes y Señor de señores.
           </p>
         </div>
+      </div>
+
+      <div className={styles.gallery}>
+        <Row>
+          <Col xs={24} sm={8} lg={6}>
+            <img
+              src={`${cdnPath}/v2/images/central/worship/elim-central-guitarrista.jpg`}
+              alt="Elim central guitarrista"
+            />
+          </Col>
+          <Col xs={24} sm={8} lg={6}>
+            <img
+              src={`${cdnPath}/v2/images/central/worship/elim-central-baterista.jpg`}
+              alt="Elim central baterista"
+            />
+          </Col>
+
+          <Col xs={24} sm={8} lg={6}>
+            <img
+              src={`${cdnPath}/v2/images/central/worship/elim-central-director-marvin.jpg`}
+              alt="Elim central director marvin"
+            />
+          </Col>
+          <Col xs={24} sm={8} lg={6}>
+            <img
+              src={`${cdnPath}/v2/images/central/worship/elim-central-director-irma.jpg`}
+              alt="Alabanza Elim Central Irma"
+            />
+          </Col>
+          <Col xs={24} sm={8} lg={6}>
+            <img
+              src={`${cdnPath}/v2/images/central/worship/elim-central-voces.jpg`}
+              alt="Alabanza"
+            />
+          </Col>
+          <Col xs={24} sm={8} lg={6}>
+            <img
+              src={`${cdnPath}/v2/images/central/worship/elim-central-grupo-alabanza.jpg`}
+              alt="Alabanza"
+            />
+          </Col>
+          <Col xs={24} sm={8} lg={6}>
+            <img
+              src={`${cdnPath}/v2/images/central/worship/elim-central-vientos.jpg`}
+              alt="Elim central vientos"
+            />
+          </Col>
+          <Col xs={24} sm={8} lg={6}>
+            <img
+              src={`${cdnPath}/v2/images/central/worship/elim-central-voces-2.jpg`}
+              alt="Elim central Voces"
+            />
+          </Col>
+        </Row>
       </div>
     </div>
   );
