@@ -1,0 +1,19 @@
+@import './variables';
+
+.mainBanner {
+  height: 35rem;
+  @include respond-to(xlarge) {
+    height: 60rem;
+  }
+  @include respond-to(xxl) {
+    height: 70rem;
+  }
+  img {
+    width: 100%;
+    height: inherit;
+    object-fit: cover;
+  }
+}
+.section-title {
+  font: 800 4rem $font-raleway;
+}

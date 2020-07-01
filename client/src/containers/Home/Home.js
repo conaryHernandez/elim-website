@@ -124,10 +124,12 @@ const Home = () => {
                 <div className={classes.content}>
                   <h3>Alabanza</h3>
                   <p>
-                    Resourcing the body of Christ with fresh songs of worship.
+                    Inspirados por la palabra, nuestro equipo de alabanza ha
+                    compuesto hermosos cantos para glorificar el nombre de
+                    nuestro Dios.{' '}
                   </p>
                   <Link
-                    to="/"
+                    to="/alabanza"
                     className={`${classes.exploreLink} uppercase txt-center`}
                   >
                     Elim Central
@@ -146,7 +148,8 @@ const Home = () => {
                 <div className={classes.content}>
                   <h3>Prédicas</h3>
                   <p>
-                    Resourcing the body of Christ with fresh songs of worship.
+                    Múltiples prédicas de diversos pastores de la misión, para
+                    acompañarte en tu estudio continuo de la palabra.
                   </p>
                   <Link
                     to="/"
@@ -168,7 +171,8 @@ const Home = () => {
                 <div className={classes.content}>
                   <h3>Generosidad</h3>
                   <p>
-                    Resourcing the body of Christ with fresh songs of worship.
+                    Cada uno dé como propuso en su corazón, no con tristeza ni
+                    por obligación porque Dios ama al dador alegre.
                   </p>
                   <Link
                     to="/"

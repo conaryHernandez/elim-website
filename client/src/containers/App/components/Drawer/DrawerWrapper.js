@@ -11,6 +11,7 @@ import {
   HeartOutlined,
   ContactsOutlined,
   VideoCameraOutlined,
+  YoutubeOutlined,
 } from '@ant-design/icons';
 
 import elimWhiteLogo from '../../../../assets/img/home/logo-elim-white.png';
@@ -45,6 +46,11 @@ export default function DrawerWrapper(props) {
         <div className="drawer-item" onClick={closeDrawer}>
           <TeamOutlined />
           <Link to="/elim-central">Elim Central</Link>
+        </div>
+
+        <div className="drawer-item" onClick={closeDrawer}>
+          <YoutubeOutlined />
+          <Link to="/alabanza">Alabanza</Link>
         </div>
 
         <div className="drawer-item" onClick={closeDrawer}>

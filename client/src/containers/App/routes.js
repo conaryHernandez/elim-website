@@ -10,6 +10,7 @@ const Donations = lazy(() => import('../Donations/Donations'));
 const Live = lazy(() => import('../Live/Live'));
 const Mission = lazy(() => import('../Mission/Mission'));
 const Churches = lazy(() => import('../Mission/Churches'));
+const Worship = lazy(() => import('../Central/Worship'));
 
 const routes = [
   {
@@ -61,6 +62,11 @@ const routes = [
     exact: false,
     path: '/iglesias',
     component: Churches,
+  },
+  {
+    exact: false,
+    path: '/alabanza',
+    component: Worship,
   },
 ];
 

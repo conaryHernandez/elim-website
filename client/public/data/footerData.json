@@ -65,7 +65,8 @@
       "items": [
         {
           "id": "elim-1",
-          "label": "Alabanza"
+          "label": "Alabanza",
+          "link": "/alabanza"
         },
         {
           "id": "elim-2",

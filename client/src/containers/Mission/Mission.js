@@ -11,7 +11,7 @@ export default function Mission() {
 
   return (
     <div className={styles.Mission}>
-      <div className={styles.mainBanner}>
+      <div className="mainBanner">
         <img
           src={`${cdnPath}/v2/images/mission/directivos.jpg`}
           alt="Mission Banner"
