@@ -52,11 +52,13 @@ export default function Live() {
               handleVideoModal(true, video.snippet.resourceId.videoId)
             }
           >
-            <img
-              className="img-responsive"
-              src={video.snippet.thumbnails.medium.url}
-              alt={video.snippet.title}
-            />
+            <div className={styles.imageWrapper}>
+              <img
+                src={video.snippet.thumbnails.maxres.url}
+                alt={video.snippet.title}
+              />
+            </div>
+
             <strong className={styles.videoTitle}>{video.snippet.title}</strong>
             <strong className={styles.videoDesc}>
               {desc[0].includes('Pagina') ? '' : desc[0]}
@@ -91,7 +93,7 @@ export default function Live() {
           ></iframe>
         </div>
         <div className={styles.recentMessages}>
-          <h2>Mensajes recientes</h2>
+          <h2>Videos recientes</h2>
           <Row gutter={16} justify="center" align={'middle'}>
             {videoList.length > 0 && generateVideoItemList(videoList)}
           </Row>
