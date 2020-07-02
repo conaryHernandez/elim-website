@@ -69,9 +69,11 @@ export default function Header() {
             }
           >
             <Menu.Item key="alabanza">
-              <Link to="alabanza">Alabanza</Link>
+              <Link to="/alabanza">Alabanza</Link>
             </Menu.Item>
-            <Menu.Item key="escuela">Escuela Bíblica</Menu.Item>
+            <Menu.Item key="escuela">
+              <Link to="/escuela-biblica">Escuela Bíblica</Link>
+            </Menu.Item>
             <Menu.Item key="damas">Damas</Menu.Item>
             <Menu.Item key="youth">Jóvenes</Menu.Item>
             <Menu.Item key="servidores">Ujieres</Menu.Item>

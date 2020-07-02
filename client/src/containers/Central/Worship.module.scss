@@ -83,8 +83,17 @@
     }
   }
   .gallery {
+    padding-bottom: 5rem;
+    @include respond-to-max(large) {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
     img {
       width: 100%;
+
+      @include respond-to-max(large) {
+        margin-bottom: 0.5rem;
+      }
     }
   }
 }

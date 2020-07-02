@@ -1,0 +1,51 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.kids {
+  .intro {
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    text-align: center;
+    h1 {
+      font-size: 3.5rem;
+    }
+    p {
+      font: 500 1.6rem/3.2rem $font-openSans;
+    }
+  }
+  .kidsVerse {
+    background-color: #c52184;
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+    text-align: center;
+    h2 {
+      color: #fff;
+    }
+    p {
+      font: 400 1.8rem/3.2rem $font-openSans;
+      max-width: 59rem;
+      margin: 0 auto;
+      text-align: center;
+      color: #fff;
+
+      @include respond-to(xlarge) {
+        max-width: 69rem;
+      }
+    }
+  }
+  .kidsSlider {
+    padding-bottom: 9rem;
+    padding-top: 1rem;
+    .slide {
+      width: 60rem;
+      img {
+        width: 100%;
+        margin: 0 auto;
+
+        @include respond-to(xlarge) {
+          width: 90%;
+        }
+      }
+    }
+  }
+}

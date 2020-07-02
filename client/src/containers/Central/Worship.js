@@ -12,7 +12,7 @@ export default function Worship() {
       <div className="mainBanner">
         <img
           src={`${cdnPath}/v2/images/central/worship/grupo-alabanza-bg.jpg`}
-          alt="Mission Banner"
+          alt="Grupo de Alabanza Elim Honduras"
         />
       </div>
       <div className="container">
@@ -65,7 +65,7 @@ export default function Worship() {
             <div className={styles.platformsWrapper}>
               <a
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 href="https://www.youtube.com/channel/UC7Ukk_VOwRJEvyNzlu4ckCQ"
               >
                 <img
@@ -77,7 +77,7 @@ export default function Worship() {
 
               <a
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 href="https://open.spotify.com/artist/52eZu145B7h27z3jFHifgk?si=aW6n0AiNT-ugQmn7ExCzxg"
               >
                 <img
@@ -88,7 +88,7 @@ export default function Worship() {
               </a>
               <a
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 href="https://music.amazon.com/artists/B087V87KVM?tab=CATALOG"
               >
                 <img
