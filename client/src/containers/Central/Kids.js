@@ -56,8 +56,30 @@ export default function Kids() {
         </div>
       </div>
 
+      <div className={`${styles.kidsTeam} section-paddings`}>
+        <div className="container">
+          <h2>Nuestro Equipo</h2>
+          <p>
+            Formado por aproximadamente 40 Maestros y Ayudas, a quienes el
+            dinamismo, pasión y entrega al Servicio del Señor les caracterizan,
+            este grupo de personas desarrolla: La Escuela Bíblica Dominical, El
+            Culto Infantil ViVi de los días viernes por la Noche, así como
+            Campamentos Infantiles entre otras.
+          </p>
+          <a
+            className="regular-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.facebook.com/ebehonduras"
+          >
+            Síguenos en facebook
+          </a>
+        </div>
+      </div>
+
       <div className={styles.kidsSlider}>
         <div className="container">
+          <h3 className="section-title">Instruye al niño en su camino</h3>
           <Slider {...settings}>
             <div className={styles.slide}>
               <img

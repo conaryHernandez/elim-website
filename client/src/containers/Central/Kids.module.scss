@@ -33,9 +33,30 @@
       }
     }
   }
+  .kidsTeam {
+    padding-top: 6rem;
+    background-color: #f9e900;
+    text-align: center;
+    h2 {
+      font: 800 3.5rem $font-raleway;
+      margin-bottom: 3rem;
+    }
+    p {
+      margin-bottom: 5rem;
+    }
+    a {
+      padding: 1.5rem 2rem;
+      color: #000;
+    }
+  }
   .kidsSlider {
     padding-bottom: 9rem;
-    padding-top: 1rem;
+    padding-top: 5rem;
+    h3 {
+      text-align: center;
+      margin-bottom: 4rem;
+      color: #000;
+    }
     .slide {
       width: 60rem;
       img {
