@@ -56,7 +56,7 @@ export default function DrawerWrapper(props) {
 
         <div className="drawer-item" onClick={closeDrawer}>
           <QqOutlined />
-          <Link to="/escuela-biblica">Elim Kids</Link>
+          <Link to="/escuela-biblica">Escuela Biblica</Link>
         </div>
 
         <div className="drawer-item" onClick={closeDrawer}>

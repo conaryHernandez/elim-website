@@ -1,5 +1,10 @@
 @import './variables';
 
+a {
+  &:hover {
+    opacity: 0.8;
+  }
+}
 .mainBanner {
   height: 35rem;
   @include respond-to(xlarge) {

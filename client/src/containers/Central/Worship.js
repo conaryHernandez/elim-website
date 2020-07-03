@@ -54,10 +54,10 @@ export default function Worship() {
             </Col>
 
             <Col xs={24} sm={11} lg={{ span: 11, offset: 1 }}>
-              <div className={styles.diskItem}>
+              <div className={`${styles.diskItem} ${styles.venidAclamemos}`}>
                 <img
                   src={`${cdnPath}/v2/images/central/worship/venid-aclamemos-cd.png`}
-                  alt="Frutos CD"
+                  alt="Venid aclamemos CD"
                 />
               </div>
             </Col>

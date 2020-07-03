@@ -19,7 +19,7 @@ export default function Mission() {
       </div>
       <div className="container">
         <div className={styles.beliefs}>
-          <h1 className="txt-center">¿En qué creemos?</h1>
+          <h1 className="txt-center section-title">¿En qué creemos?</h1>
           <Row justify="center">
             <Col xs={24} md={16}>
               <p>
@@ -48,7 +48,7 @@ export default function Mission() {
         </h2>
       </div>
       <div className={`${styles.ourPastor} container`}>
-        <h3>Nuestro pastor</h3>
+        <h3 className="section-title">Nuestro pastor</h3>
         <Row justify="center" align="middle">
           <Col xs={24} md={12}>
             <p>

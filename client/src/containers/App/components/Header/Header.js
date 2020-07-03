@@ -75,7 +75,9 @@ export default function Header() {
               <Link to="/escuela-biblica">Escuela Bíblica</Link>
             </Menu.Item>
             <Menu.Item key="damas">Damas</Menu.Item>
-            <Menu.Item key="youth">Jóvenes</Menu.Item>
+            <Menu.Item key="youth">
+              <Link to="/jovenes-elim">Jóvenes</Link>
+            </Menu.Item>
             <Menu.Item key="servidores">Ujieres</Menu.Item>
           </SubMenu>
 

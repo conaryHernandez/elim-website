@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './Kids.module.scss';
+import { Link } from 'react-router-dom';
 import { cdnPath } from '../../constants';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.scss';
@@ -25,6 +26,9 @@ const settings = {
 };
 
 export default function Kids() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className={styles.kids}>
       <div className="mainBanner">
@@ -108,6 +112,9 @@ export default function Kids() {
               />
             </div>
           </Slider>
+          <Link className="regular-btn" to="/escuela-biblica-lecciones">
+            Ver lecciones
+          </Link>
         </div>
       </div>
 
@@ -118,6 +125,7 @@ export default function Kids() {
             Dejad a los niños venir a mí, y no se lo impidáis; porque de los
             tales es el reino de los cielos.
           </p>
+          <strong className={styles.cite}>Mateo 19:14</strong>
         </div>
       </div>
     </div>

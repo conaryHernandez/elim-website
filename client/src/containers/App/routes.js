@@ -12,6 +12,7 @@ const Mission = lazy(() => import('../Mission/Mission'));
 const Churches = lazy(() => import('../Mission/Churches'));
 const Worship = lazy(() => import('../Central/Worship'));
 const Kids = lazy(() => import('../Central/Kids'));
+const Youth = lazy(() => import('../Central/Youth'));
 
 const routes = [
   {
@@ -73,6 +74,11 @@ const routes = [
     exact: false,
     path: '/escuela-biblica',
     component: Kids,
+  },
+  {
+    exact: false,
+    path: '/jovenes-elim',
+    component: Youth,
   },
 ];
 
