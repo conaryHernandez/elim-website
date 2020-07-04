@@ -1,15 +1,16 @@
 {
   "specialLinks": [
     {
+      "id": "special-2",
+      "label": "Iglesias",
+      "link": "/iglesias"
+    },
+    {
       "id": "special-1",
       "label": "Contacto",
       "link": "/contact"
     },
-    {
-      "id": "special-2",
-      "label": "Usuarios Elim",
-      "link": "#"
-    },
+
     {
       "id": "special-3",
       "label": "Mapa",
@@ -23,14 +24,20 @@
       "link": "https://www.facebook.com/elimhonduras/"
     },
     {
-      "id": "network-2",
-      "name": "instagram",
-      "link": "https://www.instagram.com/elimhonduras/"
-    },
-    {
       "id": "network-3",
       "name": "twitter",
       "link": "https://twitter.com/elimhonduras"
+    },
+    {
+      "id": "network-4",
+      "name": "youtube",
+      "link": "https://www.youtube.com/channel/UCLabTb6ZU_MtZf1KG8chE2A"
+    },
+
+    {
+      "id": "network-2",
+      "name": "instagram",
+      "link": "https://www.instagram.com/elimhonduras/"
     }
   ],
   "location": {
@@ -46,14 +53,7 @@
           "label": "Misión Cristiana Elim",
           "link": "/mision-elim-honduras"
         },
-        {
-          "id": "inicio-2",
-          "label": "Huellas del Pasado"
-        },
-        {
-          "id": "inicio-3",
-          "label": "En que creemos"
-        },
+
         {
           "id": "inicio-4",
           "label": "Calendario"
@@ -79,7 +79,7 @@
         },
         {
           "id": "elim-4",
-          "label": "Jovenes",
+          "label": "Jóvenes",
           "link": "/jovenes-elim"
         },
         {
@@ -97,7 +97,8 @@
         },
         {
           "id": "multimedia-2",
-          "label": "Lecciones"
+          "label": "En vivo",
+          "link": "/elim-live"
         },
         {
           "id": "multimedia-3",

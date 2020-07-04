@@ -1,15 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import { Menu, Affix } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
 import Drawer from '../Drawer/DrawerWrapper';
 import logo from '../../../../assets/img/home/elim-logo-blue.png';
+import SocialBar from '../../../../components/SocialBar/SocialBar';
 
 const { SubMenu } = Menu;
 
 export default function Header() {
   const [currentOption, setCurrentOption] = useState([]);
   const [isDrawerVisible, setIsDrawerVisible] = useState(false);
+  const [footerData, setFooterData] = useState({});
+
+  useEffect(() => {
+    async function getFooterData() {
+      try {
+        const response = await axios.get('data/footerData.json');
+
+        setFooterData(response.data);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    getFooterData();
+  }, []);
 
   const showDrawer = () => {
     setIsDrawerVisible(true);
@@ -33,6 +49,10 @@ export default function Header() {
       <Link to="/">
         <img src={logo} className="header-logo ib" alt="Elim Logo" />
       </Link>
+      <SocialBar
+        className="socialBar hidden-large-down"
+        networks={footerData.socialNetworks}
+      />
       <Affix offsetTop={0}>
         <Menu
           onClick={handleClick}

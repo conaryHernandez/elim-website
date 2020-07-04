@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Row, Select } from 'antd';
 import styles from './Churches.module.scss';
 import logo from '../../assets/img/home/elim-logo-2.png';
@@ -11,6 +11,10 @@ export default function Churches() {
 
   const [churchesData, setChurches] = useState(churches);
   const [filteredChurches, setFilteredChurches] = useState(churchesData);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const onDepartamentChange = (value) => {
     if (value === 'all') {

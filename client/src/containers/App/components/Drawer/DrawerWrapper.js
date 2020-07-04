@@ -13,6 +13,7 @@ import {
   VideoCameraOutlined,
   YoutubeOutlined,
   QqOutlined,
+  LikeOutlined,
 } from '@ant-design/icons';
 
 import elimWhiteLogo from '../../../../assets/img/home/logo-elim-white.png';
@@ -33,49 +34,76 @@ export default function DrawerWrapper(props) {
         visible={props.isDrawerVisible}
       >
         <div className="drawer-item" onClick={closeDrawer}>
-          <HomeOutlined />
-          <Link to="/">Inicio</Link>
+          <Link to="/">
+            <HomeOutlined />
+            Inicio
+          </Link>
         </div>
         <div className="drawer-item" onClick={closeDrawer}>
-          <VideoCameraOutlined />
-          <Link to="/elim-live">En vivo</Link>
+          <Link to="/elim-live">
+            <VideoCameraOutlined />
+            En vivo
+          </Link>
         </div>
         <div className="drawer-item" onClick={closeDrawer}>
-          <UsergroupAddOutlined />
-          <Link to="/mision-elim-honduras">Misión Cristiana Elim</Link>
+          <Link to="/mision-elim-honduras">
+            <UsergroupAddOutlined />
+            Misión Cristiana Elim
+          </Link>
         </div>
         <div className="drawer-item" onClick={closeDrawer}>
-          <TeamOutlined />
-          <Link to="/elim-central">Elim Central</Link>
-        </div>
-
-        <div className="drawer-item" onClick={closeDrawer}>
-          <YoutubeOutlined />
-          <Link to="/alabanza">Alabanza</Link>
-        </div>
-
-        <div className="drawer-item" onClick={closeDrawer}>
-          <QqOutlined />
-          <Link to="/escuela-biblica">Escuela Biblica</Link>
+          <Link to="/elim-central">
+            <TeamOutlined />
+            Elim Central
+          </Link>
         </div>
 
         <div className="drawer-item" onClick={closeDrawer}>
-          <CalendarOutlined />
-          <Link to="/calendario">Calendario</Link>
+          <Link to="/alabanza">
+            <YoutubeOutlined />
+            Alabanza
+          </Link>
         </div>
 
         <div className="drawer-item" onClick={closeDrawer}>
-          <BookOutlined />
-          <Link to="/calendario">Prédicas</Link>
+          <Link to="/escuela-biblica">
+            <QqOutlined />
+            Escuela Biblica
+          </Link>
         </div>
 
         <div className="drawer-item" onClick={closeDrawer}>
-          <HeartOutlined />
-          <Link to="/corazones-generosos">Corazones Generosos</Link>
+          <Link to="/jovenes-elim">
+            <LikeOutlined />
+            Jóvenes Elim
+          </Link>
+        </div>
+
+        <div className="drawer-item" onClick={closeDrawer}>
+          <Link to="/calendario">
+            <CalendarOutlined />
+            Calendario
+          </Link>
+        </div>
+
+        <div className="drawer-item" onClick={closeDrawer}>
+          <Link to="/calendario">
+            <BookOutlined />
+            Prédicas
+          </Link>
+        </div>
+
+        <div className="drawer-item" onClick={closeDrawer}>
+          <Link to="/corazones-generosos">
+            <HeartOutlined />
+            Corazones Generosos
+          </Link>
         </div>
         <div className="drawer-item" onClick={closeDrawer}>
-          <ContactsOutlined />
-          <Link to="/contact">Contacto</Link>
+          <Link to="/contact">
+            <ContactsOutlined />
+            Contacto
+          </Link>
         </div>
       </Drawer>
     </div>

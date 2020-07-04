@@ -10,6 +10,8 @@ import 'slick-carousel/slick/slick-theme.css';
 
 const settings = {
   dots: true,
+  autoplay: true,
+  autoplaySpeed: 4000,
   infinite: true,
   slidesToShow: 3,
   slidesToScroll: 1,
@@ -53,7 +55,7 @@ export default function Youth() {
   const generateActivitiesSlides = (activities) => {
     return activities.map((activity, index) => {
       return (
-        <div className="slider-item">
+        <div key={index} className="slider-item">
           <div className="slider-item-inner">
             <img
               src={`${cdnPath}${activity.imgURL}`}
@@ -130,21 +132,6 @@ export default function Youth() {
           </Col>
         </Row>
       </div>
-      <div className={`${styles.vision} section-gray`}>
-        <div className="container">
-          <h2 className="section-title">Vision</h2>
-          <p>
-            Es nuestro anhelo que los jóvenes sean llenos del Espíritu Santo,
-            que experimenten y disfruten el amor de Dios no como una religión,
-            sino como una constante vivencia personal y voluntaria que los
-            conduzca al cumplimiento del diseño y plan de Dios para sus vidas.
-          </p>
-        </div>
-      </div>
-      <div className={`${styles.activitiesSlider} section-gray`}>
-        <h3 className="section-title">Campamentos</h3>
-        <Slider {...settings}>{generateActivitiesSlides(activities)}</Slider>
-      </div>
 
       <div className={styles.presidentMessage}>
         <div className="container">
@@ -165,6 +152,21 @@ export default function Youth() {
               </p>
             </Col>
           </Row>
+        </div>
+      </div>
+      <div className={`${styles.activitiesSlider} section-gray`}>
+        <h3 className="section-title">Campamentos</h3>
+        <Slider {...settings}>{generateActivitiesSlides(activities)}</Slider>
+      </div>
+      <div className={`${styles.vision} section-gray`}>
+        <div className="container">
+          <h2 className="section-title">Vision</h2>
+          <p>
+            Es nuestro anhelo que los jóvenes sean llenos del Espíritu Santo,
+            que experimenten y disfruten el amor de Dios no como una religión,
+            sino como una constante vivencia personal y voluntaria que los
+            conduzca al cumplimiento del diseño y plan de Dios para sus vidas.
+          </p>
         </div>
       </div>
     </div>
