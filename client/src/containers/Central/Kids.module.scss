@@ -2,6 +2,11 @@
 @import '../../styles/mixins';
 
 .kids {
+  a {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
   .intro {
     padding-top: 5rem;
     padding-bottom: 2rem;

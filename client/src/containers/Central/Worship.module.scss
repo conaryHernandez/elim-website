@@ -50,7 +50,7 @@
       &.venidAclamemos {
         @include respond-to-max(xs-max) {
           margin-top: 2rem;
-          transform: scale(1.3);
+          // transform: scale(1.3);
         }
       }
     }
