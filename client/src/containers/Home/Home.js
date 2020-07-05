@@ -133,9 +133,11 @@ const Home = () => {
                     compuesto hermosos cantos para glorificar a Dios.
                   </p>
                   <Link
-                    onClick={trackButtonEvents(
-                      'Presionó el botón de alabanza en Inicio'
-                    )}
+                    onClick={() =>
+                      trackButtonEvents(
+                        'Presionó el botón de alabanza en Inicio'
+                      )
+                    }
                     to="/alabanza"
                     className={`${classes.exploreLink} uppercase txt-center`}
                   >
@@ -182,9 +184,11 @@ const Home = () => {
                     por obligación porque Dios ama al dador alegre.
                   </p>
                   <Link
-                    onClick={trackButtonEvents(
-                      'Presionó el botón de Generosidad en Inicio'
-                    )}
+                    onClick={() =>
+                      trackButtonEvents(
+                        'Presionó el botón de Generosidad en Inicio'
+                      )
+                    }
                     to="/corazones-generosos"
                     className={`${classes.exploreLink} uppercase txt-center`}
                   >
@@ -219,9 +223,9 @@ const Home = () => {
             anuncios por medio de la antesala.
           </p>
           <Link
-            onClick={trackButtonEvents(
-              'Presionó el botón de Elim live en inicio'
-            )}
+            onClick={() =>
+              trackButtonEvents('Presionó el botón de Elim live en inicio')
+            }
             to="/elim-live"
             className={`${classes.goLiveBtn} regular-btn uppercase txt-center`}
           >
