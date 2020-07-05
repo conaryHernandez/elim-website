@@ -125,8 +125,7 @@ const Home = () => {
                   <h3>Alabanza</h3>
                   <p>
                     Inspirados por la palabra, nuestro equipo de alabanza ha
-                    compuesto hermosos cantos para glorificar el nombre de
-                    nuestro Dios.{' '}
+                    compuesto hermosos cantos para glorificar a Dios.
                   </p>
                   <Link
                     to="/alabanza"
@@ -152,7 +151,7 @@ const Home = () => {
                     acompañarte en tu estudio continuo de la palabra.
                   </p>
                   <Link
-                    to="/"
+                    to="/elim-live"
                     className={`${classes.exploreLink} uppercase txt-center`}
                   >
                     Ver libreria
@@ -165,7 +164,7 @@ const Home = () => {
               <div className={classes.exploreCard}>
                 <img
                   className="img-responsive"
-                  src={`${cdnPath}/v2/images/home/generosidad.jpg`}
+                  src={`${cdnPath}/v2/images/home/generosos.png`}
                   alt="generosidad"
                 />
                 <div className={classes.content}>
@@ -175,7 +174,7 @@ const Home = () => {
                     por obligación porque Dios ama al dador alegre.
                   </p>
                   <Link
-                    to="/"
+                    to="/corazones-generosos"
                     className={`${classes.exploreLink} uppercase txt-center`}
                   >
                     Información
@@ -186,26 +185,7 @@ const Home = () => {
           </Row>
         </div>
       </div>
-      <div className={`${classes.channels} ${classes.sectionPaddings}`}>
-        <div className="container">
-          <span className={classes.title}>Sigue nuestras transmisiones</span>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Reiciendis, omnis non. Ipsa tempora libero, iusto quia quis
-            perspiciatis unde voluptatem voluptates distinctio repellendus
-            eligendi sapiente, sequi animi? Praesentium eveniet ipsam atque
-            repellendus nobis rerum unde voluptate, at perspiciatis! Tempora
-            perferendis quae eos natus voluptatem similique eligendi sequi autem
-            omnis laudantium.
-          </p>
-          <Link
-            to="/elim-live"
-            className={`${classes.goLiveBtn} regular-btn uppercase txt-center`}
-          >
-            Elim Live
-          </Link>
-        </div>
-      </div>
+
       <div className={`${classes.servicesSchedule} ${classes.sectionPaddings}`}>
         <h2>Horarios de culto</h2>
         <Row
@@ -217,7 +197,25 @@ const Home = () => {
           {generateSchedulesItemList(schedules)}
         </Row>
       </div>
-      <div className={`${classes.oracionWrapper} container`}>
+
+      <div className={`${classes.channels} ${classes.sectionPaddings}`}>
+        <div className="container">
+          <span className={classes.title}>Sigue nuestras transmisiones</span>
+          <p>
+            Acompáñanos en todos nuestros cultos en línea donde a la luz de la
+            palabra seremos edificados por el Dios Todopoderoso. También
+            compartiremos un tiempo de alabanza justo después de dar los
+            anuncios por medio de la antesala.
+          </p>
+          <Link
+            to="/elim-live"
+            className={`${classes.goLiveBtn} regular-btn uppercase txt-center`}
+          >
+            Elim Live
+          </Link>
+        </div>
+      </div>
+      {/* <div className={`${classes.oracionWrapper} container`}>
         <div className={classes.titleWrapper}>
           <h3>Queremos orar por ti!</h3>
           <strong>La oración eficaz del justo puede mucho</strong>
@@ -276,7 +274,7 @@ const Home = () => {
             </Button>
           </Form.Item>
         </Form>
-      </div>
+      </div> */}
     </div>
   );
 };

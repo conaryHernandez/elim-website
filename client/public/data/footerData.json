@@ -52,11 +52,6 @@
           "id": "inicio-1",
           "label": "Misión Cristiana Elim",
           "link": "/mision-elim-honduras"
-        },
-
-        {
-          "id": "inicio-4",
-          "label": "Calendario"
         }
       ]
     },
@@ -73,18 +68,11 @@
           "label": "Escuela Bíblica",
           "link": "/escuela-biblica"
         },
-        {
-          "id": "elim-3",
-          "label": "Damas"
-        },
+
         {
           "id": "elim-4",
           "label": "Jóvenes",
           "link": "/jovenes-elim"
-        },
-        {
-          "id": "elim-5",
-          "label": "Ujieres"
         }
       ]
     },
@@ -92,17 +80,9 @@
       "title": "multimedia",
       "items": [
         {
-          "id": "multimedia-1",
-          "label": "Enseñanzas y Prédicas"
-        },
-        {
           "id": "multimedia-2",
           "label": "En vivo",
           "link": "/elim-live"
-        },
-        {
-          "id": "multimedia-3",
-          "label": "Series"
         }
       ]
     },
@@ -111,11 +91,13 @@
       "items": [
         {
           "id": "corazones-1",
-          "label": "Donación Misión Elim Central"
+          "label": "Donación Misión Elim Central",
+          "link": "/corazones-generosos"
         },
         {
           "id": "corazones-2",
-          "label": "Donación Elim Central"
+          "label": "Donación Elim Central",
+          "link": "/corazones-generosos"
         }
       ]
     }

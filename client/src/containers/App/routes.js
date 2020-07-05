@@ -10,6 +10,7 @@ const Donations = lazy(() => import('../Donations/Donations'));
 const Live = lazy(() => import('../Live/Live'));
 const Mission = lazy(() => import('../Mission/Mission'));
 const Churches = lazy(() => import('../Mission/Churches'));
+const Central = lazy(() => import('../Central/Central'));
 const Worship = lazy(() => import('../Central/Worship'));
 const Kids = lazy(() => import('../Central/Kids'));
 const Youth = lazy(() => import('../Central/Youth'));
@@ -42,7 +43,7 @@ const routes = [
   },
   {
     exact: false,
-    path: '/donations',
+    path: '/corazones-generosos',
     component: Donations,
   },
   {
@@ -79,6 +80,11 @@ const routes = [
     exact: false,
     path: '/jovenes-elim',
     component: Youth,
+  },
+  {
+    exact: false,
+    path: '/elim-central',
+    component: Central,
   },
 ];
 

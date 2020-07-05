@@ -75,7 +75,6 @@ export default function Header() {
               </span>
             }
           >
-            <Menu.Item key="huellas">Huellas del pasado</Menu.Item>
             <Menu.Item key="churches">
               <Link to="/iglesias">Iglesias</Link>
             </Menu.Item>
@@ -94,14 +93,14 @@ export default function Header() {
             <Menu.Item key="escuela">
               <Link to="/escuela-biblica">Escuela Bíblica</Link>
             </Menu.Item>
-            <Menu.Item key="damas">Damas</Menu.Item>
+            {/* <Menu.Item key="damas">Damas</Menu.Item> */}
             <Menu.Item key="youth">
               <Link to="/jovenes-elim">Jóvenes</Link>
             </Menu.Item>
-            <Menu.Item key="servidores">Ujieres</Menu.Item>
+            {/* <Menu.Item key="servidores">Ujieres</Menu.Item> */}
           </SubMenu>
 
-          <SubMenu
+          {/*          <SubMenu
             title={
               <span className="submenu-title-wrapper">
                 <Link to="/calendario">Calendario</Link>
@@ -111,9 +110,13 @@ export default function Header() {
             <Menu.Item key="events">
               <Link to="/eventos">Eventos</Link>
             </Menu.Item>
-          </SubMenu>
+          </SubMenu> */}
 
-          <SubMenu
+          <Menu.Item key="contact">
+            <Link to="/corazones-generosos">Corazones generosos</Link>
+          </Menu.Item>
+
+          {/* <SubMenu
             title={
               <span className="submenu-title-wrapper">
                 <Link to="/corazones-generosos">Corazones generosos</Link>
@@ -122,15 +125,15 @@ export default function Header() {
           >
             <Menu.Item key="donacion-mce">Donación Misión Elim</Menu.Item>
             <Menu.Item key="donacion-central">Donación Elim Central</Menu.Item>
-          </SubMenu>
+          </SubMenu> */}
 
           <Menu.Item key="contact">
             <Link to="/contact">Contacto</Link>
           </Menu.Item>
 
-          <Menu.Item key="users">
+          {/* <Menu.Item key="users">
             <Link to="/users">Prédicas</Link>
-          </Menu.Item>
+          </Menu.Item> */}
         </Menu>
       </Affix>
     </div>

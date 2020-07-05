@@ -79,7 +79,7 @@ export default function DrawerWrapper(props) {
           </Link>
         </div>
 
-        <div className="drawer-item" onClick={closeDrawer}>
+        {/* <div className="drawer-item" onClick={closeDrawer}>
           <Link to="/calendario">
             <CalendarOutlined />
             Calendario
@@ -91,7 +91,7 @@ export default function DrawerWrapper(props) {
             <BookOutlined />
             Prédicas
           </Link>
-        </div>
+        </div> */}
 
         <div className="drawer-item" onClick={closeDrawer}>
           <Link to="/corazones-generosos">
