@@ -4,9 +4,17 @@
 .Mission {
   .beliefs {
     padding-top: 4rem;
+    padding-bottom: 7rem;
+    text-align: center;
 
     h1 {
       margin-bottom: 2rem;
+    }
+    a {
+      padding: 1rem 3rem;
+      position: relative;
+      top: 2rem;
+      color: #000;
     }
   }
 

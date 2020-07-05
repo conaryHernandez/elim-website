@@ -35,8 +35,10 @@ export default function Mission() {
               </p>
             </Col>
           </Row>
+          <Link className="regular-btn" to="/iglesias">
+            Ver iglesias
+          </Link>
         </div>
-        <Link to="/iglesias">Ver iglesias</Link>
       </div>
       <div className={styles.sloganWrapper}>
         <img

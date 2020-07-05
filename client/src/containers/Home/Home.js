@@ -10,6 +10,7 @@ import { CheckCircleTwoTone } from '@ant-design/icons';
 import { cdnPath } from '../../constants';
 import { pastorMessageOne, pastorMessageTwo } from './data';
 import parse from 'html-react-parser';
+import ReactGA from 'react-ga';
 
 const settings = {
   showThumbs: false,
@@ -54,6 +55,12 @@ const Home = () => {
       <ScheduleItem key={index} scheduleData={schedule} />
     ));
   };
+  const trackButtonEvents = (action = '') => {
+    ReactGA.event({
+      category: 'Button',
+      action: action,
+    });
+  };
 
   return (
     <div className={classes.Home}>
@@ -61,13 +68,6 @@ const Home = () => {
       <div className="container">
         <div className={classes.pastorMessage}>
           <Row type="flex" justify="space-around" align="middle">
-            {/* <Col xs={24} md={10} lg={8} className="txt-center">
-              <img
-                className={classes.pastorAvatar}
-                src={`${cdnPath}/v2/images/home/dr-rafael-ismael.png`}
-                alt="Pastor Ismael Paz"
-              />
-            </Col> */}
             <Col xs={24} md={16}>
               <h1>Palabras de Vida</h1>
               <p className={classes.introText}>
@@ -84,7 +84,12 @@ const Home = () => {
               <span className={classes.quoteBy}>-Pastor Ismael Paz</span>
 
               <button
-                onClick={() => setIsMessageModalVisible(true)}
+                onClick={() => {
+                  trackButtonEvents(
+                    'Presionó leer mas mensaje del pastor en inicio'
+                  );
+                  setIsMessageModalVisible(true);
+                }}
                 className={`${classes.readMore} regular-btn uppercase txt-center`}
               >
                 Leer más
@@ -128,6 +133,9 @@ const Home = () => {
                     compuesto hermosos cantos para glorificar a Dios.
                   </p>
                   <Link
+                    onClick={trackButtonEvents(
+                      'Presionó el botón de alabanza en Inicio'
+                    )}
                     to="/alabanza"
                     className={`${classes.exploreLink} uppercase txt-center`}
                   >
@@ -174,6 +182,9 @@ const Home = () => {
                     por obligación porque Dios ama al dador alegre.
                   </p>
                   <Link
+                    onClick={trackButtonEvents(
+                      'Presionó el botón de Generosidad en Inicio'
+                    )}
                     to="/corazones-generosos"
                     className={`${classes.exploreLink} uppercase txt-center`}
                   >
@@ -208,6 +219,9 @@ const Home = () => {
             anuncios por medio de la antesala.
           </p>
           <Link
+            onClick={trackButtonEvents(
+              'Presionó el botón de Elim live en inicio'
+            )}
             to="/elim-live"
             className={`${classes.goLiveBtn} regular-btn uppercase txt-center`}
           >

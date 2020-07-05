@@ -3,10 +3,17 @@ import AppNavigator from './AppRoutes';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import { Spin } from 'antd';
+import ReactGA from 'react-ga';
 
 function App(props) {
   const { hideLoader } = props;
   useEffect(() => hideLoader(), [hideLoader]);
+
+  useEffect(() => {
+    ReactGA.initialize('UA-171677704-1');
+    // To Report Page View
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  });
   return (
     <div className="App">
       <Header />

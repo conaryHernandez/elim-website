@@ -2,11 +2,18 @@ import React, { useEffect } from 'react';
 import styles from './Worship.module.scss';
 import { cdnPath } from '../../constants';
 import { Row, Col } from 'antd';
+import ReactGA from 'react-ga';
 
 export default function Worship() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const trackButtonEvents = (action = '') => {
+    ReactGA.event({
+      category: 'Button',
+      action: action,
+    });
+  };
   return (
     <div className={styles.Worship}>
       <div className="mainBanner">
@@ -64,6 +71,9 @@ export default function Worship() {
 
             <div className={styles.platformsWrapper}>
               <a
+                onClick={() =>
+                  trackButtonEvents('Presionó el link de Youtube en Alabanza')
+                }
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.youtube.com/channel/UC7Ukk_VOwRJEvyNzlu4ckCQ"
@@ -76,6 +86,9 @@ export default function Worship() {
               </a>
 
               <a
+                onClick={() =>
+                  trackButtonEvents('Presionó el link de Spotify en Alabanza')
+                }
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://open.spotify.com/artist/52eZu145B7h27z3jFHifgk?si=aW6n0AiNT-ugQmn7ExCzxg"
@@ -87,6 +100,9 @@ export default function Worship() {
                 />
               </a>
               <a
+                onClick={() =>
+                  trackButtonEvents('Presionó el link de Amazon en Alabanza')
+                }
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://music.amazon.com/artists/B087V87KVM?tab=CATALOG"

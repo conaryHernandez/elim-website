@@ -112,7 +112,7 @@ export default function Header() {
             </Menu.Item>
           </SubMenu> */}
 
-          <Menu.Item key="contact">
+          <Menu.Item key="generosos">
             <Link to="/corazones-generosos">Corazones generosos</Link>
           </Menu.Item>
 
