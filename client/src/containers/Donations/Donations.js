@@ -88,6 +88,10 @@ function Donations() {
                 <Select.Option value="proyeccion">
                   Proyección social
                 </Select.Option>
+                <Select.Option value="proTerreno">Pro terreno</Select.Option>
+                <Select.Option value="enfermosCOVID">
+                  Ayudas por Covid-19
+                </Select.Option>
               </Select>
             </Form.Item>
 

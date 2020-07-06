@@ -4,6 +4,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import { Spin } from 'antd';
 import ReactGA from 'react-ga';
+import { withRouter } from 'react-router-dom';
 
 function App(props) {
   const { hideLoader } = props;
@@ -12,7 +13,7 @@ function App(props) {
   useEffect(() => {
     ReactGA.initialize('UA-171677704-1');
     // To Report Page View
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    ReactGA.pageview(window.location.pathname);
   });
   return (
     <div className="App">
@@ -33,4 +34,4 @@ function App(props) {
   );
 }
 
-export default App;
+export default withRouter(App);

@@ -1,3 +1,5 @@
+@import '../../styles/variables';
+
 .donations {
   .introFidelidad {
     padding-top: 3rem;
@@ -15,6 +17,21 @@
       font-size: 2rem;
       text-align: center;
       margin-bottom: 3rem;
+    }
+  }
+  .paypalSuccess {
+    h1 {
+      font-size: 2rem;
+      text-align: center;
+    }
+    img {
+      width: 50%;
+      margin: 0 auto;
+    }
+    .successBtn {
+      padding: 0.7rem 2rem;
+      background: $secondary-color;
+      color: #fff;
     }
   }
 }

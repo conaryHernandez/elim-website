@@ -1,4 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
+import styles from './Donations.module.scss';
+import { Result, Button } from 'antd';
+import { Link } from 'react-router-dom';
 
 export default function Paypal({ product }) {
   const [paidFor, setPaidFor] = useState(false);
@@ -24,7 +27,6 @@ export default function Paypal({ product }) {
         onApprove: async (data, actions) => {
           const order = await actions.order.capture();
           setPaidFor(true);
-          console.log(order);
         },
         onError: (err) => {
           setError(err);
@@ -36,11 +38,16 @@ export default function Paypal({ product }) {
 
   if (paidFor) {
     return (
-      <div>
-        <h1>Congrats, you just bought {product.beneficiary}!</h1>
-        <img
-          alt={product.beneficiary}
-          src="https://elim.nyc3.cdn.digitaloceanspaces.com/v2/images/central/cards-slider/alabanza-card.jpg"
+      <div className={styles.paypalSuccess}>
+        <Result
+          status="success"
+          title={`Muchas gracias por tu aportación a ${product.beneficiary}!`}
+          subTitle="Tu aportación fue enviada y recibida exitosamente!"
+          extra={[
+            <Link className={`${styles.successBtn} regular-btn`} to="/">
+              Ir a inicio
+            </Link>,
+          ]}
         />
       </div>
     );
@@ -48,7 +55,7 @@ export default function Paypal({ product }) {
 
   return (
     <div>
-      {error && <div>Uh oh, an error occurred! {error.message}</div>}
+      {error && <div>Uh oh, Un error ha ocurrido! {error.message}</div>}
       <div ref={paypalRef} />
     </div>
   );
