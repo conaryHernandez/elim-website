@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 export default function Paypal({ product }) {
   const [paidFor, setPaidFor] = useState(false);
+  const [payerInfo, setPayerInfo] = useState({});
   const [error, setError] = useState(null);
   const paypalRef = useRef();
 
@@ -18,7 +19,7 @@ export default function Paypal({ product }) {
                 description: `${product.beneficiary} por concepto de ${product.purpose}`,
                 amount: {
                   currency_code: 'USD',
-                  value: product.price,
+                  value: document.getElementById('amount').value,
                 },
               },
             ],
@@ -26,9 +27,15 @@ export default function Paypal({ product }) {
         },
         onApprove: async (data, actions) => {
           const order = await actions.order.capture();
+          setPayerInfo(order.payer);
+          console.log(order);
+          const scrollToElement = document.getElementById('amount');
+          scrollToElement.scrollIntoView();
           setPaidFor(true);
         },
         onError: (err) => {
+          const scrollToElement = document.getElementById('amount');
+          scrollToElement.scrollIntoView();
           setError(err);
           console.error(err);
         },
@@ -37,11 +44,18 @@ export default function Paypal({ product }) {
   }, [product.beneficiary, product.price, product.purpose]);
 
   if (paidFor) {
+    const { name } = payerInfo;
     return (
       <div className={styles.paypalSuccess}>
         <Result
           status="success"
-          title={`Muchas gracias por tu aportación a ${product.beneficiary}!`}
+          className={styles.ResulTitle}
+          title={
+            <h6>
+              {name.given_name} {name.surname}, muchas gracias por tu aportación
+              a {product.beneficiary}!
+            </h6>
+          }
           subTitle="Tu aportación fue enviada y recibida exitosamente!"
           extra={[
             <Link className={`${styles.successBtn} regular-btn`} to="/">

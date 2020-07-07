@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import Paypal from './Paypal';
 import { cdnPath } from '../../constants';
-import { Form, Select, InputNumber, Button } from 'antd';
+import { Form, Select, InputNumber, Button, Radio, List, Avatar } from 'antd';
 import styles from './Donations.module.scss';
+import { accountsInfo } from './data';
 
 function Donations() {
   const [amount, setAmount] = useState(10);
   const [beneficiary, setBeneficiary] = useState('misionCristianaElim');
   const [purpose, setPurpose] = useState('ofrenda');
+  const [isAccountInfoVisible, setIsAccountInfoVisible] = useState(false);
 
   const product = {
     price: amount,
     purpose: purpose,
     beneficiary: beneficiary,
   };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -27,7 +30,7 @@ function Donations() {
   };
 
   const onBeneficiaryChange = (value) => {
-    product.beneficiary = value;
+    product.beneficiary = value.target.value;
   };
 
   return (
@@ -61,22 +64,23 @@ function Donations() {
             layout="horizontal"
           >
             <Form.Item
-              label="Dirigida a:"
               name="beneficiario"
+              label="Dirigida a:"
               rules={[
                 { required: true, message: 'Porfavor seleccione una opcion' },
               ]}
             >
-              <Select defaultValue={beneficiary} onChange={onBeneficiaryChange}>
-                <Select.Option value="misionCristianaElim">
-                  Misión Cristiana Elim
-                </Select.Option>
-                <Select.Option value="elimCentral">Elim Central</Select.Option>
-              </Select>
+              <Radio.Group
+                onChange={onBeneficiaryChange}
+                defaultValue="elimCentral"
+              >
+                <Radio value="elimCentral">Elim Central</Radio>
+                <Radio value="misionCristianaElim">Misión Cristiana Elim</Radio>
+              </Radio.Group>
             </Form.Item>
 
             <Form.Item
-              label="Seleccione un Propósito:"
+              label="Propósito:"
               name="propósito"
               rules={[
                 { required: true, message: 'Porfavor seleccione una opcion' },
@@ -89,20 +93,21 @@ function Donations() {
                   Proyección social
                 </Select.Option>
                 <Select.Option value="proTerreno">Pro terreno</Select.Option>
-                <Select.Option value="enfermosCOVID">
+                <Select.Option value="ayudasPorCovid">
                   Ayudas por Covid-19
                 </Select.Option>
               </Select>
             </Form.Item>
 
             <Form.Item
-              label="Monto (USD)"
+              label="Monto (Dólares)"
               name="monto"
               rules={[
                 { required: true, message: 'Porfavor ingrese una cantidad' },
               ]}
             >
               <InputNumber
+                id="amount"
                 min={5}
                 defaultValue={amount}
                 onChange={onAmountChange}
@@ -116,10 +121,46 @@ function Donations() {
               />
             </Form.Item>
           </Form>
-          <div className="paypalWrapper">
-            <Paypal product={product} />
-          </div>
         </div>
+
+        <div className="paypalWrapper">
+          <Paypal product={product} />
+        </div>
+        <div className={styles.AccountsWrapper}>
+          <Button
+            onClick={() => setIsAccountInfoVisible(!isAccountInfoVisible)}
+          >
+            Transferencias o depósitos bancarios
+          </Button>
+        </div>
+        {isAccountInfoVisible && (
+          <div className={styles.accountsInfo}>
+            <div className="container">
+              <List
+                itemLayout="horizontal"
+                dataSource={accountsInfo}
+                renderItem={(item) => (
+                  <List.Item>
+                    <List.Item.Meta
+                      avatar={<Avatar src={item.img} />}
+                      title={item.title}
+                      description={
+                        <div className={styles.accountDesc}>
+                          <span className={styles.accountHolder}>
+                            {item.description}
+                          </span>
+                          <h5 className={styles.accountNumber}>
+                            {item.account}
+                          </h5>
+                        </div>
+                      }
+                    />
+                  </List.Item>
+                )}
+              />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
