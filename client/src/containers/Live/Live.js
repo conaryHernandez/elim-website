@@ -30,7 +30,10 @@ export default function Live() {
       });
   };
   const getLatestVideos = async (elimAPI, maxResults = 6) => {
-    const response = await axios.get(`${elimAPI}/videos?latest=${maxResults}`);
+    const playListId = 'PLB_odl26rwmXQZ4UcEw-TN7OJbM7xn1VY';
+    const response = await axios.get(
+      `${elimAPI}/playlists/${playListId}?maxResults=${maxResults}`
+    );
 
     response.status === 200
       ? setVideoList(response.data.videos)
