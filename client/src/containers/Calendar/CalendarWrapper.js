@@ -4,6 +4,7 @@ import { Calendar, Badge } from 'antd';
 import styles from './Calendar.module.scss';
 import axios from 'axios';
 import { strapiURL } from '../../constants';
+
 // import { defaultBadgeColor } from '../constants';
 
 export default function CalendarWrapper(props) {
@@ -53,14 +54,19 @@ export default function CalendarWrapper(props) {
     return num ? (
       <div className="notes-month">
         <section>{num}</section>
-        <span>Backlog number</span>
+        <span>info</span>
       </div>
     ) : null;
+  };
+  const onPanelChange = (value, mode) => {
+    console.log(value.format('YYYY-MM-DD'), mode);
   };
 
   return (
     <div className={styles.calendarWrapper}>
       <Calendar
+        locale="es_ES"
+        onPanelChange={onPanelChange}
         dateCellRender={dateCellRender}
         monthCellRender={monthCellRender}
         onSelect={props.onDaySelection}

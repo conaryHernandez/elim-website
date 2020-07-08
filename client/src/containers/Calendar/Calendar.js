@@ -3,36 +3,45 @@ import CalendarWrapper from './CalendarWrapper';
 // import ReminderPanel from '../components/ReminderPanel';
 import { Modal, Button } from 'antd';
 import styles from './Calendar.module.scss';
+import { ConfigProvider } from 'antd';
+import esES from 'antd/es/locale/es_ES';
 
 export default function Dashboard() {
-  const [isReminderModalVisible, setIsReminderModalVisible] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedDay, setSelectedDay] = useState('');
   const [isSummaryShowing, setIsSummaryShowing] = useState(false);
+  const [isPanelDifferent, setIsPanelDifferent] = useState(false);
 
   const onDaySelection = (value) => {
     setIsSummaryShowing(true);
     setSelectedDay(value);
-    setIsReminderModalVisible(true);
+    setIsModalVisible(true);
   };
   const onCreateReminderClick = () => {
     setIsSummaryShowing(false);
-    setIsReminderModalVisible(true);
+    setIsModalVisible(true);
+  };
+  const handleModal = (isVisible) => {
+    setIsModalVisible(isVisible);
   };
 
   return (
     <div className={styles.calendar}>
       <div className="container">
         <h1>Calendario Ministerial</h1>
-        <CalendarWrapper />
+        <ConfigProvider locale={esES}>
+          <CalendarWrapper handleModal={handleModal} />
+        </ConfigProvider>
+
         {/* <CalendarWrapper onDaySelection={onDaySelection} /> */}
         <Modal
           title={
             isSummaryShowing
-              ? `Reminders for: ${selectedDay.format('MMMM Do YYYY')}`
+              ? `Evento para el: ${selectedDay.format('MMMM Do YYYY')}`
               : 'New Reminder'
           }
-          visible={isReminderModalVisible}
-          onCancel={() => setIsReminderModalVisible(false)}
+          visible={isModalVisible}
+          onCancel={() => setIsModalVisible(false)}
           footer={null}
         >
           {/* <ReminderPanel selectedDay={selectedDay} /> */}

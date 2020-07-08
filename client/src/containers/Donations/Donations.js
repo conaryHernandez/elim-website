@@ -1,9 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import Paypal from './Paypal';
 import { cdnPath } from '../../constants';
-import { Form, Select, InputNumber, Button, Radio, List, Avatar } from 'antd';
+import {
+  Form,
+  Select,
+  InputNumber,
+  Button,
+  Radio,
+  List,
+  Avatar,
+  Tabs,
+} from 'antd';
 import styles from './Donations.module.scss';
 import { accountsInfo } from './data';
+
+const { TabPane } = Tabs;
+
+function callback(key) {
+  console.log(key);
+}
 
 function Donations() {
   const [amount, setAmount] = useState(10);
@@ -31,6 +46,9 @@ function Donations() {
 
   const onBeneficiaryChange = (value) => {
     product.beneficiary = value.target.value;
+  };
+  const getAccountsByType = (accounts, type) => {
+    return accounts.filter((account) => account.type === type);
   };
 
   return (
@@ -135,30 +153,59 @@ function Donations() {
         </div>
         {isAccountInfoVisible && (
           <div className={styles.accountsInfo}>
-            <div className="container">
-              <List
-                itemLayout="horizontal"
-                dataSource={accountsInfo}
-                renderItem={(item) => (
-                  <List.Item>
-                    <List.Item.Meta
-                      avatar={<Avatar src={item.img} />}
-                      title={item.title}
-                      description={
-                        <div className={styles.accountDesc}>
-                          <span className={styles.accountHolder}>
-                            {item.description}
-                          </span>
-                          <h5 className={styles.accountNumber}>
-                            {item.account}
-                          </h5>
-                        </div>
-                      }
-                    />
-                  </List.Item>
-                )}
-              />
-            </div>
+            <Tabs defaultActiveKey="1" onChange={callback}>
+              <TabPane tab="Elim Central" key="1">
+                <List
+                  itemLayout="horizontal"
+                  dataSource={getAccountsByType(accountsInfo, 'central')}
+                  renderItem={(item) => (
+                    <List.Item>
+                      <List.Item.Meta
+                        avatar={<Avatar src={item.img} />}
+                        title={item.title}
+                        description={
+                          <div className={styles.accountDesc}>
+                            <span className={styles.accountHolder}>
+                              {item.description}
+                            </span>
+                            <h5 className={styles.accountNumber}>
+                              {item.account}
+                            </h5>
+                          </div>
+                        }
+                      />
+                    </List.Item>
+                  )}
+                />
+              </TabPane>
+              <TabPane tab="Misión Cristiana Elim" key="2">
+                <div className="container">
+                  <List
+                    itemLayout="horizontal"
+                    dataSource={getAccountsByType(accountsInfo, 'mision')}
+                    renderItem={(item) => (
+                      <List.Item>
+                        <List.Item.Meta
+                          avatar={<Avatar src={item.img} />}
+                          title={item.title}
+                          description={
+                            <div className={styles.accountDesc}>
+                              <span className={styles.accountHolder}>
+                                {item.description}
+                              </span>
+                              <h5 className={styles.accountNumber}>
+                                {item.account}
+                              </h5>
+                            </div>
+                          }
+                        />
+                      </List.Item>
+                    )}
+                  />
+                </div>
+              </TabPane>
+            </Tabs>
+            <strong className={styles.rtn}>RTN: 05019995144260</strong>
           </div>
         )}
       </div>
