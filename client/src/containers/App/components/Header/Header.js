@@ -111,6 +111,9 @@ export default function Header() {
               <Link to="/eventos">Eventos</Link>
             </Menu.Item>
           </SubMenu> */}
+          <Menu.Item key="calendar">
+            <Link to="/calendario">Calendario</Link>
+          </Menu.Item>
 
           <Menu.Item key="generosos">
             <Link to="/corazones-generosos">Corazones generosos</Link>

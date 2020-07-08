@@ -1,0 +1,58 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.lessons {
+  .kidsTitle {
+    font: 3.5rem $font-fredoka;
+    color: #ffa726;
+    text-align: center;
+    letter-spacing: 0.05rem;
+  }
+  .intro {
+    padding: 3rem 5rem;
+
+    p {
+      font: 400 1.8rem/3.2rem $font-openSans;
+      max-width: 59rem;
+      margin: 0 auto;
+      text-align: center;
+      color: rgba(0, 0, 0, 0.65);
+    }
+  }
+
+  .inclusions {
+    background-image: url('#{$cdnPath}/v2/images/central/kids/blue-curved.png');
+    background-repeat: no-repeat;
+    height: 36rem;
+    padding: 15.6rem 0px;
+    background-size: cover;
+  }
+  .lessonsWrapper {
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+
+    .kidsTitle {
+      // color: #f44336;
+      //color: #8373ce;
+      text-transform: uppercase;
+      color: #03a9f4;
+      margin-bottom: 4rem;
+    }
+  }
+  .lessonCard {
+    margin-bottom: 1.5rem;
+    @include respond-to(xlarge) {
+      margin-bottom: 3rem;
+    }
+    img {
+      width: 100%;
+      margin: 0 auto;
+      margin-top: -1.5rem;
+    }
+    .content {
+      @include respond-to(large) {
+        margin-left: 1.5rem;
+      }
+    }
+  }
+}

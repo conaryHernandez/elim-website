@@ -1,6 +1,5 @@
 import { lazy } from 'react';
 import Home from '../Home/Home';
-import Common from '../Common/Common';
 
 const Contact = lazy(() => import('../Contact/Contact'));
 const History = lazy(() => import('../History/History'));
@@ -14,6 +13,8 @@ const Central = lazy(() => import('../Central/Central'));
 const Worship = lazy(() => import('../Central/Worship'));
 const Kids = lazy(() => import('../Central/Kids'));
 const Youth = lazy(() => import('../Central/Youth'));
+const Lessons = lazy(() => import('../Central/Lessons'));
+const Calendar = lazy(() => import('../Calendar/Calendar'));
 
 const routes = [
   {
@@ -22,10 +23,11 @@ const routes = [
     component: Home,
   },
   {
-    exact: false,
-    path: '/common',
-    component: Common,
+    exact: true,
+    path: '/calendario',
+    component: Calendar,
   },
+
   {
     exact: false,
     path: '/history',
@@ -85,6 +87,11 @@ const routes = [
     exact: false,
     path: '/elim-central',
     component: Central,
+  },
+  {
+    exact: false,
+    path: '/escuela-biblica-lecciones',
+    component: Lessons,
   },
 ];
 

@@ -3,10 +3,10 @@
 .mainBanner {
   height: 35rem;
   @include respond-to(xlarge) {
-    height: 60rem;
+    height: 55rem;
   }
   @include respond-to(xxl) {
-    height: 70rem;
+    height: 65rem;
   }
   img {
     width: 100%;
@@ -28,4 +28,9 @@
   margin: 0 auto;
   z-index: 0;
   position: relative;
+  padding: 0 1rem;
+}
+
+.ant-picker-calendar-date-content {
+  overflow: hidden !important;
 }

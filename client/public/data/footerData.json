@@ -52,6 +52,11 @@
           "id": "inicio-1",
           "label": "Misión Cristiana Elim",
           "link": "/mision-elim-honduras"
+        },
+        {
+          "id": "inicio-2",
+          "label": "Calendario",
+          "link": "/calendario"
         }
       ]
     },
@@ -83,6 +88,11 @@
           "id": "multimedia-2",
           "label": "En vivo",
           "link": "/elim-live"
+        },
+        {
+          "id": "multimedia-3",
+          "label": "Lecciones para Niños",
+          "link": "/escuela-biblica-lecciones"
         }
       ]
     },

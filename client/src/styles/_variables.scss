@@ -2,6 +2,8 @@
 // Variables
 // ------------------------------------------------ */
 
+$cdnPath: 'https://elim.nyc3.cdn.digitaloceanspaces.com';
+
 $primary-color: #2c307a;
 $secondary-color: #040926;
 $third-color: #3d314a;
@@ -15,6 +17,7 @@ $status-color2: #f0c808;
 
 $font-openSans: 'Open Sans', sans-serif;
 $font-raleway: 'Raleway', sans-serif;
+$font-fredoka: 'Fredoka One', cursive;
 
 $z-layers: (
   bottomless-pit: -9999,

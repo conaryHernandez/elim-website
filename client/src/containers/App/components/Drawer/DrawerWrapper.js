@@ -79,13 +79,13 @@ export default function DrawerWrapper(props) {
           </Link>
         </div>
 
-        {/* <div className="drawer-item" onClick={closeDrawer}>
+        <div className="drawer-item" onClick={closeDrawer}>
           <Link to="/calendario">
             <CalendarOutlined />
             Calendario
           </Link>
         </div>
-
+        {/*
         <div className="drawer-item" onClick={closeDrawer}>
           <Link to="/calendario">
             <BookOutlined />
