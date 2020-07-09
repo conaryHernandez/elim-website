@@ -126,7 +126,7 @@ function Donations() {
             >
               <InputNumber
                 id="amount"
-                min={5}
+                min={1}
                 defaultValue={amount}
                 onChange={onAmountChange}
               />
