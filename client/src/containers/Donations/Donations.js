@@ -114,6 +114,9 @@ function Donations() {
                 <Select.Option value="ayudasPorCovid">
                   Ayudas por Covid-19
                 </Select.Option>
+                <Select.Option value="membresiaAnual">
+                  Cuota de Membresia Anual
+                </Select.Option>
               </Select>
             </Form.Item>
 

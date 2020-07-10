@@ -7,10 +7,11 @@ import classes from './Home.module.scss';
 import ScheduleItem from './ScheduleItem';
 import { Row, Col, Form, Input, Button, notification, Modal } from 'antd';
 import { CheckCircleTwoTone } from '@ant-design/icons';
-import { cdnPath } from '../../constants';
+import { cdnPath, elimAPI } from '../../constants';
 import { pastorMessageOne, pastorMessageTwo } from './data';
 import parse from 'html-react-parser';
 import ReactGA from 'react-ga';
+import axios from 'axios';
 
 const settings = {
   showThumbs: false,
@@ -32,9 +33,19 @@ const Home = () => {
     window.scrollTo(0, 0);
   }, []);
   const [form] = Form.useForm();
+
   const onSubmitPrayer = (values) => {
-    console.log('Success:', values);
-    openNotification('bottomRight');
+    const options = {
+      url: `${elimAPI}/emails`,
+      method: 'POST',
+      data: JSON.stringify(values),
+      headers: { 'Content-Type': 'application/json' },
+    };
+    axios(options)
+      .then((response) => {
+        openNotification('bottomRight');
+      })
+      .catch((error) => console.error(error));
   };
 
   const onSubmitPrayerFailed = (errorInfo) => {
@@ -201,18 +212,6 @@ const Home = () => {
         </div>
       </div>
 
-      <div className={`${classes.servicesSchedule} ${classes.sectionPaddings}`}>
-        <h2>Horarios de culto</h2>
-        <Row
-          type="flex"
-          justify="space-around"
-          align="middle"
-          className="container"
-        >
-          {generateSchedulesItemList(schedules)}
-        </Row>
-      </div>
-
       <div className={`${classes.channels} ${classes.sectionPaddings}`}>
         <div className="container">
           <span className={classes.title}>Sigue nuestras transmisiones</span>
@@ -233,7 +232,20 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      {/* <div className={`${classes.oracionWrapper} container`}>
+
+      <div className={`${classes.servicesSchedule} ${classes.sectionPaddings}`}>
+        <h2>Horarios de culto</h2>
+        <Row
+          type="flex"
+          justify="space-around"
+          align="middle"
+          className="container"
+        >
+          {generateSchedulesItemList(schedules)}
+        </Row>
+      </div>
+
+      <div className={`${classes.oracionWrapper} container`}>
         <div className={classes.titleWrapper}>
           <h3>Queremos orar por ti!</h3>
           <strong>La oración eficaz del justo puede mucho</strong>
@@ -271,7 +283,7 @@ const Home = () => {
           </Form.Item>
 
           <Form.Item
-            name={['petición', 'peticion']}
+            name={'peticion'}
             rules={[
               {
                 required: true,
@@ -292,7 +304,7 @@ const Home = () => {
             </Button>
           </Form.Item>
         </Form>
-      </div> */}
+      </div>
     </div>
   );
 };
