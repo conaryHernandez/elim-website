@@ -43,6 +43,7 @@ const Home = () => {
     };
     axios(options)
       .then((response) => {
+        form.resetFields();
         openNotification('bottomRight');
       })
       .catch((error) => console.error(error));

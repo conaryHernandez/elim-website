@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import { Row, Select } from 'antd';
+import { Row, Select, Avatar } from 'antd';
 import styles from './Churches.module.scss';
-import logo from '../../assets/img/home/elim-logo-2.png';
-import { departaments } from '../Contact/departamentsData';
-import { churches } from '../Contact/churchesData';
 import ChurchCard from './components/ChurchCard';
+import axios from 'axios';
+import { strapiURL } from '../../constants';
 
 export default function Churches() {
   const { Option } = Select;
 
-  const [churchesData, setChurches] = useState(churches);
-  const [filteredChurches, setFilteredChurches] = useState(churchesData);
+  const [churchesData, setChurches] = useState([]);
+  const [filteredChurches, setFilteredChurches] = useState([]);
+  const [departments, setDepartments] = useState([]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    getChurchesData();
+    getDepartmentsData();
   }, []);
 
   const onDepartamentChange = (value) => {
@@ -21,7 +24,7 @@ export default function Churches() {
       setFilteredChurches(churchesData);
     } else {
       const filtered = churchesData.filter((church) => {
-        return church.address.deptoCode === value;
+        return church.address.departamento.code === value;
       });
       setFilteredChurches(filtered);
     }
@@ -40,6 +43,7 @@ export default function Churches() {
   };
 
   const generateChurchesCardList = (data) => {
+    console.log(data);
     return data.map((church, index) => (
       <ChurchCard key={index} churchData={church} />
     ));
@@ -47,6 +51,26 @@ export default function Churches() {
   const generateDepartmentsList = (data) => {
     return data.map((depto) => <Option key={depto.code}>{depto.name}</Option>);
   };
+
+  const getChurchesData = () => {
+    axios
+      .get(`${strapiURL}/iglesias`)
+      .then((response) => {
+        setChurches(response.data);
+        setFilteredChurches(response.data);
+      })
+      .catch((error) => console.error(error));
+  };
+
+  const getDepartmentsData = () => {
+    axios
+      .get(`${strapiURL}/departamentos`)
+      .then((response) => {
+        setDepartments(response.data);
+      })
+      .catch((error) => console.error(error));
+  };
+
   return (
     <div id={styles.Churches} className="container">
       <div className={styles.locationsWrapper}>
@@ -66,7 +90,7 @@ export default function Churches() {
           }
         >
           <Option value="all">Todas</Option>
-          {generateDepartmentsList(departaments)}
+          {generateDepartmentsList(departments)}
         </Select>
       </div>
       <div className={styles.churchesWrapper}>

@@ -1,3 +1,4 @@
+@import '../../styles/variables';
 #Churches {
   padding-top: 3rem;
   padding-bottom: 5rem;
@@ -24,18 +25,24 @@
     margin-top: 2rem;
   }
   .ChurchCardContent {
-    min-height: 15rem;
+    min-height: 17rem;
   }
   .seeMore {
-    margin: 0 auto;
+    height: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 2.5rem;
     background: none;
+    border: 2px solid #000;
     color: #000;
-    border: 1px solid #000;
-    width: 100%;
-    text-align: center;
+    font-weight: bold;
+    width: 14rem;
+    font-size: 1.2rem;
     &:hover {
-      border: 1px solid #941834;
-      color: #941834;
+      color: lighten($secondary-color, 10%);
+    }
+    &:focus {
+      outline: 0;
     }
   }
 }
