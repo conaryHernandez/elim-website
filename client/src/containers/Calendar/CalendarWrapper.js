@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { Calendar, Badge } from 'antd';
+import { Calendar, Badge, Alert } from 'antd';
 import styles from './Calendar.module.scss';
 import axios from 'axios';
 import { strapiURL } from '../../constants';
+import moment from 'moment';
 
 // import { defaultBadgeColor } from '../constants';
 
 export default function CalendarWrapper(props) {
   const [eventsData, setEventsData] = useState([]);
+  const [selectedValue, setSelectedValue] = useState(moment());
 
   useEffect(() => {
     axios
@@ -61,15 +62,25 @@ export default function CalendarWrapper(props) {
   const onPanelChange = (value, mode) => {
     console.log(value.format('YYYY-MM-DD'), mode);
   };
+  const onSelectDate = (value) => {
+    setSelectedValue(value);
+  };
 
   return (
     <div className={styles.calendarWrapper}>
+      <Alert
+        message={`Fecha seleccionada: ${
+          selectedValue && selectedValue.format('DD-MM-YYYY')
+        }`}
+        type="info"
+      />
+
       <Calendar
         locale="es_ES"
         onPanelChange={onPanelChange}
         dateCellRender={dateCellRender}
         monthCellRender={monthCellRender}
-        onSelect={props.onDaySelection}
+        onSelect={onSelectDate}
       />
     </div>
   );

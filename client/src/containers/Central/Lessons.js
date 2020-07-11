@@ -3,10 +3,13 @@ import { cdnPath, elimAPI } from '../../constants';
 import styles from './Lessons.module.scss';
 import axios from 'axios';
 import { useState } from 'react';
-import { Row, Col } from 'antd';
+import { Row, Col, Modal } from 'antd';
 
 export default function Lessons() {
   const [lessons, setLessons] = useState([]);
+  const [isModalVideoVisible, setIsModalVideoVisible] = useState(false);
+  const [currentVideo, setCurrentVideo] = useState('');
+
   useEffect(() => {
     window.scrollTo(0, 0);
     getLessons('PLB_odl26rwmWtdNUJPQbT2ERvJuwmD4ei');
@@ -29,8 +32,11 @@ export default function Lessons() {
           <Row justify="center" align="middle">
             <Col xs={24} sm={8} md={6} lg={4}>
               <img
+                onClick={() =>
+                  handleVideoModal(true, lesson.snippet.resourceId.videoId)
+                }
                 src={lesson.snippet.thumbnails.maxres.url}
-                alt=""
+                alt="Video para niños"
                 className="img-responsive"
               />
             </Col>
@@ -39,9 +45,7 @@ export default function Lessons() {
                 <strong>{lesson.snippet.title}</strong>
                 <p>
                   Jehová es mi pastor; nada me faltará. En lugares de delicados
-                  pastos me hará yacer: Junto á aguas de reposo me pastoreará. 3
-                  Confortará mi alma; Guiárame por sendas de justicia por amor
-                  de su nombre.
+                  pastos me hará yacer..
                 </p>
               </div>
             </Col>
@@ -49,6 +53,10 @@ export default function Lessons() {
         </div>
       );
     });
+  };
+  const handleVideoModal = (isShowing = false, videoId = '') => {
+    setIsModalVideoVisible(isShowing);
+    setCurrentVideo(videoId);
   };
   return (
     <div className={styles.lessons}>
@@ -74,6 +82,26 @@ export default function Lessons() {
         <h2 className={styles.kidsTitle}>Lecciones</h2>
         {lessons.length > 0 && generateLessonCardList(lessons)}
       </div>
+      <Modal
+        wrapClassName={styles.VideoModal}
+        bodyStyle={{ background: '#000', padding: '0' }}
+        visible={isModalVideoVisible}
+        footer={false}
+        onOk={() => handleVideoModal(false)}
+        onCancel={() => handleVideoModal(false)}
+      >
+        <div className={styles.youtubeWrapper}>
+          <iframe
+            title=""
+            width="100%"
+            height="380"
+            src={`https://www.youtube.com/embed/${currentVideo}`}
+            frameBorder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </Modal>
     </div>
   );
 }

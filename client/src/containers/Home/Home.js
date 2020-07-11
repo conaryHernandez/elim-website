@@ -134,6 +134,29 @@ const Home = () => {
               <div className={classes.exploreCard}>
                 <img
                   className="img-responsive"
+                  src={`${cdnPath}/v2/images/home/predicas.jpg`}
+                  alt="Prédicas"
+                />
+                <div className={classes.content}>
+                  <h3>Prédicas</h3>
+                  <p>
+                    Múltiples prédicas de diversos pastores de la misión, para
+                    acompañarte en tu estudio continuo de la palabra.
+                  </p>
+                  <Link
+                    to="/elim-live"
+                    className={`${classes.exploreLink} uppercase txt-center`}
+                  >
+                    Ver libreria
+                  </Link>
+                </div>
+              </div>
+            </Col>
+
+            <Col xs={24} sm={8} xl={7}>
+              <div className={classes.exploreCard}>
+                <img
+                  className="img-responsive"
                   src={`${cdnPath}/v2/images/home/alabanza.jpeg`}
                   alt="Alabanza"
                 />
@@ -153,29 +176,6 @@ const Home = () => {
                     className={`${classes.exploreLink} uppercase txt-center`}
                   >
                     Elim Central
-                  </Link>
-                </div>
-              </div>
-            </Col>
-
-            <Col xs={24} sm={8} xl={7}>
-              <div className={classes.exploreCard}>
-                <img
-                  className="img-responsive"
-                  src={`${cdnPath}/v2/images/home/predicas.jpg`}
-                  alt="Prédicas"
-                />
-                <div className={classes.content}>
-                  <h3>Prédicas</h3>
-                  <p>
-                    Múltiples prédicas de diversos pastores de la misión, para
-                    acompañarte en tu estudio continuo de la palabra.
-                  </p>
-                  <Link
-                    to="/elim-live"
-                    className={`${classes.exploreLink} uppercase txt-center`}
-                  >
-                    Ver libreria
                   </Link>
                 </div>
               </div>
