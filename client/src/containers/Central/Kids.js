@@ -81,9 +81,12 @@ export default function Kids() {
         </div>
       </div>
 
-      <div className={styles.kidsSlider}>
+      <div className={`${styles.kidsSlider} kids-lessons-slider`}>
         <div className="container">
-          <h3 className="section-title">Instruye al niño en su camino</h3>
+          <h3 className="section-title">
+            Instruye al niño <br />
+            en su camino
+          </h3>
           <Slider {...settings}>
             <div className={styles.slide}>
               <img

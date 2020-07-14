@@ -127,14 +127,27 @@
     }
   }
   .oracionWrapper {
-    padding: 3rem 2rem 5rem;
+    background-image: url('#{$cdnPath}/v2/images/home/peticiones-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 4rem 2rem 3rem;
+
+    @include respond-to-max(large) {
+      background-position: top;
+    }
   }
   .oracionForm {
-    max-width: 50rem;
+    @include respond-to(large) {
+      max-width: 35rem;
+    }
+    @include respond-to(xlarge) {
+      max-width: 40rem;
+    }
     margin: 0 auto;
   }
   .submitPrayerBtn {
     color: $secondary-color;
+    margin-top: 2rem;
 
     &:hover {
       background: #040926;

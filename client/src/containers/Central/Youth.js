@@ -93,13 +93,13 @@ export default function Youth() {
 
           <p>
             Fruto de estas generaciones ha sido el llamado al ministerio de
-            Pastores, como los hermanos: Melitón Rodríguez, Geovani Gambareli,
-            Miguel Flores, Víctor Manuel López, Josué Alexis Barrientos, Julio
-            Lobo, Adalberto Muñoz, José Aníbal Fajardo, Hugo Medina, entre
-            tantos que podríamos mencionar. Jóvenes que buscaban continuamente
-            la presencia de Dios, la revelación de la Palabra y de los cuales
-            hay testimonios poderosos de lo que Dios puede hacer en la vida de
-            un joven que decide entregarse por completo a Dios.
+            Pastores, como los hermanos: <strong>Melitón Rodríguez</strong>,{' '}
+            <strong>Geovani Gambareli</strong>, <strong>Miguel Flores</strong>,{' '}
+            <strong>Josué Barrientos</strong>, entre tantos que podríamos
+            mencionar. Jóvenes que buscaban continuamente la presencia de Dios,
+            la revelación de la Palabra y de los cuales hay testimonios
+            poderosos de lo que Dios puede hacer en la vida de un joven que
+            decide <strong>entregarse por completo a Dios</strong>.
           </p>
         </div>
       </div>

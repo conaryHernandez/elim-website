@@ -28,7 +28,6 @@ export default function Paypal({ product }) {
         onApprove: async (data, actions) => {
           const order = await actions.order.capture();
           setPayerInfo(order.payer);
-          console.log(order);
           const scrollToElement = document.getElementById('amount');
           scrollToElement.scrollIntoView();
           setPaidFor(true);

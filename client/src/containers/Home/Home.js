@@ -246,65 +246,67 @@ const Home = () => {
         </Row>
       </div>
 
-      <div className={`${classes.oracionWrapper} container`}>
-        <div className={classes.titleWrapper}>
-          <h3>Queremos orar por ti!</h3>
-          <strong>La oración eficaz del justo puede mucho</strong>
-        </div>
+      <div className={`${classes.oracionWrapper} `}>
+        <div className="container">
+          <div className={classes.titleWrapper}>
+            <h3>! Queremos orar por ti !</h3>
+            <strong>La oración eficaz del justo puede mucho</strong>
+          </div>
 
-        <Form
-          name="basic"
-          form={form}
-          onFinish={onSubmitPrayer}
-          onFinishFailed={onSubmitPrayerFailed}
-          className={classes.oracionForm}
-        >
-          <Form.Item
-            name="name"
-            rules={[
-              {
-                required: true,
-                message: 'Por favor ingresa tu nombre!',
-              },
-            ]}
+          <Form
+            name="basic"
+            form={form}
+            onFinish={onSubmitPrayer}
+            onFinishFailed={onSubmitPrayerFailed}
+            className={classes.oracionForm}
           >
-            <Input placeholder="Nombre" />
-          </Form.Item>
-
-          <Form.Item
-            name="country"
-            rules={[
-              {
-                required: true,
-                message: 'Por favor ingresa tu país!',
-              },
-            ]}
-          >
-            <Input placeholder="País" />
-          </Form.Item>
-
-          <Form.Item
-            name={'peticion'}
-            rules={[
-              {
-                required: true,
-                message: 'Por favor ingresa tu petición!',
-              },
-            ]}
-          >
-            <Input.TextArea placeholder="petición" />
-          </Form.Item>
-
-          <Form.Item className="txt-center">
-            <Button
-              type="primary"
-              htmlType="submit"
-              className={`${classes.submitPrayerBtn} regular-btn`}
+            <Form.Item
+              name="name"
+              rules={[
+                {
+                  required: true,
+                  message: 'Por favor ingresa tu nombre!',
+                },
+              ]}
             >
-              Enviar
-            </Button>
-          </Form.Item>
-        </Form>
+              <Input placeholder="Nombre" />
+            </Form.Item>
+
+            <Form.Item
+              name="country"
+              rules={[
+                {
+                  required: true,
+                  message: 'Por favor ingresa tu país!',
+                },
+              ]}
+            >
+              <Input placeholder="País" />
+            </Form.Item>
+
+            <Form.Item
+              name={'peticion'}
+              rules={[
+                {
+                  required: true,
+                  message: 'Por favor ingresa tu petición!',
+                },
+              ]}
+            >
+              <Input.TextArea placeholder="Petición" allowClear autoSize />
+            </Form.Item>
+
+            <Form.Item className="txt-center">
+              <Button
+                type="primary"
+                htmlType="submit"
+                className={`${classes.submitPrayerBtn} regular-btn`}
+              >
+                Enviar
+              </Button>
+            </Form.Item>
+          </Form>
+        </div>
       </div>
     </div>
   );

@@ -43,7 +43,6 @@ export default function Churches() {
   };
 
   const generateChurchesCardList = (data) => {
-    console.log(data);
     return data.map((church, index) => (
       <ChurchCard key={index} churchData={church} />
     ));

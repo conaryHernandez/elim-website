@@ -87,8 +87,6 @@ export default function Lessons() {
         bodyStyle={{ background: '#000', padding: '0' }}
         visible={isModalVideoVisible}
         footer={false}
-        onOk={() => handleVideoModal(false)}
-        onCancel={() => handleVideoModal(false)}
       >
         <div className={styles.youtubeWrapper}>
           <iframe

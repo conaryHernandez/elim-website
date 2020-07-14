@@ -9,7 +9,7 @@ export const serviceAreas = [
     link: '/alabanza',
     linkLabel: 'Más información',
   },
-  /* {
+  {
     name: 'damas',
     title: 'Damas',
     caption:
@@ -18,7 +18,7 @@ export const serviceAreas = [
     imgAlt: '',
     link: '/damas',
     linkLabel: 'Más información',
-  }, */
+  },
   {
     name: 'kids',
     title: 'Escuela Bíblica',
@@ -37,7 +37,7 @@ export const serviceAreas = [
     link: '/jovenes-elim',
     linkLabel: 'Más información',
   },
-  /*  {
+  {
     name: 'ujieres',
     title: 'Ujieres',
     caption: 'Comprometidos y apasionados al servicio del Señor',
@@ -45,5 +45,5 @@ export const serviceAreas = [
     imgAlt: '',
     link: '/ujieres',
     linkLabel: 'Más información',
-  }, */
+  },
 ];

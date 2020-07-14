@@ -56,3 +56,10 @@ p {
     width: 85rem !important;
   }
 }
+
+input::-webkit-input-placeholder {
+  color: #808080 !important;
+}
+textarea::-webkit-input-placeholder {
+  color: #808080 !important;
+}

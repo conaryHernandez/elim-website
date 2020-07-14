@@ -17,7 +17,8 @@
     }
     p {
       font: 400 1.6rem/3.2rem $font-openSans;
-      margin-bottom: 3rem;
+      max-width: 80rem;
+      margin: 0 auto 3rem;
     }
   }
   .gallery {
