@@ -99,7 +99,7 @@ export default function Youth() {
             mencionar. Jóvenes que buscaban continuamente la presencia de Dios,
             la revelación de la Palabra y de los cuales hay testimonios
             poderosos de lo que Dios puede hacer en la vida de un joven que
-            decide <strong>entregarse por completo a Dios</strong>.
+            decide entregarse por completo a Dios.
           </p>
         </div>
       </div>
