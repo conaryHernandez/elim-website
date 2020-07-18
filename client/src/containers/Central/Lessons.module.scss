@@ -3,13 +3,18 @@
 
 .lessons {
   .kidsTitle {
-    font: 4rem $font-fredoka;
+    font: 3rem $font-fredoka;
+
     color: #ffa726;
     text-align: center;
     letter-spacing: 0.05rem;
+    @include respond-to(large) {
+      font: 4rem $font-fredoka;
+    }
   }
   .intro {
-    padding: 3rem 5rem;
+    padding: 4rem 7rem;
+    text-align: center;
 
     p {
       font: 400 1.8rem/3.2rem $font-openSans;
@@ -18,13 +23,16 @@
       text-align: center;
       color: rgba(0, 0, 0, 0.65);
     }
+    .animal {
+      margin-top: 2rem;
+    }
   }
 
   .inclusions {
     background-image: url('#{$cdnPath}/v2/images/central/kids/blue-curved.png');
     background-repeat: no-repeat;
     height: 36rem;
-    padding: 14.6rem 0px;
+    padding: 10.6rem 0px 12rem;
     background-size: cover;
     text-align: center;
 
@@ -33,10 +41,14 @@
       color: #fff;
     }
     p {
+      font-size: 1.8rem;
       text-align: center;
       color: #fff;
       max-width: 60rem;
       margin: 0 auto;
+    }
+    @include respond-to(large) {
+      padding: 12.6rem 0px;
     }
   }
   .lessonsWrapper {
@@ -49,9 +61,14 @@
       //color: #03a9f4;
       margin-bottom: 4rem;
     }
+    .animal {
+      margin: -3rem auto 3rem;
+      width: 13rem;
+      display: block;
+    }
   }
   .lessonCard {
-    margin-bottom: 1.5rem;
+    margin-bottom: 3rem;
     @include respond-to(xlarge) {
       margin-bottom: 5rem;
     }
@@ -71,8 +88,18 @@
       }
     }
     .content {
+      p {
+        font-size: 1.3rem;
+        line-height: 2.6rem;
+        @include respond-to(large) {
+          font-size: 1.5rem;
+        }
+      }
       strong {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
+        @include respond-to(large) {
+          font-size: 1.7rem;
+        }
       }
       @include respond-to-max(large) {
         margin-top: 1.5rem;

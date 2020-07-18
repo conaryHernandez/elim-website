@@ -72,6 +72,11 @@ export default function Lessons() {
             nuestros discipulados infantiles, de modo que puedas compartirla
             junto con tus hijos.
           </p>
+          <img
+            className={styles.animal}
+            src={`${cdnPath}/v2/images/central/kids/animals/chicken.png`}
+            alt="Pollo imagen"
+          />
         </div>
       </div>
       <div className={styles.inclusions}>
@@ -85,7 +90,16 @@ export default function Lessons() {
       </div>
       <div className={`${styles.lessonsWrapper} container`}>
         <h2 className={styles.kidsTitle}>Lecciones</h2>
+        <img
+          className={styles.animal}
+          src={`${cdnPath}/v2/images/central/kids/animals/elefante.png`}
+          alt="Elefante Sticker"
+        />
         {lessons.length > 0 && generateLessonCardList(lessons)}
+        {/* <img
+          src={`${cdnPath}/v2/images/central/kids/flowers/yellow-flower.png`}
+          alt="Yellow Flower"
+        /> */}
       </div>
       <Modal
         wrapClassName={styles.VideoModal}

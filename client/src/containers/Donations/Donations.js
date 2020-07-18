@@ -117,6 +117,9 @@ function Donations() {
                 <Select.Option value="membresiaAnual">
                   Cuota de Membresia Anual
                 </Select.Option>
+                <Select.Option value="consagracionOfrenda">
+                  Consagración de Ofrendas
+                </Select.Option>
               </Select>
             </Form.Item>
 
