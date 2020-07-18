@@ -43,10 +43,7 @@ export default function Lessons() {
             <Col xs={24} sm={16} md={18} lg={20}>
               <div className={styles.content}>
                 <strong>{lesson.snippet.title}</strong>
-                <p>
-                  Jehová es mi pastor; nada me faltará. En lugares de delicados
-                  pastos me hará yacer..
-                </p>
+                <p>{lesson.snippet.description}</p>
               </div>
             </Col>
           </Row>
@@ -77,7 +74,15 @@ export default function Lessons() {
           </p>
         </div>
       </div>
-      <div className={styles.inclusions}></div>
+      <div className={styles.inclusions}>
+        <div className="container">
+          <h4>Mateo 19 : 14</h4>
+          <p>
+            «Dejen que los niños vengan a mí, y no se lo impidan, porque el
+            reino de los cielos es de quienes son como ellos.»
+          </p>
+        </div>
+      </div>
       <div className={`${styles.lessonsWrapper} container`}>
         <h2 className={styles.kidsTitle}>Lecciones</h2>
         {lessons.length > 0 && generateLessonCardList(lessons)}

@@ -24,10 +24,11 @@ export default function ChurchCard(props) {
             size={64}
             src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Circle-icons-profile.svg"
           />
-          <strong>Dirección</strong>
-          <span className="display-block">{address?.location}</span>
           <strong>Pastor:</strong>
+
           <p>{pastor && `${pastor.name} ${pastor.lastName}`}</p>
+
+          {/* <span className="display-block">{address?.location}</span> */}
         </div>
 
         <Button className={styles.seeMore} type="primary" size={'default'}>

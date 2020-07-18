@@ -3,7 +3,7 @@
 
 .lessons {
   .kidsTitle {
-    font: 3.5rem $font-fredoka;
+    font: 4rem $font-fredoka;
     color: #ffa726;
     text-align: center;
     letter-spacing: 0.05rem;
@@ -24,18 +24,29 @@
     background-image: url('#{$cdnPath}/v2/images/central/kids/blue-curved.png');
     background-repeat: no-repeat;
     height: 36rem;
-    padding: 15.6rem 0px;
+    padding: 14.6rem 0px;
     background-size: cover;
+    text-align: center;
+
+    h4 {
+      font: 3.5rem $font-fredoka;
+      color: #fff;
+    }
+    p {
+      text-align: center;
+      color: #fff;
+      max-width: 60rem;
+      margin: 0 auto;
+    }
   }
   .lessonsWrapper {
     padding-top: 5rem;
     padding-bottom: 4rem;
 
     .kidsTitle {
-      // color: #f44336;
+      color: #000;
       //color: #8373ce;
-      text-transform: uppercase;
-      color: #03a9f4;
+      //color: #03a9f4;
       margin-bottom: 4rem;
     }
   }
@@ -50,7 +61,8 @@
     img {
       width: 100%;
       cursor: pointer;
-      box-shadow: 1px 3px 15px 0 rgba(0, 0, 0, 0.5);
+      // box-shadow: 1px 3px 15px 0 rgba(0, 0, 0, 0.5);
+      border: 2.5px solid #000;
       margin: 0 auto;
       margin-top: -1.5rem;
       &:hover {

@@ -160,7 +160,7 @@ export default function Youth() {
       </div>
       <div className={`${styles.vision} section-gray`}>
         <div className="container">
-          <h2 className="section-title">Vision</h2>
+          <h2 className="section-title">Visión</h2>
           <p>
             Es nuestro anhelo que los jóvenes sean llenos del Espíritu Santo,
             que experimenten y disfruten el amor de Dios no como una religión,
