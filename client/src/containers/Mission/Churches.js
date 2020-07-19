@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Row, Select, Avatar } from 'antd';
+import { Row, Select, Modal } from 'antd';
 import styles from './Churches.module.scss';
 import ChurchCard from './components/ChurchCard';
 import axios from 'axios';
@@ -7,6 +7,8 @@ import { strapiURL } from '../../constants';
 
 export default function Churches() {
   const { Option } = Select;
+  const [isModalVideoVisible, setIsModalVideoVisible] = useState(false);
+  const [currentChurchInfo, setCurrentChurchInfo] = useState({});
 
   const [churchesData, setChurches] = useState([]);
   const [filteredChurches, setFilteredChurches] = useState([]);
@@ -44,7 +46,11 @@ export default function Churches() {
 
   const generateChurchesCardList = (data) => {
     return data.map((church, index) => (
-      <ChurchCard key={index} churchData={church} />
+      <ChurchCard
+        key={index}
+        churchData={church}
+        handleChurchModal={handleChurchModal}
+      />
     ));
   };
   const generateDepartmentsList = (data) => {
@@ -68,6 +74,16 @@ export default function Churches() {
         setDepartments(response.data);
       })
       .catch((error) => console.error(error));
+  };
+
+  const handleChurchModal = async (isShowing = false, churchId = '') => {
+    const currentChurch = getCurrentChurch(churchId);
+
+    setIsModalVideoVisible(isShowing);
+    setCurrentChurchInfo(currentChurch);
+  };
+  const getCurrentChurch = (currentChurchId) => {
+    return churchesData.find((church) => church.id === currentChurchId);
   };
 
   return (
@@ -97,6 +113,21 @@ export default function Churches() {
           {generateChurchesCardList(filteredChurches)}
         </Row>
       </div>
+      {currentChurchInfo && (
+        <Modal
+          title={currentChurchInfo.name}
+          wrapClassName="churchModal"
+          bodyStyle={{ background: '#fff', padding: '0' }}
+          visible={isModalVideoVisible}
+          footer={false}
+          onOk={() => handleChurchModal(false)}
+          onCancel={() => handleChurchModal(false)}
+        >
+          <div className="churchModalContent">
+            <div className="churchName">{currentChurchInfo.name}</div>
+          </div>
+        </Modal>
+      )}
     </div>
   );
 }

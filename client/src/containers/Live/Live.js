@@ -101,14 +101,14 @@ export default function Live() {
             {videoList.length > 0 && generateVideoItemList(videoList)}
           </Row>
         </div>
-        <div className={styles.facebookWrapper}>
+        {/* <div className={styles.facebookWrapper}>
           <div
             className="fb-comments"
             data-href="https://www.elimhonduras.org/elim-live"
             data-numposts="10"
             data-width="100%"
           ></div>
-        </div>
+        </div> */}
 
         <Modal
           wrapClassName={styles.VideoModal}
