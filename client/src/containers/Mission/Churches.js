@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Row, Select, Modal } from 'antd';
+import { Row, Select, Modal, Descriptions } from 'antd';
 import styles from './Churches.module.scss';
 import ChurchCard from './components/ChurchCard';
 import axios from 'axios';
@@ -115,7 +115,7 @@ export default function Churches() {
       </div>
       {currentChurchInfo && (
         <Modal
-          title={currentChurchInfo.name}
+          title={currentChurchInfo.shortName}
           wrapClassName="churchModal"
           bodyStyle={{ background: '#fff', padding: '0' }}
           visible={isModalVideoVisible}
@@ -124,7 +124,20 @@ export default function Churches() {
           onCancel={() => handleChurchModal(false)}
         >
           <div className="churchModalContent">
-            <div className="churchName">{currentChurchInfo.name}</div>
+            <Descriptions layout="vertical">
+              <Descriptions.Item label="Pastor">
+                {`${currentChurchInfo?.pastor?.name} ${currentChurchInfo?.pastor?.lastName}`}
+              </Descriptions.Item>
+              <Descriptions.Item label="Teléfono">
+                {currentChurchInfo.phone || ''}
+              </Descriptions.Item>
+              <Descriptions.Item label="Live">
+                Hangzhou, Zhejiang
+              </Descriptions.Item>
+              <Descriptions.Item label="Dirección" span={2}>
+                {`${currentChurchInfo?.address?.location}, ${currentChurchInfo?.address?.ciudad},  ${currentChurchInfo?.address?.departamento?.name}`}
+              </Descriptions.Item>
+            </Descriptions>
           </div>
         </Modal>
       )}

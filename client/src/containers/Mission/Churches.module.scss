@@ -18,7 +18,7 @@
     }
   }
   .ChurchCard {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     box-shadow: 0 5px 16px 0 rgba(0, 0, 0, 0.1);
   }
   .churchesWrapper {
@@ -39,7 +39,9 @@
     width: 14rem;
     font-size: 1.2rem;
     &:hover {
-      color: lighten($secondary-color, 10%);
+      color: #fff;
+      border-color: #000;
+      background: #040926;
     }
     &:focus {
       outline: 0;

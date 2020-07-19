@@ -8,6 +8,14 @@
     margin-top: 1rem;
     margin-bottom: 0;
   }
+  .ant-card-head {
+    background: #040926;
+    line-height: 4.7rem;
+
+    .ant-card-head-wrapper {
+      color: #fff;
+    }
+  }
   .ant-card-head-title {
     padding: 0;
   }
