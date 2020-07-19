@@ -131,9 +131,7 @@ export default function Churches() {
               <Descriptions.Item label="Teléfono">
                 {currentChurchInfo.phone || ''}
               </Descriptions.Item>
-              <Descriptions.Item label="Live">
-                Hangzhou, Zhejiang
-              </Descriptions.Item>
+
               <Descriptions.Item label="Dirección" span={2}>
                 {`${currentChurchInfo?.address?.location}, ${currentChurchInfo?.address?.ciudad},  ${currentChurchInfo?.address?.departamento?.name}`}
               </Descriptions.Item>
