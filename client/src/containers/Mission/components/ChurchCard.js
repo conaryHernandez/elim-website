@@ -13,7 +13,7 @@ const headStyles = {
 
 export default function ChurchCard(props) {
   const { shortName, address, pastor, id, imageLink } = props.churchData;
-  const image = pastor.imageLink
+  const image = pastor?.imageLink
     ? `${cdnPath}${pastor.imageLink}`
     : `${cdnPath}/v2/images/home/logo-elim-blue-single.png`;
   return (
