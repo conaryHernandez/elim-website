@@ -29,10 +29,11 @@ export const accountsInfo = [
     description: 'Misión Cristiana Elim',
     img: `${cdnPath}/v2/images/generosidad/davivienda.jpg`,
   },
-  /* {
-    title: 'Banco Ficohsa',
-    account: '';
-    description: `${cdnPath}/v2/images/generosidad/ficohsa.png`,
+  {
+    title: 'Banco Ficohsa (USD)',
+    type: 'mision',
+    account: '028-207-16548',
+    description: 'Misión Cristiana Elim',
     img: `${cdnPath}/v2/images/generosidad/ficohsa.jpg`,
-  }, */
+  },
 ];
