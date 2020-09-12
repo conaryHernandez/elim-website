@@ -1,16 +1,16 @@
-import React from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from "react-responsive-carousel";
+import React from 'react';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { Carousel } from 'react-responsive-carousel';
 
-const Slider = props => {
+const Slider = (props) => {
   return (
     <Carousel {...props.settings}>
       {props.photos.map((photo, index) => (
         <div key={index}>
-          <img alt={photo.src} src={photo.src} />
+          <img alt={photo.caption} src={photo.imagePath} />
           {photo.legend && (
             <p className={props.settings.legendClassName}>
-              {photo.legend || ""}
+              {photo.legend || ''}
             </p>
           )}
         </div>
@@ -21,6 +21,6 @@ const Slider = props => {
 
 Slider.defaultProps = {
   settings: {},
-  photos: {}
+  photos: {},
 };
 export default Slider;

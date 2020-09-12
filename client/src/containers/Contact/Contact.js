@@ -48,7 +48,7 @@ const Contact = () => {
                   <MailFilled />
                   Correo:
                 </strong>
-                <p>info@elimhn.org</p>
+                <p>mceh.peticiones@gmail.com</p>
               </Card>
             </Col>
             <Col xs={24} sm={12} lg={10}>
@@ -66,7 +66,7 @@ const Contact = () => {
                   <MailFilled />
                   Correo:
                 </strong>
-                <p>info@elimhn.org</p>
+                <p>mceh.peticiones@gmail.com</p>
               </Card>
             </Col>
           </Row>

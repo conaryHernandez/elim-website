@@ -214,6 +214,9 @@
     }
   }
   .mainSlider {
+    max-width: 190rem;
+    margin: 0 auto;
+
     img {
       object-fit: cover;
 

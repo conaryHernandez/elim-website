@@ -7,7 +7,7 @@ import classes from './Home.module.scss';
 import ScheduleItem from './ScheduleItem';
 import { Row, Col, Form, Input, Button, notification, Modal } from 'antd';
 import { CheckCircleTwoTone } from '@ant-design/icons';
-import { cdnPath, elimAPI } from '../../constants';
+import { cdnPath, elimAPI, strapiURL } from '../../constants';
 import { pastorMessageOne, pastorMessageTwo } from './data';
 import parse from 'html-react-parser';
 import ReactGA from 'react-ga';
@@ -28,9 +28,12 @@ const messageTwo = parse(pastorMessageTwo);
 
 const Home = () => {
   const [isMessageModalVisible, setIsMessageModalVisible] = useState(false);
+  const [pageData, setPageData] = useState({});
+  const { slide } = pageData || {};
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    getPageData();
   }, []);
   const [form] = Form.useForm();
 
@@ -73,10 +76,19 @@ const Home = () => {
       action: action,
     });
   };
+  const getPageData = async () => {
+    try {
+      const response = await axios.get(`${strapiURL}/elim-home`);
+      setPageData(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <div className={classes.Home}>
-      <Slider photos={photos.map((el) => el)} settings={settings} />
+      {slide && <Slider photos={slide.map((el) => el)} settings={settings} />}
+
       <div className="container">
         <div className={classes.pastorMessage}>
           <Row type="flex" justify="space-around" align="middle">
