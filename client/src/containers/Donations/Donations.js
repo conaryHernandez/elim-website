@@ -59,7 +59,7 @@ function Donations() {
           alt="Corazones Generosos"
         />
       </div>
-      <div className={`${styles.introFidelidad}`}>
+      {/*  <div className={`${styles.introFidelidad}`}>
         <div className="container">
           <h2 className="section-title">Dios ha sido fiel</h2>
           <p>
@@ -70,7 +70,7 @@ function Donations() {
             !grande es tu fidelidad!
           </p>
         </div>
-      </div>
+      </div> */}
 
       <div className={styles.formWrapper}>
         <div className="container">
@@ -107,10 +107,12 @@ function Donations() {
               <Select defaultValue={purpose} onChange={onPurposeChange}>
                 <Select.Option value="ofrenda">Ofrenda</Select.Option>
                 <Select.Option value="diezmo">Diezmo</Select.Option>
-                <Select.Option value="proyeccion">
+                {/* <Select.Option value="proyeccion">
                   Proyección social
+                </Select.Option> */}
+                <Select.Option value="huracanETA">
+                  Ayuda por Huracán ETA
                 </Select.Option>
-                <Select.Option value="proTerreno">Pro terreno</Select.Option>
                 <Select.Option value="ayudasPorCovid">
                   Ayudas por Covid-19
                 </Select.Option>

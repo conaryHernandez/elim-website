@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { photos } from './main-slides';
 import { schedules } from './schedules';
 import Slider from '../../components/Slider/Slider';
 import classes from './Home.module.scss';
