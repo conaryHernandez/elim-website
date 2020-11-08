@@ -86,13 +86,22 @@ export default function Live() {
       </div>
       <div className="container">
         <div className={styles.iframeWrapper}>
-          <iframe
+          {/* <iframe
             width="100%"
             height="100%"
             src={`https://www.youtube.com/embed/${pageData.videoId}`}
             frameBorder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
+          ></iframe> */}
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://boxcast.tv/view-embed/test-hbhvfuwbq9t0e4ygpmr1?showTitle=0&showDescription=0&showHighlights=0&showRelated=0&showCountdown=1&market=house-of-worship&showDocuments=0&showIndex=0&showDonations=0"
+            frameBorder="0"
+            scrolling="auto"
+            allowfullscreen="true"
+            allow="autoplay; fullscreen"
           ></iframe>
         </div>
         <div className={styles.recentMessages}>
